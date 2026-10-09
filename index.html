@@ -339,5 +339,126 @@ if (cursor) {
     });
 }
 </script>
+
+<script>
+(function () {
+    const playlistSelect = document.getElementById("playlist-select");
+    const trackTitle = document.getElementById("track-title");
+    const progressBar = document.getElementById("progress-bar");
+    const progressContainer = document.getElementById("progress-container");
+    const timeDisplay = document.getElementById("time-display");
+
+    if (!playlistSelect || !document.getElementById("youtube-player")) return;
+
+    let player;
+    let ready = false;
+    let progressTimer = null;
+
+    function formatTime(seconds) {
+        if (!Number.isFinite(seconds) || seconds < 0) seconds = 0;
+        seconds = Math.floor(seconds);
+        return Math.floor(seconds / 60) + ":" +
+            String(seconds % 60).padStart(2, "0");
+    }
+
+    function updateProgress() {
+        if (!ready || !player || typeof player.getCurrentTime !== "function") return;
+
+        const current = player.getCurrentTime() || 0;
+        const duration = player.getDuration() || 0;
+        const percent = duration ? (current / duration) * 100 : 0;
+
+        progressBar.style.width = percent + "%";
+        timeDisplay.textContent =
+            formatTime(current) + " / " + formatTime(duration);
+    }
+
+    window.onYouTubeIframeAPIReady = function () {
+        player = new YT.Player("youtube-player", {
+            width: "100%",
+            height: "100%",
+            playerVars: {
+                listType: "playlist",
+                list: playlistSelect.value,
+                autoplay: 0,
+                controls: 1,
+                rel: 0
+            },
+            events: {
+                onReady: function () {
+                    ready = true;
+                    trackTitle.textContent = "Lista de reproducción cargada";
+                    progressTimer = setInterval(updateProgress, 1000);
+                },
+                onStateChange: function (event) {
+                    if (event.data === YT.PlayerState.PLAYING) {
+                        const data = player.getVideoData();
+                        trackTitle.textContent =
+                            data && data.title ? data.title : "Reproduciendo";
+                    } else if (event.data === YT.PlayerState.PAUSED) {
+                        trackTitle.textContent = "En pausa";
+                    } else if (event.data === YT.PlayerState.ENDED) {
+                        trackTitle.textContent = "Canción finalizada";
+                    }
+                    updateProgress();
+                },
+                onError: function () {
+                    trackTitle.textContent =
+                        "No se pudo cargar el video. Probá otra lista.";
+                }
+            }
+        });
+    };
+
+    const apiScript = document.createElement("script");
+    apiScript.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(apiScript);
+
+    playlistSelect.addEventListener("change", function () {
+        if (ready && player) {
+            player.loadPlaylist({
+                listType: "playlist",
+                list: playlistSelect.value,
+                index: 0
+            });
+            trackTitle.textContent = "Cargando lista...";
+        }
+    });
+
+    document.getElementById("playBtn").addEventListener("click", function () {
+        if (ready) player.playVideo();
+    });
+
+    document.getElementById("pauseBtn").addEventListener("click", function () {
+        if (ready) player.pauseVideo();
+    });
+
+    document.getElementById("stopBtn").addEventListener("click", function () {
+        if (ready) player.stopVideo();
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", function () {
+        if (ready) player.nextVideo();
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", function () {
+        if (ready) player.previousVideo();
+    });
+
+    progressContainer.addEventListener("click", function (event) {
+        if (!ready || !player) return;
+
+        const duration = player.getDuration() || 0;
+        const rect = progressContainer.getBoundingClientRect();
+        if (!duration || !rect.width) return;
+
+        const fraction = Math.max(0, Math.min(1,
+            (event.clientX - rect.left) / rect.width
+        ));
+        player.seekTo(duration * fraction, true);
+        updateProgress();
+    });
+})();
+</script>
 </body>
 </html>
