@@ -52,6 +52,54 @@
             <!-- Columna Derecha (Barra Lateral / Widgets) -->
             <aside class="sidebar">
                 <div class="sidebar-box">
+					<!-- MEGARОAD RADIO -->
+<div id="megaroad-radio">
+    <div class="radio-heading">
+        <span class="radio-icon">◉</span>
+        <h3 class="radio-title">MEGARОAD RADIO</h3>
+        <span class="radio-status">
+            <span class="status-light"></span>
+            ONLINE
+        </span>
+    </div>
+
+    <select id="playlist-select" aria-label="Lista de reproducción">
+        <option value="PLSeiqrimA2o8">SDF Macross Songs</option>
+        <option value="PLWe53-3G-AWiQaVxsZQynmbWEycn-iPWJ">SDF Macross OST</option>
+        <option value="PLWtsy7pX9eFg">Macross Plus</option>
+        <option value="PLcxkdXHgIIl4">Macross II</option>
+        <option value="PLDVa9jThGlI4">Macross 7</option>
+    </select>
+
+    <div class="radio-video">
+        <div id="youtube-player"></div>
+    </div>
+
+    <div id="track-info">
+        <span class="radio-track-label">REPRODUCIENDO</span>
+        <span id="track-title">Seleccioná una lista de reproducción</span>
+    </div>
+
+    <div id="progress-container"
+         title="Ir a una posición de la canción"
+         role="progressbar"
+         aria-label="Progreso de la canción">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div id="time-display">0:00 / 0:00</div>
+
+    <div id="player-controls">
+        <button id="prevBtn" type="button" title="Anterior">⏮</button>
+        <button id="playBtn" type="button" title="Reproducir">▶</button>
+        <button id="pauseBtn" type="button" title="Pausar">Ⅱ</button>
+        <button id="stopBtn" type="button" title="Detener">■</button>
+        <button id="nextBtn" type="button" title="Siguiente">⏭</button>
+    </div>
+
+    <div class="radio-footer">SOUND SYSTEM // MEGARОAD FLEET</div>
+</div>
+<!-- FIN MEGARОAD RADIO -->
                     <h3>Menú</h3>
                     <ul class="sidebar-mock-list">
 
