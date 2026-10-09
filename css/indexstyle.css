@@ -653,3 +653,8 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
         font-size: 12px;
     }
 }
+
+/* Ocultar la pantalla de video de MEGARОAD RADIO */
+#megaroad-radio .radio-video {
+    display: none;
+}
