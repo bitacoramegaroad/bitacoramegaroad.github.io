@@ -435,3 +435,221 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 .custom-cursor.hover .lock-text {
     opacity: 1;
 }
+/* ==========================================
+   MEGARОAD RADIO — REPRODUCTOR SCI-FI
+   ========================================== */
+
+#megaroad-radio {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: linear-gradient(
+        145deg,
+        rgba(8, 18, 25, 0.97),
+        rgba(5, 9, 14, 0.97)
+    );
+    border: 1px solid #0077b6;
+    border-radius: 5px;
+    box-shadow:
+        0 0 10px rgba(0, 119, 182, 0.18),
+        inset 0 0 15px rgba(0, 255, 204, 0.035);
+    color: #d8e5ed;
+    font-family: 'Conthrax', monospace, sans-serif;
+    overflow: hidden;
+}
+
+#megaroad-radio * {
+    box-sizing: border-box;
+}
+
+#megaroad-radio .radio-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.3);
+}
+
+#megaroad-radio .radio-icon {
+    color: #00ffcc;
+    font-size: 22px;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
+}
+
+#megaroad-radio .radio-title {
+    flex: 1;
+    color: #00ffcc;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#megaroad-radio .radio-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #7d9aa7;
+    font-size: 8px;
+    white-space: nowrap;
+}
+
+#megaroad-radio .status-light {
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    background: #00ffcc;
+    border-radius: 50%;
+    box-shadow: 0 0 7px #00ffcc;
+}
+
+#megaroad-radio #playlist-select {
+    display: block;
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 10px 8px;
+    background-color: #0b151d;
+    border: 1px solid #245267;
+    border-radius: 3px;
+    color: #00ffcc;
+    font-family: 'Conthrax', monospace, sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+#megaroad-radio #playlist-select:focus {
+    outline: 1px solid #00ffcc;
+    border-color: #00ffcc;
+}
+
+#megaroad-radio #playlist-select option {
+    background-color: #0b151d;
+    color: #d8e5ed;
+}
+
+#megaroad-radio .radio-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 14px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid #183747;
+}
+
+#megaroad-radio #youtube-player {
+    width: 100%;
+    height: 100%;
+}
+
+#megaroad-radio #youtube-player iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#megaroad-radio #track-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 12px;
+}
+
+#megaroad-radio .radio-track-label {
+    color: #5d8190;
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+#megaroad-radio #track-title {
+    min-height: 16px;
+    color: #e0eaf0;
+    font-size: 10px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+#megaroad-radio #progress-container {
+    width: 100%;
+    height: 5px;
+    margin-bottom: 7px;
+    background: #1b303b;
+    border: 1px solid #294653;
+    cursor: pointer;
+}
+
+#megaroad-radio #progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #00ffcc;
+    box-shadow: 0 0 7px rgba(0, 255, 204, 0.6);
+    transition: width 0.15s linear;
+}
+
+#megaroad-radio #time-display {
+    margin-bottom: 13px;
+    color: #78909c;
+    font-family: monospace;
+    font-size: 10px;
+    text-align: right;
+}
+
+#megaroad-radio #player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 14px;
+}
+
+#megaroad-radio #player-controls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 32px;
+    padding: 0;
+    background: linear-gradient(180deg, #10232e, #09131a);
+    border: 1px solid #245267;
+    border-radius: 3px;
+    color: #00ffcc;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#megaroad-radio #player-controls button:hover {
+    background: #12313d;
+    border-color: #00ffcc;
+    box-shadow: 0 0 9px rgba(0, 255, 204, 0.25);
+}
+
+#megaroad-radio #player-controls #playBtn {
+    width: 40px;
+    height: 36px;
+    border-color: #00a98b;
+    font-size: 17px;
+}
+
+#megaroad-radio .radio-footer {
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 255, 204, 0.2);
+    color: #42616e;
+    font-size: 7px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    #megaroad-radio {
+        padding: 14px;
+    }
+
+    #megaroad-radio .radio-title {
+        font-size: 12px;
+    }
+}
