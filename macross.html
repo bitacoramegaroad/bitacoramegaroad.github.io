@@ -1,1 +1,222 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macross | La Bitácora del Megaroad</title>
+
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/indexstyle.css">
+  <link rel="stylesheet" href="css/macross.css">
+</head>
+
+<body>
+  <header class="macross-header">
+    <a href="index.html" class="logo-link">
+      <img
+        src="img/LaBitacoraDelMegaroad.png"
+        alt="La Bitácora del Megaroad"
+        class="logo"
+      >
+    </a>
+
+    <h1>ARCHIVO MACROSS</h1>
+    <p>Historias, sagas y universos de una misma galaxia.</p>
+  </header>
+
+  <main class="macross-container">
+    <section class="catalogo">
+      <div class="catalogo-titulo">
+        <h2>Catálogo de producciones</h2>
+        <p>Seleccioná una producción y después el episodio o versión.</p>
+      </div>
+
+      <div id="catalogo-lista">
+        <p class="estado">Cargando catálogo...</p>
+      </div>
+    </section>
+
+    <section class="visor">
+      <div class="visor-titulo">
+        <span class="visor-indicador"></span>
+        <h2 id="reproductor-titulo">Reproductor</h2>
+      </div>
+
+      <div class="reproductor">
+        <iframe
+          id="reproductor-frame"
+          src="about:blank"
+          title="Reproductor de Macross"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="autoplay; fullscreen; picture-in-picture"
+        ></iframe>
+      </div>
+
+      <p id="reproductor-info" class="reproductor-info">
+        Elegí una producción del catálogo para comenzar.
+      </p>
+    </section>
+  </main>
+
+  <footer class="macross-footer">
+    <a href="index.html">← Volver a La Bitácora del Megaroad</a>
+  </footer>
+
+  <script>
+    const archivosCatalogo = [
+      "data/sdfmacross.json",
+      "data/macrossplus.json"
+    ];
+
+    const listaCatalogo = document.getElementById("catalogo-lista");
+    const frame = document.getElementById("reproductor-frame");
+    const tituloReproductor = document.getElementById("reproductor-titulo");
+    const infoReproductor = document.getElementById("reproductor-info");
+
+    function convertirUrl(url) {
+      try {
+        const direccion = new URL(url);
+
+        // Convertir videos de YouTube a formato insertable.
+        if (
+          direccion.hostname === "www.youtube.com" ||
+          direccion.hostname === "youtube.com"
+        ) {
+          if (direccion.pathname === "/playlist") {
+            const lista = direccion.searchParams.get("list");
+            return lista
+              ? `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(lista)}`
+              : url;
+          }
+
+          if (direccion.pathname === "/watch") {
+            const video = direccion.searchParams.get("v");
+            return video
+              ? `https://www.youtube.com/embed/${encodeURIComponent(video)}`
+              : url;
+          }
+        }
+
+        // Los enlaces de otros servidores se conservan como están.
+        return url;
+      } catch {
+        return url;
+      }
+    }
+
+    function reproducir(produccion, version) {
+      frame.src = convertirUrl(version.url);
+      tituloReproductor.textContent = produccion.titulo;
+      infoReproductor.textContent = version.titulo;
+
+      document.querySelectorAll(".episodio-btn").forEach(boton => {
+        boton.classList.toggle(
+          "activo",
+          boton.dataset.url === version.url
+        );
+      });
+
+      document.querySelectorAll(".produccion").forEach(bloque => {
+        bloque.classList.toggle(
+          "produccion-activa",
+          bloque.contains(
+            document.querySelector(
+              `.episodio-btn[data-url="${CSS.escape(version.url)}"]`
+            )
+          )
+        );
+      });
+    }
+
+    function crearCatalogo(sagas) {
+      listaCatalogo.replaceChildren();
+
+      sagas.forEach(saga => {
+        const seccionSaga = document.createElement("section");
+        seccionSaga.className = "saga";
+
+        const tituloSaga = document.createElement("h3");
+        tituloSaga.className = "saga-titulo";
+        tituloSaga.textContent = saga.titulo;
+
+        seccionSaga.appendChild(tituloSaga);
+
+        saga.producciones.forEach(produccion => {
+          const bloque = document.createElement("div");
+          bloque.className = "produccion";
+
+          const titulo = document.createElement("h4");
+          titulo.textContent = produccion.titulo;
+
+          const tipo = document.createElement("span");
+          tipo.className = "produccion-tipo";
+          tipo.textContent = produccion.tipo;
+
+          const listaVersiones = document.createElement("div");
+          listaVersiones.className = "episodios";
+
+          produccion.versiones.forEach(version => {
+            const boton = document.createElement("button");
+            boton.type = "button";
+            boton.className = "episodio-btn";
+            boton.textContent = version.titulo;
+            boton.dataset.url = version.url;
+
+            boton.addEventListener("click", () => {
+              reproducir(produccion, version);
+            });
+
+            listaVersiones.appendChild(boton);
+          });
+
+          bloque.append(titulo, tipo, listaVersiones);
+          seccionSaga.appendChild(bloque);
+        });
+
+        listaCatalogo.appendChild(seccionSaga);
+      });
+
+      const primerBoton = listaCatalogo.querySelector(".episodio-btn");
+
+      if (primerBoton) {
+        primerBoton.click();
+      } else {
+        listaCatalogo.innerHTML =
+          '<p class="estado">Todavía no hay producciones cargadas.</p>';
+      }
+    }
+
+    async function cargarCatalogo() {
+      try {
+        const resultados = await Promise.all(
+          archivosCatalogo.map(async archivo => {
+            const respuesta = await fetch(archivo);
+
+            if (!respuesta.ok) {
+              throw new Error(`No se pudo cargar ${archivo}`);
+            }
+
+            return respuesta.json();
+          })
+        );
+
+        const sagas = resultados.map(datos => Object.values(datos)[0]);
+        crearCatalogo(sagas);
+      } catch (error) {
+        console.error(error);
+        listaCatalogo.innerHTML = `
+          <p class="estado error">
+            No se pudo cargar el catálogo. Revisá las rutas y la sintaxis
+            de los archivos JSON.
+          </p>
+        `;
+      }
+    }
+
+    cargarCatalogo();
+  </script>
+</body>
+</html>
+
