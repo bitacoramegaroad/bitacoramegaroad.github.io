@@ -471,5 +471,21 @@ playlistSelect.addEventListener("change", function () {
     });
 })();
 </script>
+<script>
+    // ===== EFECTO DE ZOOM ULTRA SUTIL AL HACER SCROLL =====
+    let IsScrolling;
+
+    window.addEventListener('scroll', () => {
+        // Zoom mínimo del 103% para que sea un efecto ambiental discreto
+        document.body.style.backgroundSize = "100.2%";
+
+        window.clearTimeout(IsScrolling);
+
+        // Espera 350ms después de detener el scroll para regresar al tamaño original
+        IsScrolling = setTimeout(() => {
+            document.body.style.backgroundSize = "100%";
+        }, 350);
+    });
+</script>
 </body>
 </html>
