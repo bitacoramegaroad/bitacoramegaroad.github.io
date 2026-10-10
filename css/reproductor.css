@@ -23,6 +23,7 @@
 .macross-header h1 {
   margin: 20px 0 0;
   color: #00ffcc;
+  font-family: 'Conthrax', monospace, sans-serif;
   font-size: clamp(1.3rem, 3vw, 2rem);
   line-height: 1.4;
   letter-spacing: 2px;
@@ -31,12 +32,11 @@
 }
 
 /* ==========================================
-   TIPOGRAFÍA
+   TIPOGRAFÍA GENERAL
    ========================================== */
 
 .macross-container,
 .macross-container button,
-.macross-container select,
 .macross-container label,
 .macross-header h1,
 .macross-footer,
@@ -50,6 +50,8 @@
 
 /* ==========================================
    DISTRIBUCIÓN PRINCIPAL
+   Catálogo a la izquierda y reproductor
+   a la derecha
    ========================================== */
 
 .macross-container {
@@ -86,117 +88,76 @@
 
 .catalogo-titulo h2 {
   margin-bottom: 0;
-}
-
-.catalogo h3 {
-  margin: 0 0 10px;
-  color: #00ffcc;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+  font-family: 'Conthrax', monospace, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 /* ==========================================
-   SELECTOR DE FRANQUICIA
+   ÁRBOL DE NAVEGACIÓN
    ========================================== */
 
-.selector-franquicia {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 22px;
-}
-
-.selector-franquicia label {
-  color: #fff;
-  font-size: 0.9rem;
-}
-
-.selector-franquicia select {
-  display: block;
+.arbol-catalogo {
   width: 100%;
-  min-height: 44px;
-  padding: 11px 36px 11px 12px;
-  color: #00ffcc;
-  background: linear-gradient(
-    135deg,
-    rgba(6, 11, 17, 0.95) 0%,
-    rgba(17, 27, 39, 0.95) 100%
-  );
-  border: 1.5px solid #fff;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  box-sizing: border-box;
-  cursor: none;
-}
-
-.selector-franquicia select option {
-  color: #fff;
-  background: #111b27;
-}
-
-.selector-franquicia select:hover {
-  border-color: #00ffcc;
-  box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
-}
-
-/* ==========================================
-   NIVELES DEL CATÁLOGO
-   ========================================== */
-
-.nivel-catalogo {
-  min-width: 0;
-  margin-top: 20px;
-}
-
-.opciones-saga,
-.opciones-produccion,
-.episodios {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   min-width: 0;
 }
 
-.opciones-saga,
-.opciones-produccion {
-  max-height: 190px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 2px 8px 2px 0;
-  overscroll-behavior: contain;
+.arbol-lista,
+.arbol-hijos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nivel-episodios {
-  padding-top: 16px;
-  border-top: 1px solid rgba(0, 255, 204, 0.3);
+.arbol-lista {
+  width: 100%;
 }
 
-.episodios {
-  max-height: 310px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 2px 8px 2px 0;
-  overscroll-behavior: contain;
+.arbol-nodo {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ramas interiores */
+
+.arbol-hijos {
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(0, 255, 204, 0.24);
+}
+
+.arbol-hijos[hidden] {
+  display: none !important;
+}
+
+/* Espaciado entre elementos */
+
+.arbol-lista > .arbol-nodo,
+.arbol-hijos > .arbol-nodo {
+  margin-top: 6px;
+}
+
+.arbol-lista > .arbol-nodo:first-child,
+.arbol-hijos > .arbol-nodo:first-child {
+  margin-top: 0;
 }
 
 /* ==========================================
-   BOTONES DEL CATÁLOGO
+   BOTONES DEL ÁRBOL
    Estilo de navegación de la Bitácora
    ========================================== */
 
-.saga-btn,
-.produccion-btn,
-.episodio-btn {
+.arbol-boton {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  flex: 0 0 auto;
+  gap: 9px;
+
   width: 100%;
   min-width: 0;
-  min-height: 44px;
-  padding: 10px 14px;
-  box-sizing: border-box;
+  min-height: 39px;
+  padding: 8px 11px;
 
   background: linear-gradient(
     135deg,
@@ -204,36 +165,116 @@
     rgba(17, 27, 39, 0.4) 100%
   );
 
-  border: 1.5px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.75);
   border-radius: 50px;
 
   color: #00ffcc;
-  font-size: 12px;
+  font-family: 'Conthrax', monospace, sans-serif;
+  font-size: 11px;
   font-weight: normal;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 1px;
   text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
   line-height: 1.5;
+
   overflow-wrap: anywhere;
   white-space: normal;
+  box-sizing: border-box;
 
-  /* La retícula personalizada reemplaza el cursor del sistema. */
-  cursor: none;
+  cursor: none !important;
 
   transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    color 0.3s ease;
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
 }
 
-.saga-btn:hover,
-.produccion-btn:hover,
-.episodio-btn:hover,
-.saga-btn.activo,
-.produccion-btn.activo,
-.episodio-btn.activo {
+/* Texto del botón */
+
+.arbol-texto {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Símbolos + y − */
+
+.arbol-icono {
+  display: inline-flex;
+  flex: 0 0 17px;
+  align-items: center;
+  justify-content: center;
+
+  width: 17px;
+  min-width: 17px;
+  height: 17px;
+
+  color: #00ffcc;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1;
+
+  border: 1px solid rgba(0, 255, 204, 0.55);
+  border-radius: 50%;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Raíz del catálogo */
+
+.arbol-boton.arbol-raiz {
+  min-height: 44px;
+  margin-bottom: 9px;
+
+  border-color: #fff;
+  color: #00ffcc;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+
+/* Franquicias */
+
+.franquicia-btn {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Saga y producción */
+
+.saga-btn,
+.produccion-btn {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Episodios y versiones */
+
+.version-btn {
+  min-height: 35px;
+  padding: 7px 10px;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* El símbolo de reproducción no necesita el círculo de expansión */
+
+.version-btn .arbol-icono {
+  border-color: transparent;
+  font-size: 11px;
+}
+
+/* ==========================================
+   ESTADOS: HOVER Y SELECCIÓN
+   ========================================== */
+
+.arbol-boton:hover,
+.arbol-boton.activo {
   background: linear-gradient(
     135deg,
     rgba(9, 19, 30, 0.85) 0%,
@@ -241,39 +282,57 @@
   );
 
   border-color: #00ffcc;
-  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+  box-shadow: 0 0 12px rgba(0, 255, 204, 0.3);
   color: #00ffcc;
 }
 
-.saga-btn:active,
-.produccion-btn:active,
-.episodio-btn:active {
-  box-shadow: 0 0 8px rgba(0, 255, 204, 0.65);
+.arbol-boton:hover .arbol-icono,
+.arbol-boton.activo .arbol-icono {
+  color: #ff6b00;
+  border-color: #ff6b00;
+  background: rgba(255, 107, 0, 0.08);
 }
 
-.saga-btn:focus-visible,
-.produccion-btn:focus-visible,
-.episodio-btn:focus-visible,
-.selector-franquicia select:focus-visible,
-.boton-bitacora:focus-visible {
+.arbol-boton:focus-visible {
   outline: 2px solid #00ffcc;
   outline-offset: 3px;
 }
 
+/* Versión seleccionada */
+
+.version-btn.activo {
+  color: #ff6b00;
+  border-color: #ff6b00;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 15, 6, 0.75) 0%,
+    rgba(45, 24, 10, 0.75) 100%
+  );
+
+  box-shadow: 0 0 12px rgba(255, 107, 0, 0.3);
+}
+
+.version-btn.activo .arbol-icono {
+  color: #ff6b00;
+}
+
 /* ==========================================
-   MENSAJES DE ESTADO
+   MENSAJES DEL CATÁLOGO
    ========================================== */
 
-.estado {
-  margin: 6px 0;
-  color: #ccc;
+.arbol-mensaje {
+  margin: 7px 0;
+  padding: 8px 10px;
+
+  color: #b9c5ca;
   font-family: 'Conthrax', monospace, sans-serif;
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-size: 10px;
+  line-height: 1.7;
+
   overflow-wrap: anywhere;
 }
 
-.estado.error {
+.arbol-mensaje.error {
   color: #ff8a65;
 }
 
@@ -291,9 +350,12 @@
 .visor-titulo h2 {
   min-width: 0;
   margin: 0;
+
   color: #00ffcc;
+  font-family: 'Conthrax', monospace, sans-serif;
   font-size: 1.15rem;
   line-height: 1.5;
+
   overflow-wrap: anywhere;
 }
 
@@ -301,6 +363,7 @@
   flex: 0 0 9px;
   width: 9px;
   height: 9px;
+
   background: #00ffcc;
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
@@ -311,6 +374,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+
   background: #000;
   border: 1px solid rgba(0, 255, 204, 0.35);
   box-sizing: border-box;
@@ -319,25 +383,28 @@
 .reproductor iframe {
   position: absolute;
   inset: 0;
+
   display: block;
   width: 100%;
   height: 100%;
+
   border: 0;
   background: #000;
 }
 
 .reproductor-info {
   margin: 14px 0 0;
+
   color: #ccc;
   font-family: 'Conthrax', monospace, sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.7;
+
   overflow-wrap: anywhere;
 }
 
 /* ==========================================
    BOTÓN VOLVER A LA BITÁCORA
-   Estilo ovalado, translúcido y luminoso
    ========================================== */
 
 .macross-footer {
@@ -352,6 +419,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   max-width: 100%;
   min-height: 55px;
   padding: 10px 24px;
@@ -367,6 +435,7 @@
   border-radius: 50px;
 
   color: #00ffcc;
+  font-family: 'Conthrax', monospace, sans-serif;
   font-size: 13px;
   font-weight: normal;
   text-transform: uppercase;
@@ -376,7 +445,7 @@
   line-height: 1.6;
   overflow-wrap: anywhere;
 
-  cursor: none;
+  cursor: none !important;
 
   transition:
     background 0.3s ease,
@@ -397,9 +466,14 @@
   color: #00ffcc;
 }
 
+.boton-bitacora:focus-visible {
+  outline: 2px solid #00ffcc;
+  outline-offset: 3px;
+}
+
 /* ==========================================
    RETÍCULA PERSONALIZADA
-   Conserva la apariencia original de la Bitácora
+   Conserva los estilos originales del sitio
    ========================================== */
 
 body,
@@ -413,43 +487,37 @@ input,
   cursor: none !important;
 }
 
-/* No redefinir aquí el tamaño, la geometría ni los
-   efectos de .custom-cursor, .reticle-svg o .lock-text.
-   Esos estilos pertenecen a indexstyle.css. */
+/*
+  No redefinir aquí .custom-cursor, .reticle-svg,
+  .corner-square ni .lock-text.
+
+  Su geometría, tamaño, efectos luminosos y
+  transiciones pertenecen a indexstyle.css.
+*/
 
 /* ==========================================
    BARRAS DE DESPLAZAMIENTO
    ========================================== */
 
-.opciones-saga,
-.opciones-produccion,
-.episodios {
+.arbol-catalogo {
   scrollbar-width: thin;
   scrollbar-color: #00ffcc rgba(6, 11, 17, 0.8);
 }
 
-.opciones-saga::-webkit-scrollbar,
-.opciones-produccion::-webkit-scrollbar,
-.episodios::-webkit-scrollbar {
+.arbol-catalogo::-webkit-scrollbar {
   width: 6px;
 }
 
-.opciones-saga::-webkit-scrollbar-track,
-.opciones-produccion::-webkit-scrollbar-track,
-.episodios::-webkit-scrollbar-track {
+.arbol-catalogo::-webkit-scrollbar-track {
   background: rgba(6, 11, 17, 0.8);
 }
 
-.opciones-saga::-webkit-scrollbar-thumb,
-.opciones-produccion::-webkit-scrollbar-thumb,
-.episodios::-webkit-scrollbar-thumb {
+.arbol-catalogo::-webkit-scrollbar-thumb {
   background: #00ffcc;
   border-radius: 10px;
 }
 
-.opciones-saga::-webkit-scrollbar-thumb:hover,
-.opciones-produccion::-webkit-scrollbar-thumb:hover,
-.episodios::-webkit-scrollbar-thumb:hover {
+.arbol-catalogo::-webkit-scrollbar-thumb:hover {
   background: #fff;
 }
 
@@ -479,13 +547,23 @@ input,
     letter-spacing: 1.5px;
   }
 
-  .opciones-saga,
-  .opciones-produccion {
-    max-height: 160px;
+  .arbol-hijos {
+    margin-left: 8px;
+    padding-left: 9px;
   }
 
-  .episodios {
-    max-height: 240px;
+  .arbol-boton {
+    min-height: 40px;
+  }
+
+  .franquicia-btn {
+    font-size: 11px;
+  }
+
+  .saga-btn,
+  .produccion-btn,
+  .version-btn {
+    font-size: 10px;
   }
 
   .boton-bitacora {
@@ -510,20 +588,32 @@ input,
     padding: 12px;
   }
 
-  .saga-btn,
-  .produccion-btn,
-  .episodio-btn {
-    padding: 10px 12px;
-    font-size: 11px;
-    letter-spacing: 0.5px;
+  .arbol-boton {
+    gap: 6px;
+    padding: 8px;
+    font-size: 10px;
+    letter-spacing: 0.2px;
   }
 
-  .selector-franquicia select {
-    font-size: 0.8rem;
+  .arbol-icono {
+    flex-basis: 16px;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+  }
+
+  .arbol-hijos {
+    margin-left: 5px;
+    padding-left: 7px;
   }
 
   .visor-titulo h2 {
     font-size: 1rem;
+  }
+
+  .boton-bitacora {
+    padding: 10px 14px;
+    font-size: 11px;
   }
 }
 
@@ -532,10 +622,9 @@ input,
    ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .saga-btn,
-  .produccion-btn,
-  .episodio-btn,
-  .boton-bitacora {
+  .arbol-boton,
+  .boton-bitacora,
+  .arbol-icono {
     transition: none;
   }
 }
