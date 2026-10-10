@@ -414,16 +414,20 @@ if (cursor) {
     apiScript.src = "https://www.youtube.com/iframe_api";
     document.head.appendChild(apiScript);
 
-    playlistSelect.addEventListener("change", function () {
-        if (ready && player) {
-            player.loadPlaylist({
-                listType: "playlist",
-                list: playlistSelect.value,
-                index: 0
-            });
-            trackTitle.textContent = "Cargando lista...";
-        }
-    });
+
+playlistSelect.addEventListener("change", function () {
+    if (ready && player) {
+        player.stopVideo();
+        player.loadPlaylist({
+            listType: "playlist",
+            list: playlistSelect.value,
+            index: 0
+        });
+        trackTitle.textContent = "Cargando lista...";
+        progressBar.style.width = "0%";
+        timeDisplay.textContent = "0:00 / 0:00";
+    }
+});
 
     document.getElementById("playBtn").addEventListener("click", function () {
         if (ready) player.playVideo();
