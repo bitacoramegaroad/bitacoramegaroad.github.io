@@ -12,6 +12,11 @@
 </head>
 
 <body>
+
+  <!-- ======================================
+       ENCABEZADO
+       ====================================== -->
+
   <header class="macross-header">
     <a href="index.html" class="logo-link">
       <img
@@ -24,53 +29,112 @@
     <h1>SERIES ONLINE</h1>
   </header>
 
+
+  <!-- ======================================
+       CONTENIDO PRINCIPAL
+       ====================================== -->
+
   <main class="macross-container">
-    <section class="catalogo">
+
+    <!-- ====================================
+         ÁRBOL DE NAVEGACIÓN
+         ==================================== -->
+
+    <section class="catalogo" aria-label="Catálogo de series y películas">
+
       <div class="catalogo-titulo">
         <h2>Catálogo</h2>
       </div>
 
-      <div class="selector-franquicia">
-        <label for="franquicia-select">Franquicia</label>
+      <nav class="arbol-catalogo" aria-label="Franquicias y producciones">
 
-        <select id="franquicia-select">
-          <option value="macross">Macross</option>
-          <option value="robotech">Robotech</option>
-        </select>
-      </div>
+        <ul id="arbol-lista" class="arbol-lista">
 
-      <section class="nivel-catalogo">
-        <h3>Saga</h3>
+          <li class="arbol-nodo nodo-franquicias">
 
-        <div id="sagas-lista" class="opciones-saga">
-          <p class="estado">Cargando catálogo...</p>
-        </div>
-      </section>
+            <button
+              type="button"
+              class="arbol-boton arbol-raiz"
+              aria-expanded="true"
+              aria-controls="lista-franquicias"
+            >
+              <span class="arbol-icono" aria-hidden="true">−</span>
+              <span class="arbol-texto">FRANQUICIAS</span>
+            </button>
 
-      <section class="nivel-catalogo">
-        <h3>Producción</h3>
+            <ul id="lista-franquicias" class="arbol-hijos">
 
-        <div id="producciones-lista" class="opciones-produccion">
-          <p class="estado">Selecciona una saga.</p>
-        </div>
-      </section>
+              <li class="arbol-nodo">
 
-      <section class="nivel-catalogo nivel-episodios">
-        <h3 id="episodios-titulo">Episodios y versiones</h3>
+                <button
+                  type="button"
+                  class="arbol-boton franquicia-btn"
+                  data-franquicia="macross"
+                  aria-expanded="false"
+                >
+                  <span class="arbol-icono" aria-hidden="true">+</span>
+                  <span class="arbol-texto">MACROSS</span>
+                </button>
 
-        <div id="episodios-lista" class="episodios">
-          <p class="estado">Selecciona una producción.</p>
-        </div>
-      </section>
+                <ul
+                  class="arbol-hijos lista-sagas"
+                  data-lista-franquicia="macross"
+                  hidden
+                >
+                  <li class="arbol-mensaje">
+                    Selecciona Macross para cargar el catálogo.
+                  </li>
+                </ul>
+
+              </li>
+
+              <li class="arbol-nodo">
+
+                <button
+                  type="button"
+                  class="arbol-boton franquicia-btn"
+                  data-franquicia="robotech"
+                  aria-expanded="false"
+                >
+                  <span class="arbol-icono" aria-hidden="true">+</span>
+                  <span class="arbol-texto">ROBOTECH</span>
+                </button>
+
+                <ul
+                  class="arbol-hijos lista-sagas"
+                  data-lista-franquicia="robotech"
+                  hidden
+                >
+                  <li class="arbol-mensaje">
+                    El catálogo todavía no está disponible.
+                  </li>
+                </ul>
+
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </nav>
+
     </section>
 
-    <section class="visor">
+
+    <!-- ====================================
+         REPRODUCTOR
+         ==================================== -->
+
+    <section class="visor" aria-label="Reproductor de video">
+
       <div class="visor-titulo">
-        <span class="visor-indicador"></span>
+        <span class="visor-indicador" aria-hidden="true"></span>
         <h2 id="reproductor-titulo">Reproductor</h2>
       </div>
 
       <div class="reproductor">
+
         <iframe
           id="reproductor-frame"
           src="about:blank"
@@ -79,28 +143,47 @@
           referrerpolicy="strict-origin-when-cross-origin"
           allow="autoplay; fullscreen; picture-in-picture"
         ></iframe>
+
       </div>
 
-      <p id="reproductor-info" class="reproductor-info">
-        Selecciona un episodio o una versión para reproducirlo.
+      <p
+        id="reproductor-info"
+        class="reproductor-info"
+        aria-live="polite"
+      >
+        Selecciona una franquicia, una producción y una versión para reproducirla.
       </p>
+
     </section>
+
   </main>
 
+
+  <!-- ======================================
+       VOLVER A LA BITÁCORA
+       ====================================== -->
+
   <footer class="macross-footer">
+
     <a href="index.html" class="boton-bitacora">
       Volver a La Bitácora del Megaroad
     </a>
+
   </footer>
 
-  <!-- Retícula original de La Bitácora del Megaroad -->
+
+  <!-- ======================================
+       RETÍCULA ORIGINAL DE LA BITÁCORA
+       ====================================== -->
+
   <div class="custom-cursor" aria-hidden="true">
+
     <svg
       class="reticle-svg"
       viewBox="0 0 100 80"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <!-- Bracket izquierdo -->
+
       <path
         d="M28 6 L2 18 L2 62 L28 74"
         fill="none"
@@ -110,7 +193,6 @@
         stroke-linejoin="miter"
       />
 
-      <!-- Bracket derecho -->
       <path
         d="M72 6 L98 18 L98 62 L72 74"
         fill="none"
@@ -120,7 +202,6 @@
         stroke-linejoin="miter"
       />
 
-      <!-- Cuadrado de la retícula -->
       <rect
         class="corner-square"
         x="79"
@@ -130,80 +211,169 @@
         fill="#00ffcc"
         transform="rotate(63 85 70)"
       />
+
     </svg>
 
     <div class="lock-text">LOCK ON</div>
+
   </div>
 
-  <script>
-    // ==========================================
-    // CONFIGURACIÓN DEL CATÁLOGO
-    // ==========================================
 
+  <!-- ======================================
+       LÓGICA DEL CATÁLOGO
+       ====================================== -->
+
+  <script>
+    "use strict";
+
+    // Archivos JSON disponibles para cada franquicia.
     const archivosFranquicia = {
       macross: [
         "data/sdfmacross.json",
         "data/macrossplus.json"
       ],
+
       robotech: [
         "data/robotech.json"
       ]
     };
 
-    const franquiciaSelect =
-      document.getElementById("franquicia-select");
 
-    const sagasLista =
-      document.getElementById("sagas-lista");
+    // Elementos principales.
+    const arbolLista = document.getElementById("arbol-lista");
 
-    const produccionesLista =
-      document.getElementById("producciones-lista");
+    const botonesFranquicia = document.querySelectorAll(
+      ".franquicia-btn"
+    );
 
-    const episodiosLista =
-      document.getElementById("episodios-lista");
+    const listasFranquicia = document.querySelectorAll(
+      ".lista-sagas"
+    );
 
-    const episodiosTitulo =
-      document.getElementById("episodios-titulo");
+    const frame = document.getElementById("reproductor-frame");
 
-    const frame =
-      document.getElementById("reproductor-frame");
+    const tituloReproductor = document.getElementById(
+      "reproductor-titulo"
+    );
 
-    const tituloReproductor =
-      document.getElementById("reproductor-titulo");
+    const infoReproductor = document.getElementById(
+      "reproductor-info"
+    );
 
-    const infoReproductor =
-      document.getElementById("reproductor-info");
 
-    let sagasActuales = [];
-    let sagaSeleccionada = -1;
-    let produccionSeleccionada = -1;
+    // Seguimiento del catálogo y de las solicitudes.
+    const catalogosCargados = new Set();
 
-    // ==========================================
-    // ESTADOS Y REPRODUCCIÓN
-    // ==========================================
+    const solicitudesActivas = new Map();
 
-    function mostrarEstado(contenedor, mensaje, esError = false) {
-      contenedor.replaceChildren();
+    let reproduccionSeleccionada = null;
 
-      const texto = document.createElement("p");
-      texto.className = esError ? "estado error" : "estado";
-      texto.textContent = mensaje;
 
-      contenedor.appendChild(texto);
+    // ======================================
+    // UTILIDADES DEL ÁRBOL
+    // ======================================
+
+    function crearElemento(etiqueta, clase, texto = "") {
+      const elemento = document.createElement(etiqueta);
+
+      if (clase) {
+        elemento.className = clase;
+      }
+
+      if (texto) {
+        elemento.textContent = texto;
+      }
+
+      return elemento;
     }
 
-    function detenerReproduccion() {
-      frame.src = "about:blank";
 
-      tituloReproductor.textContent = "Reproductor";
+    function crearBotonArbol(texto, clase, icono = "+") {
+      const boton = document.createElement("button");
 
-      infoReproductor.textContent =
-        "Selecciona un episodio o una versión para reproducirlo.";
+      boton.type = "button";
+      boton.className = `arbol-boton ${clase}`;
+
+      const iconoElemento = crearElemento(
+        "span",
+        "arbol-icono",
+        icono
+      );
+
+      iconoElemento.setAttribute("aria-hidden", "true");
+
+      const textoElemento = crearElemento(
+        "span",
+        "arbol-texto",
+        texto
+      );
+
+      boton.append(iconoElemento, textoElemento);
+
+      return boton;
     }
+
+
+    function actualizarIcono(boton, expandido) {
+      const icono = boton.querySelector(".arbol-icono");
+
+      if (icono) {
+        icono.textContent = expandido ? "−" : "+";
+      }
+
+      boton.setAttribute(
+        "aria-expanded",
+        String(expandido)
+      );
+    }
+
+
+    function alternarRama(boton, lista) {
+      if (!lista) {
+        return;
+      }
+
+      const expandida = boton.getAttribute("aria-expanded") === "true";
+
+      lista.hidden = expandida;
+
+      actualizarIcono(boton, !expandida);
+    }
+
+
+    function mostrarMensaje(lista, mensaje, esError = false) {
+      lista.replaceChildren();
+
+      const elemento = crearElemento(
+        "li",
+        esError ? "arbol-mensaje error" : "arbol-mensaje",
+        mensaje
+      );
+
+      lista.appendChild(elemento);
+    }
+
+
+    function cerrarRamasDescendientes(lista) {
+      lista.querySelectorAll(".arbol-hijos").forEach((rama) => {
+        rama.hidden = true;
+      });
+
+      lista.querySelectorAll(".arbol-boton").forEach((boton) => {
+        actualizarIcono(boton, false);
+        boton.classList.remove("activo");
+      });
+    }
+
+
+    // ======================================
+    // CONVERSIÓN DE URL DE YOUTUBE
+    // ======================================
 
     function convertirUrl(url) {
       try {
         const direccion = new URL(url);
+
         const host = direccion.hostname.toLowerCase();
 
         if (
@@ -239,38 +409,482 @@
             : url;
         }
 
+        // Los reproductores externos conservan su URL original.
         return url;
+
       } catch {
         return url;
       }
     }
 
-    function reproducir(produccion, version, indice) {
-      if (!version || !version.url) {
+
+    // ======================================
+    // REPRODUCCIÓN
+    // ======================================
+
+    function detenerReproduccion() {
+      frame.src = "about:blank";
+
+      tituloReproductor.textContent = "Reproductor";
+
+      infoReproductor.textContent =
+        "Selecciona una franquicia, una producción y una versión para reproducirla.";
+
+      reproduccionSeleccionada = null;
+
+      document.querySelectorAll(".version-btn").forEach((boton) => {
+        boton.classList.remove("activo");
+        boton.setAttribute("aria-pressed", "false");
+      });
+    }
+
+
+    function reproducir(produccion, version, boton) {
+      if (!version || typeof version.url !== "string" || !version.url.trim()) {
         infoReproductor.textContent =
           "Esta versión no tiene una dirección de reproducción disponible.";
 
         return;
       }
 
-      frame.src = convertirUrl(version.url);
+      const url = convertirUrl(version.url.trim());
 
-      tituloReproductor.textContent = produccion.titulo;
-      infoReproductor.textContent = version.titulo;
+      frame.src = url;
 
-      episodiosLista
-        .querySelectorAll(".episodio-btn")
-        .forEach((boton, i) => {
-          const activo = i === indice;
+      tituloReproductor.textContent =
+        produccion.titulo || "Reproducción";
 
-          boton.classList.toggle("activo", activo);
-          boton.setAttribute("aria-pressed", String(activo));
-        });
+      infoReproductor.textContent =
+        version.titulo || "Versión seleccionada";
+
+      reproduccionSeleccionada = {
+        produccion,
+        version
+      };
+
+      document.querySelectorAll(".version-btn").forEach((elemento) => {
+        const activo = elemento === boton;
+
+        elemento.classList.toggle("activo", activo);
+
+        elemento.setAttribute(
+          "aria-pressed",
+          String(activo)
+        );
+      });
     }
 
-    // ==========================================
+
+    // ======================================
+    // CONSTRUCCIÓN DE LAS VERSIONES
+    // ======================================
+
+    function renderizarVersiones(produccion, lista) {
+      lista.replaceChildren();
+
+      const versiones = Array.isArray(produccion.versiones)
+        ? produccion.versiones
+        : [];
+
+      if (versiones.length === 0) {
+        mostrarMensaje(
+          lista,
+          "Esta producción todavía no tiene episodios o versiones cargados."
+        );
+
+        return;
+      }
+
+      versiones.forEach((version, indice) => {
+        const titulo = version.titulo || `Versión ${indice + 1}`;
+
+        const item = crearElemento("li", "arbol-nodo nodo-version");
+
+        const boton = crearBotonArbol(
+          titulo,
+          "version-btn",
+          "▶"
+        );
+
+        boton.setAttribute("aria-pressed", "false");
+
+        boton.addEventListener("click", () => {
+          reproducir(produccion, version, boton);
+        });
+
+        item.appendChild(boton);
+
+        lista.appendChild(item);
+      });
+    }
+
+
+    // ======================================
+    // CONSTRUCCIÓN DE LAS PRODUCCIONES
+    // ======================================
+
+    function renderizarProducciones(saga, lista) {
+      lista.replaceChildren();
+
+      const producciones = Array.isArray(saga.producciones)
+        ? saga.producciones
+        : [];
+
+      if (producciones.length === 0) {
+        mostrarMensaje(
+          lista,
+          "Esta saga todavía no tiene producciones cargadas."
+        );
+
+        return;
+      }
+
+      producciones.forEach((produccion, indice) => {
+        const titulo =
+          produccion.titulo || `Producción ${indice + 1}`;
+
+        const item = crearElemento("li", "arbol-nodo nodo-produccion");
+
+        const boton = crearBotonArbol(
+          titulo,
+          "produccion-btn"
+        );
+
+        const listaVersiones = crearElemento(
+          "ul",
+          "arbol-hijos lista-versiones"
+        );
+
+        listaVersiones.hidden = true;
+
+        boton.addEventListener("click", () => {
+          const estabaExpandida =
+            boton.getAttribute("aria-expanded") === "true";
+
+          // Cerrar las otras producciones de la misma saga.
+          const hermanos = lista.querySelectorAll(
+            ":scope > .nodo-produccion"
+          );
+
+          hermanos.forEach((hermano) => {
+            if (hermano === item) {
+              return;
+            }
+
+            const otroBoton = hermano.querySelector(
+              ":scope > .produccion-btn"
+            );
+
+            const otraLista = hermano.querySelector(
+              ":scope > .lista-versiones"
+            );
+
+            if (otraLista) {
+              otraLista.hidden = true;
+            }
+
+            if (otroBoton) {
+              actualizarIcono(otroBoton, false);
+              otroBoton.classList.remove("activo");
+            }
+          });
+
+          if (!estabaExpandida) {
+            listaVersiones.hidden = false;
+
+            actualizarIcono(boton, true);
+
+            boton.classList.add("activo");
+
+            renderizarVersiones(produccion, listaVersiones);
+
+          } else {
+            listaVersiones.hidden = true;
+
+            actualizarIcono(boton, false);
+
+            boton.classList.remove("activo");
+          }
+        });
+
+        item.append(boton, listaVersiones);
+
+        lista.appendChild(item);
+      });
+    }
+
+
+    // ======================================
+    // CONSTRUCCIÓN DE LAS SAGAS
+    // ======================================
+
+    function renderizarSagas(sagas, lista) {
+      lista.replaceChildren();
+
+      if (sagas.length === 0) {
+        mostrarMensaje(
+          lista,
+          "No hay sagas disponibles para esta franquicia."
+        );
+
+        return;
+      }
+
+      sagas.forEach((saga, indice) => {
+        const titulo = saga.titulo || `Saga ${indice + 1}`;
+
+        const item = crearElemento("li", "arbol-nodo nodo-saga");
+
+        const boton = crearBotonArbol(
+          titulo,
+          "saga-btn"
+        );
+
+        const listaProducciones = crearElemento(
+          "ul",
+          "arbol-hijos lista-producciones"
+        );
+
+        listaProducciones.hidden = true;
+
+        boton.addEventListener("click", () => {
+          const estabaExpandida =
+            boton.getAttribute("aria-expanded") === "true";
+
+          // Solo una saga desplegada por franquicia.
+          lista.querySelectorAll(":scope > .nodo-saga").forEach((hermana) => {
+            if (hermana === item) {
+              return;
+            }
+
+            const otroBoton = hermana.querySelector(
+              ":scope > .saga-btn"
+            );
+
+            const otraLista = hermana.querySelector(
+              ":scope > .lista-producciones"
+            );
+
+            if (otraLista) {
+              otraLista.hidden = true;
+              cerrarRamasDescendientes(otraLista);
+            }
+
+            if (otroBoton) {
+              actualizarIcono(otroBoton, false);
+              otroBoton.classList.remove("activo");
+            }
+          });
+
+          if (!estabaExpandida) {
+            listaProducciones.hidden = false;
+
+            actualizarIcono(boton, true);
+
+            boton.classList.add("activo");
+
+            renderizarProducciones(saga, listaProducciones);
+
+          } else {
+            listaProducciones.hidden = true;
+
+            cerrarRamasDescendientes(listaProducciones);
+
+            actualizarIcono(boton, false);
+
+            boton.classList.remove("activo");
+          }
+        });
+
+        item.append(boton, listaProducciones);
+
+        lista.appendChild(item);
+      });
+    }
+
+
+    // ======================================
+    // CARGA DE LOS JSON
+    // ======================================
+
+    async function cargarFranquicia(nombre) {
+      const lista = document.querySelector(
+        `[data-lista-franquicia="${nombre}"]`
+      );
+
+      if (!lista) {
+        return;
+      }
+
+      const botonFranquicia = document.querySelector(
+        `.franquicia-btn[data-franquicia="${nombre}"]`
+      );
+
+      // Cerrar las otras franquicias.
+      botonesFranquicia.forEach((boton) => {
+        if (boton.dataset.franquicia === nombre) {
+          return;
+        }
+
+        const otraLista = document.querySelector(
+          `[data-lista-franquicia="${boton.dataset.franquicia}"]`
+        );
+
+        if (otraLista) {
+          otraLista.hidden = true;
+          cerrarRamasDescendientes(otraLista);
+        }
+
+        actualizarIcono(boton, false);
+        boton.classList.remove("activo");
+      });
+
+      // Si la franquicia ya está abierta, cerrarla.
+      const yaExpandida =
+        botonFranquicia.getAttribute("aria-expanded") === "true";
+
+      if (yaExpandida) {
+        lista.hidden = true;
+
+        cerrarRamasDescendientes(lista);
+
+        actualizarIcono(botonFranquicia, false);
+
+        botonFranquicia.classList.remove("activo");
+
+        return;
+      }
+
+      lista.hidden = false;
+
+      actualizarIcono(botonFranquicia, true);
+
+      botonFranquicia.classList.add("activo");
+
+      // No volver a descargar archivos que ya se cargaron.
+      if (catalogosCargados.has(nombre)) {
+        return;
+      }
+
+      mostrarMensaje(lista, "Cargando catálogo...");
+
+      const solicitudAnterior = solicitudesActivas.get(nombre);
+
+      if (solicitudAnterior) {
+        return;
+      }
+
+      const solicitud = (async () => {
+        const archivos = archivosFranquicia[nombre] || [];
+
+        const resultados = await Promise.allSettled(
+          archivos.map(async (archivo) => {
+            const respuesta = await fetch(archivo);
+
+            if (!respuesta.ok) {
+              throw new Error(
+                `Error HTTP ${respuesta.status}: ${archivo}`
+              );
+            }
+
+            return respuesta.json();
+          })
+        );
+
+        const sagas = [];
+
+        resultados.forEach((resultado) => {
+          if (resultado.status !== "fulfilled") {
+            console.warn(
+              "No se pudo cargar un archivo del catálogo:",
+              resultado.reason
+            );
+
+            return;
+          }
+
+          const datos = resultado.value;
+
+          if (!datos || typeof datos !== "object") {
+            return;
+          }
+
+          Object.entries(datos).forEach(([clave, saga]) => {
+            if (
+              saga &&
+              typeof saga === "object" &&
+              Array.isArray(saga.producciones)
+            ) {
+              sagas.push({
+                ...saga,
+                titulo: saga.titulo || clave
+              });
+            }
+          });
+        });
+
+        if (sagas.length === 0) {
+          const mensaje = nombre === "robotech"
+            ? "El catálogo de Robotech todavía no está disponible."
+            : "No se pudo cargar el catálogo. Revisa los archivos JSON y sus rutas.";
+
+          mostrarMensaje(lista, mensaje, true);
+
+          return;
+        }
+
+        renderizarSagas(sagas, lista);
+
+        catalogosCargados.add(nombre);
+      })();
+
+      solicitudesActivas.set(nombre, solicitud);
+
+      try {
+        await solicitud;
+      } catch (error) {
+        console.error("Error al cargar la franquicia:", error);
+
+        mostrarMensaje(
+          lista,
+          "Ocurrió un error al cargar el catálogo.",
+          true
+        );
+      } finally {
+        solicitudesActivas.delete(nombre);
+      }
+    }
+
+
+    // ======================================
+    // EVENTOS DE LAS FRANQUICIAS
+    // ======================================
+
+    botonesFranquicia.forEach((boton) => {
+      boton.addEventListener("click", () => {
+        detenerReproduccion();
+
+        cargarFranquicia(boton.dataset.franquicia);
+      });
+    });
+
+
+    // ======================================
+    // BOTÓN RAÍZ: FRANQUICIAS
+    // ======================================
+
+    const botonRaiz = document.querySelector(".arbol-raiz");
+
+    const listaRaiz = document.getElementById("lista-franquicias");
+
+    botonRaiz.addEventListener("click", () => {
+      alternarRama(botonRaiz, listaRaiz);
+    });
+
+
+    // ======================================
     // RETÍCULA PERSONALIZADA
-    // ==========================================
+    // ======================================
 
     const cursor = document.querySelector(".custom-cursor");
 
@@ -280,8 +894,6 @@
         cursor.style.top = `${evento.clientY}px`;
       });
 
-      // Delegación de eventos: también funciona con botones
-      // creados después de cargar el catálogo.
       document.addEventListener("mouseover", (evento) => {
         const elemento = evento.target.closest(
           "a, button, select, input, .menu-header, .submenu li a"
@@ -297,287 +909,13 @@
           "a, button, select, input, .menu-header, .submenu li a"
         );
 
-        if (
-          elemento &&
-          !elemento.contains(evento.relatedTarget)
-        ) {
+        if (elemento && !elemento.contains(evento.relatedTarget)) {
           cursor.classList.remove("hover");
         }
       });
     }
 
-    // ==========================================
-    // RENDERIZADO DE SAGAS
-    // ==========================================
-
-    function renderizarSagas() {
-      sagasLista.replaceChildren();
-
-      if (sagasActuales.length === 0) {
-        mostrarEstado(
-          sagasLista,
-          "No hay sagas disponibles para esta franquicia."
-        );
-
-        mostrarEstado(
-          produccionesLista,
-          "No hay producciones disponibles."
-        );
-
-        mostrarEstado(
-          episodiosLista,
-          "No hay episodios disponibles."
-        );
-
-        episodiosTitulo.textContent = "Episodios y versiones";
-
-        return;
-      }
-
-      sagasActuales.forEach((saga, indice) => {
-        const boton = document.createElement("button");
-
-        boton.type = "button";
-        boton.className = "saga-btn";
-        boton.textContent = saga.titulo;
-        boton.setAttribute("aria-pressed", "false");
-
-        boton.addEventListener("click", () => {
-          seleccionarSaga(indice);
-        });
-
-        sagasLista.appendChild(boton);
-      });
-
-      seleccionarSaga(0);
-    }
-
-    function seleccionarSaga(indice) {
-      sagaSeleccionada = indice;
-      produccionSeleccionada = -1;
-
-      detenerReproduccion();
-
-      sagasLista
-        .querySelectorAll(".saga-btn")
-        .forEach((boton, i) => {
-          const activo = i === indice;
-
-          boton.classList.toggle("activo", activo);
-          boton.setAttribute("aria-pressed", String(activo));
-        });
-
-      renderizarProducciones();
-    }
-
-    // ==========================================
-    // RENDERIZADO DE PRODUCCIONES
-    // ==========================================
-
-    function renderizarProducciones() {
-      produccionesLista.replaceChildren();
-      episodiosLista.replaceChildren();
-
-      episodiosTitulo.textContent = "Episodios y versiones";
-
-      const saga = sagasActuales[sagaSeleccionada];
-
-      if (!saga || !Array.isArray(saga.producciones)) {
-        mostrarEstado(
-          produccionesLista,
-          "No hay producciones disponibles."
-        );
-
-        mostrarEstado(
-          episodiosLista,
-          "No hay episodios disponibles."
-        );
-
-        return;
-      }
-
-      if (saga.producciones.length === 0) {
-        mostrarEstado(
-          produccionesLista,
-          "Esta saga todavía no tiene producciones cargadas."
-        );
-
-        mostrarEstado(
-          episodiosLista,
-          "No hay episodios disponibles."
-        );
-
-        return;
-      }
-
-      saga.producciones.forEach((produccion, indice) => {
-        const boton = document.createElement("button");
-
-        boton.type = "button";
-        boton.className = "produccion-btn";
-        boton.textContent = produccion.titulo;
-        boton.setAttribute("aria-pressed", "false");
-
-        boton.addEventListener("click", () => {
-          seleccionarProduccion(indice);
-        });
-
-        produccionesLista.appendChild(boton);
-      });
-
-      seleccionarProduccion(0);
-    }
-
-    function seleccionarProduccion(indice) {
-      produccionSeleccionada = indice;
-
-      const saga = sagasActuales[sagaSeleccionada];
-      const produccion = saga?.producciones?.[indice];
-
-      detenerReproduccion();
-
-      produccionesLista
-        .querySelectorAll(".produccion-btn")
-        .forEach((boton, i) => {
-          const activo = i === indice;
-
-          boton.classList.toggle("activo", activo);
-          boton.setAttribute("aria-pressed", String(activo));
-        });
-
-      renderizarEpisodios(produccion);
-    }
-
-    // ==========================================
-    // RENDERIZADO DE EPISODIOS Y VERSIONES
-    // ==========================================
-
-    function renderizarEpisodios(produccion) {
-      episodiosLista.replaceChildren();
-
-      if (!produccion || !Array.isArray(produccion.versiones)) {
-        episodiosTitulo.textContent = "Episodios y versiones";
-
-        mostrarEstado(
-          episodiosLista,
-          "No hay episodios o versiones disponibles."
-        );
-
-        return;
-      }
-
-      episodiosTitulo.textContent = produccion.titulo;
-
-      if (produccion.versiones.length === 0) {
-        mostrarEstado(
-          episodiosLista,
-          "Esta producción todavía no tiene episodios cargados."
-        );
-
-        return;
-      }
-
-      produccion.versiones.forEach((version, indice) => {
-        const boton = document.createElement("button");
-
-        boton.type = "button";
-        boton.className = "episodio-btn";
-        boton.textContent = version.titulo;
-        boton.setAttribute("aria-pressed", "false");
-
-        boton.addEventListener("click", () => {
-          reproducir(produccion, version, indice);
-        });
-
-        episodiosLista.appendChild(boton);
-      });
-    }
-
-    // ==========================================
-    // CARGA DE FRANQUICIAS
-    // ==========================================
-
-    async function cargarFranquicia(nombre) {
-      sagasActuales = [];
-      sagaSeleccionada = -1;
-      produccionSeleccionada = -1;
-
-      detenerReproduccion();
-
-      episodiosTitulo.textContent = "Episodios y versiones";
-
-      mostrarEstado(sagasLista, "Cargando catálogo...");
-      mostrarEstado(produccionesLista, "Selecciona una saga.");
-      mostrarEstado(episodiosLista, "Selecciona una producción.");
-
-      const archivos = archivosFranquicia[nombre] || [];
-
-      const resultados = await Promise.allSettled(
-        archivos.map(async (archivo) => {
-          const respuesta = await fetch(archivo);
-
-          if (!respuesta.ok) {
-            throw new Error("No se pudo cargar " + archivo);
-          }
-
-          return respuesta.json();
-        })
-      );
-
-      resultados.forEach((resultado) => {
-        if (resultado.status !== "fulfilled") {
-          console.warn(
-            "No se pudo cargar un archivo del catálogo:",
-            resultado.reason
-          );
-
-          return;
-        }
-
-        Object.entries(resultado.value).forEach(([clave, saga]) => {
-          if (
-            saga &&
-            typeof saga === "object" &&
-            Array.isArray(saga.producciones)
-          ) {
-            sagasActuales.push({
-              ...saga,
-              titulo: saga.titulo || clave
-            });
-          }
-        });
-      });
-
-      if (sagasActuales.length === 0) {
-        mostrarEstado(
-          sagasLista,
-          nombre === "robotech"
-            ? "El catálogo de Robotech todavía no está disponible."
-            : "No se pudo cargar el catálogo. Revisa los archivos JSON y sus rutas.",
-          true
-        );
-
-        mostrarEstado(
-          produccionesLista,
-          "No hay producciones disponibles."
-        );
-
-        mostrarEstado(
-          episodiosLista,
-          "No hay episodios disponibles."
-        );
-
-        return;
-      }
-
-      renderizarSagas();
-    }
-
-    franquiciaSelect.addEventListener("change", () => {
-      cargarFranquicia(franquiciaSelect.value);
-    });
-
-    cargarFranquicia(franquiciaSelect.value);
   </script>
+
 </body>
 </html>
