@@ -30,6 +30,11 @@ body {
     background-size: cover;       /* Cubre toda la pantalla sin deformarse */
     background-position: center;  /* Centra el fondo espacial */
     background-attachment: fixed; /* EFECTO FIJO: El fondo no se mueve al hacer scroll */
+
+	/* ---- AJUSTE DE TRANSICIÓN ULTRA SUAVE ---- */
+    transition: background-size 1.5s cubic-bezier(0.1, 0.8, 0.2, 1); 
+    will-change: background-size; /* Ayuda a que no parpadee al cambiar de tamaño */
+    /* ------------------------------------------ */
     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #e0e0e0;
