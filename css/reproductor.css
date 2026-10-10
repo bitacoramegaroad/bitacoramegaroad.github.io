@@ -1,7 +1,36 @@
 
+/* ==========================================
+   ENCABEZADO Y LOGO
+   ========================================== */
+
 .macross-header {
   text-align: center;
 }
+
+.macross-header .logo {
+  display: block;
+  width: min(100%, 300px);
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   TIPOGRAFÍA
+   ========================================== */
+
+.macross-container,
+.macross-container button,
+.macross-container select,
+.macross-container label,
+.macross-header h1,
+.macross-footer,
+.boton-bitacora {
+  font-family: 'Conthrax', monospace, sans-serif;
+}
+
+/* ==========================================
+   DISTRIBUCIÓN PRINCIPAL
+   ========================================== */
 
 .macross-container {
   display: grid;
@@ -39,6 +68,10 @@
   font-size: 0.95rem;
 }
 
+/* ==========================================
+   SELECTOR DE FRANQUICIA
+   ========================================== */
+
 .selector-franquicia {
   display: flex;
   flex-direction: column;
@@ -53,12 +86,26 @@
 .selector-franquicia select {
   width: 100%;
   padding: 11px;
-  color: #fff;
-  background: #111;
-  border: 1px solid #00ffcc;
-  border-radius: 4px;
-  font: inherit;
+  color: #00ffcc;
+  background: linear-gradient(
+    135deg,
+    rgba(6, 11, 17, 0.8) 0%,
+    rgba(17, 27, 39, 0.8) 100%
+  );
+  border: 1.5px solid #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
 }
+
+.selector-franquicia select option {
+  color: #fff;
+  background: #111b27;
+}
+
+/* ==========================================
+   NIVELES DEL CATÁLOGO
+   ========================================== */
 
 .nivel-catalogo {
   margin-top: 20px;
@@ -90,52 +137,88 @@
   padding: 2px 6px 2px 0;
 }
 
+/* ==========================================
+   BOTONES DEL CATÁLOGO
+   Estilo de navegación de la Bitácora
+   ========================================== */
+
 .saga-btn,
 .produccion-btn,
 .episodio-btn {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
-  padding: 10px 12px;
-  color: #eee;
+  min-height: 44px;
+  padding: 10px 14px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(6, 11, 17, 0.4) 0%,
+    rgba(17, 27, 39, 0.4) 100%
+  );
+
+  border: 1.5px solid #fff;
+  border-radius: 50px;
+
+  color: #00ffcc;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
   text-align: left;
-  background: rgba(20, 20, 20, 0.9);
-  border: 1px solid rgba(0, 255, 204, 0.25);
-  border-radius: 4px;
-  font: inherit;
-  font-size: 0.88rem;
+  line-height: 1.5;
   overflow-wrap: anywhere;
   cursor: pointer;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    color 0.2s ease;
+
+  transition: all 0.3s ease;
 }
 
 .saga-btn:hover,
 .produccion-btn:hover,
-.episodio-btn:hover {
-  color: #00ffcc;
-  border-color: #00ffcc;
-}
-
+.episodio-btn:hover,
 .saga-btn.activo,
 .produccion-btn.activo,
 .episodio-btn.activo {
-  color: #00ffcc;
-  background: rgba(0, 255, 204, 0.1);
+  background: linear-gradient(
+    135deg,
+    rgba(9, 19, 30, 0.75) 0%,
+    rgba(23, 40, 58, 0.75) 100%
+  );
+
   border-color: #00ffcc;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+  color: #00ffcc;
 }
+
+.saga-btn:focus-visible,
+.produccion-btn:focus-visible,
+.episodio-btn:focus-visible,
+.selector-franquicia select:focus-visible,
+.boton-bitacora:focus-visible {
+  outline: 2px solid #00ffcc;
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   MENSAJES DE ESTADO
+   ========================================== */
 
 .estado {
   margin: 6px 0;
   color: #ccc;
   font-size: 0.88rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .estado.error {
   color: #ff8a65;
 }
+
+/* ==========================================
+   REPRODUCTOR
+   ========================================== */
 
 .visor-titulo {
   display: flex;
@@ -179,9 +262,14 @@
   margin: 14px 0 0;
   color: #ccc;
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
   overflow-wrap: anywhere;
 }
+
+/* ==========================================
+   BOTÓN VOLVER A LA BITÁCORA
+   Estilo ovalado, translúcido y luminoso
+   ========================================== */
 
 .macross-footer {
   margin: 30px auto;
@@ -190,21 +278,78 @@
 }
 
 .boton-bitacora {
-  display: inline-block;
-  padding: 11px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55px;
+  padding: 10px 24px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(6, 11, 17, 0.4) 0%,
+    rgba(17, 27, 39, 0.4) 100%
+  );
+
+  border: 1.5px solid #fff;
+  border-radius: 50px;
+
   color: #00ffcc;
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: uppercase;
   text-decoration: none;
-  border: 1px solid #00ffcc;
-  border-radius: 4px;
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease;
+  letter-spacing: 1.5px;
+  text-align: center;
+  line-height: 1.6;
+
+  transition: all 0.3s ease;
 }
 
 .boton-bitacora:hover {
-  color: #000;
-  background: #00ffcc;
+  background: linear-gradient(
+    135deg,
+    rgba(9, 19, 30, 0.75) 0%,
+    rgba(23, 40, 58, 0.75) 100%
+  );
+
+  border-color: #00ffcc;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+  color: #00ffcc;
 }
+
+/* ==========================================
+   BARRAS DE DESPLAZAMIENTO
+   ========================================== */
+
+.opciones-saga,
+.opciones-produccion,
+.episodios {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffcc rgba(6, 11, 17, 0.8);
+}
+
+.opciones-saga::-webkit-scrollbar,
+.opciones-produccion::-webkit-scrollbar,
+.episodios::-webkit-scrollbar {
+  width: 6px;
+}
+
+.opciones-saga::-webkit-scrollbar-track,
+.opciones-produccion::-webkit-scrollbar-track,
+.episodios::-webkit-scrollbar-track {
+  background: rgba(6, 11, 17, 0.8);
+}
+
+.opciones-saga::-webkit-scrollbar-thumb,
+.opciones-produccion::-webkit-scrollbar-thumb,
+.episodios::-webkit-scrollbar-thumb {
+  background: #00ffcc;
+  border-radius: 10px;
+}
+
+/* ==========================================
+   DISEÑO ADAPTABLE
+   ========================================== */
 
 @media (max-width: 800px) {
   .macross-container {
@@ -218,6 +363,10 @@
     padding: 15px;
   }
 
+  .macross-header .logo {
+    width: min(100%, 260px);
+  }
+
   .opciones-saga,
   .opciones-produccion {
     max-height: 160px;
@@ -225,5 +374,10 @@
 
   .episodios {
     max-height: 240px;
+  }
+
+  .boton-bitacora {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
