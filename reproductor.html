@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Series online | La Bitácora del Megaroad</title>
 
   <link rel="icon" href="img/favicon.ico">
@@ -20,6 +20,7 @@
         class="logo"
       >
     </a>
+
     <h1>SERIES ONLINE</h1>
   </header>
 
@@ -31,6 +32,7 @@
 
       <div class="selector-franquicia">
         <label for="franquicia-select">Franquicia</label>
+
         <select id="franquicia-select">
           <option value="macross">Macross</option>
           <option value="robotech">Robotech</option>
@@ -39,6 +41,7 @@
 
       <section class="nivel-catalogo">
         <h3>Saga</h3>
+
         <div id="sagas-lista" class="opciones-saga">
           <p class="estado">Cargando catálogo...</p>
         </div>
@@ -46,6 +49,7 @@
 
       <section class="nivel-catalogo">
         <h3>Producción</h3>
+
         <div id="producciones-lista" class="opciones-produccion">
           <p class="estado">Selecciona una saga.</p>
         </div>
@@ -53,6 +57,7 @@
 
       <section class="nivel-catalogo nivel-episodios">
         <h3 id="episodios-titulo">Episodios y versiones</h3>
+
         <div id="episodios-lista" class="episodios">
           <p class="estado">Selecciona una producción.</p>
         </div>
@@ -88,7 +93,53 @@
     </a>
   </footer>
 
+  <!-- Retícula original de La Bitácora del Megaroad -->
+  <div class="custom-cursor" aria-hidden="true">
+    <svg
+      class="reticle-svg"
+      viewBox="0 0 100 80"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <!-- Bracket izquierdo -->
+      <path
+        d="M28 6 L2 18 L2 62 L28 74"
+        fill="none"
+        stroke="#00ffcc"
+        stroke-width="6"
+        stroke-linecap="square"
+        stroke-linejoin="miter"
+      />
+
+      <!-- Bracket derecho -->
+      <path
+        d="M72 6 L98 18 L98 62 L72 74"
+        fill="none"
+        stroke="#00ffcc"
+        stroke-width="6"
+        stroke-linecap="square"
+        stroke-linejoin="miter"
+      />
+
+      <!-- Cuadrado de la retícula -->
+      <rect
+        class="corner-square"
+        x="79"
+        y="75.5"
+        width="13"
+        height="20"
+        fill="#00ffcc"
+        transform="rotate(63 85 70)"
+      />
+    </svg>
+
+    <div class="lock-text">LOCK ON</div>
+  </div>
+
   <script>
+    // ==========================================
+    // CONFIGURACIÓN DEL CATÁLOGO
+    // ==========================================
+
     const archivosFranquicia = {
       macross: [
         "data/sdfmacross.json",
@@ -101,22 +152,35 @@
 
     const franquiciaSelect =
       document.getElementById("franquicia-select");
-    const sagasLista = document.getElementById("sagas-lista");
+
+    const sagasLista =
+      document.getElementById("sagas-lista");
+
     const produccionesLista =
       document.getElementById("producciones-lista");
+
     const episodiosLista =
       document.getElementById("episodios-lista");
+
     const episodiosTitulo =
       document.getElementById("episodios-titulo");
-    const frame = document.getElementById("reproductor-frame");
+
+    const frame =
+      document.getElementById("reproductor-frame");
+
     const tituloReproductor =
       document.getElementById("reproductor-titulo");
+
     const infoReproductor =
       document.getElementById("reproductor-info");
 
     let sagasActuales = [];
     let sagaSeleccionada = -1;
     let produccionSeleccionada = -1;
+
+    // ==========================================
+    // ESTADOS Y REPRODUCCIÓN
+    // ==========================================
 
     function mostrarEstado(contenedor, mensaje, esError = false) {
       contenedor.replaceChildren();
@@ -130,7 +194,9 @@
 
     function detenerReproduccion() {
       frame.src = "about:blank";
+
       tituloReproductor.textContent = "Reproductor";
+
       infoReproductor.textContent =
         "Selecciona un episodio o una versión para reproducirlo.";
     }
@@ -180,7 +246,15 @@
     }
 
     function reproducir(produccion, version, indice) {
+      if (!version || !version.url) {
+        infoReproductor.textContent =
+          "Esta versión no tiene una dirección de reproducción disponible.";
+
+        return;
+      }
+
       frame.src = convertirUrl(version.url);
+
       tituloReproductor.textContent = produccion.titulo;
       infoReproductor.textContent = version.titulo;
 
@@ -188,10 +262,53 @@
         .querySelectorAll(".episodio-btn")
         .forEach((boton, i) => {
           const activo = i === indice;
+
           boton.classList.toggle("activo", activo);
           boton.setAttribute("aria-pressed", String(activo));
         });
     }
+
+    // ==========================================
+    // RETÍCULA PERSONALIZADA
+    // ==========================================
+
+    const cursor = document.querySelector(".custom-cursor");
+
+    if (cursor) {
+      document.addEventListener("mousemove", (evento) => {
+        cursor.style.left = `${evento.clientX}px`;
+        cursor.style.top = `${evento.clientY}px`;
+      });
+
+      // Delegación de eventos: también funciona con botones
+      // creados después de cargar el catálogo.
+      document.addEventListener("mouseover", (evento) => {
+        const elemento = evento.target.closest(
+          "a, button, select, input, .menu-header, .submenu li a"
+        );
+
+        if (elemento) {
+          cursor.classList.add("hover");
+        }
+      });
+
+      document.addEventListener("mouseout", (evento) => {
+        const elemento = evento.target.closest(
+          "a, button, select, input, .menu-header, .submenu li a"
+        );
+
+        if (
+          elemento &&
+          !elemento.contains(evento.relatedTarget)
+        ) {
+          cursor.classList.remove("hover");
+        }
+      });
+    }
+
+    // ==========================================
+    // RENDERIZADO DE SAGAS
+    // ==========================================
 
     function renderizarSagas() {
       sagasLista.replaceChildren();
@@ -201,13 +318,25 @@
           sagasLista,
           "No hay sagas disponibles para esta franquicia."
         );
-        mostrarEstado(produccionesLista, "No hay producciones disponibles.");
-        mostrarEstado(episodiosLista, "No hay episodios disponibles.");
+
+        mostrarEstado(
+          produccionesLista,
+          "No hay producciones disponibles."
+        );
+
+        mostrarEstado(
+          episodiosLista,
+          "No hay episodios disponibles."
+        );
+
+        episodiosTitulo.textContent = "Episodios y versiones";
+
         return;
       }
 
       sagasActuales.forEach((saga, indice) => {
         const boton = document.createElement("button");
+
         boton.type = "button";
         boton.className = "saga-btn";
         boton.textContent = saga.titulo;
@@ -233,6 +362,7 @@
         .querySelectorAll(".saga-btn")
         .forEach((boton, i) => {
           const activo = i === indice;
+
           boton.classList.toggle("activo", activo);
           boton.setAttribute("aria-pressed", String(activo));
         });
@@ -240,15 +370,29 @@
       renderizarProducciones();
     }
 
+    // ==========================================
+    // RENDERIZADO DE PRODUCCIONES
+    // ==========================================
+
     function renderizarProducciones() {
       produccionesLista.replaceChildren();
       episodiosLista.replaceChildren();
 
+      episodiosTitulo.textContent = "Episodios y versiones";
+
       const saga = sagasActuales[sagaSeleccionada];
 
       if (!saga || !Array.isArray(saga.producciones)) {
-        mostrarEstado(produccionesLista, "No hay producciones disponibles.");
-        mostrarEstado(episodiosLista, "No hay episodios disponibles.");
+        mostrarEstado(
+          produccionesLista,
+          "No hay producciones disponibles."
+        );
+
+        mostrarEstado(
+          episodiosLista,
+          "No hay episodios disponibles."
+        );
+
         return;
       }
 
@@ -257,12 +401,18 @@
           produccionesLista,
           "Esta saga todavía no tiene producciones cargadas."
         );
-        mostrarEstado(episodiosLista, "No hay episodios disponibles.");
+
+        mostrarEstado(
+          episodiosLista,
+          "No hay episodios disponibles."
+        );
+
         return;
       }
 
       saga.producciones.forEach((produccion, indice) => {
         const boton = document.createElement("button");
+
         boton.type = "button";
         boton.className = "produccion-btn";
         boton.textContent = produccion.titulo;
@@ -290,6 +440,7 @@
         .querySelectorAll(".produccion-btn")
         .forEach((boton, i) => {
           const activo = i === indice;
+
           boton.classList.toggle("activo", activo);
           boton.setAttribute("aria-pressed", String(activo));
         });
@@ -297,14 +448,21 @@
       renderizarEpisodios(produccion);
     }
 
+    // ==========================================
+    // RENDERIZADO DE EPISODIOS Y VERSIONES
+    // ==========================================
+
     function renderizarEpisodios(produccion) {
       episodiosLista.replaceChildren();
 
       if (!produccion || !Array.isArray(produccion.versiones)) {
+        episodiosTitulo.textContent = "Episodios y versiones";
+
         mostrarEstado(
           episodiosLista,
           "No hay episodios o versiones disponibles."
         );
+
         return;
       }
 
@@ -315,11 +473,13 @@
           episodiosLista,
           "Esta producción todavía no tiene episodios cargados."
         );
+
         return;
       }
 
       produccion.versiones.forEach((version, indice) => {
         const boton = document.createElement("button");
+
         boton.type = "button";
         boton.className = "episodio-btn";
         boton.textContent = version.titulo;
@@ -333,12 +493,18 @@
       });
     }
 
+    // ==========================================
+    // CARGA DE FRANQUICIAS
+    // ==========================================
+
     async function cargarFranquicia(nombre) {
       sagasActuales = [];
       sagaSeleccionada = -1;
       produccionSeleccionada = -1;
 
       detenerReproduccion();
+
+      episodiosTitulo.textContent = "Episodios y versiones";
 
       mostrarEstado(sagasLista, "Cargando catálogo...");
       mostrarEstado(produccionesLista, "Selecciona una saga.");
@@ -347,7 +513,7 @@
       const archivos = archivosFranquicia[nombre] || [];
 
       const resultados = await Promise.allSettled(
-        archivos.map(async archivo => {
+        archivos.map(async (archivo) => {
           const respuesta = await fetch(archivo);
 
           if (!respuesta.ok) {
@@ -358,12 +524,13 @@
         })
       );
 
-      resultados.forEach(resultado => {
+      resultados.forEach((resultado) => {
         if (resultado.status !== "fulfilled") {
           console.warn(
             "No se pudo cargar un archivo del catálogo:",
             resultado.reason
           );
+
           return;
         }
 
@@ -390,8 +557,16 @@
           true
         );
 
-        mostrarEstado(produccionesLista, "No hay producciones disponibles.");
-        mostrarEstado(episodiosLista, "No hay episodios disponibles.");
+        mostrarEstado(
+          produccionesLista,
+          "No hay producciones disponibles."
+        );
+
+        mostrarEstado(
+          episodiosLista,
+          "No hay episodios disponibles."
+        );
+
         return;
       }
 
