@@ -1,3 +1,20 @@
+:root {
+    --mr-bg: #0b0c0d;
+    --mr-surface: #141619;
+    --mr-surface-rgb: 20, 22, 25;
+    --mr-surface-raised: #1b1e22;
+    --mr-text: #e0e0e0;
+    --mr-text-soft: #b9c3cd;
+    --mr-muted: #8a949e;
+    --mr-accent: #00ffcc;
+    --mr-accent-rgb: 0, 255, 204;
+    --mr-accent-warm: #ff6b00;
+    --mr-accent-warm-rgb: 255, 107, 0;
+    --mr-border: #22262a;
+    --mr-font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --mr-font-display: 'Conthrax', monospace, sans-serif;
+}
+
 /* ==========================================
    IMPORTACIÓN DE FUENTE LOCAL (Carpeta Fonts)
    ========================================== */
@@ -25,19 +42,13 @@ body {
        ⚠️ Recuerda verificar el nombre y extensión exacta de tu imagen en la carpeta 'img'
     */
     background-image: url('../img/Galaxia.jpg'); 
-    background-color: #0b0c0d; /* Fondo de emergencia por si la imagen tarda en cargar */
+    background-color: var(--mr-bg); /* Fondo de emergencia por si la imagen tarda en cargar */
     background-repeat: no-repeat;
     background-size: cover;       /* Cubre toda la pantalla sin deformarse */
     background-position: center;  /* Centra el fondo espacial */
     background-attachment: fixed; /* EFECTO FIJO: El fondo no se mueve al hacer scroll */
-
-	/* ---- AJUSTE DE TRANSICIÓN ULTRA SUAVE ---- */
-    transition: background-size 1.5s cubic-bezier(0.1, 0.8, 0.2, 1); 
-    will-change: background-size; /* Ayuda a que no parpadee al cambiar de tamaño */
-    /* ------------------------------------------ */
-    
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #e0e0e0;
+    font-family: var(--mr-font-body);
+    color: var(--mr-text);
     line-height: 1.6;
     padding: 4vh 2vw; 
 }
@@ -47,9 +58,9 @@ body {
     max-width: 1200px; 
     width: 95vw;       
     margin: 0 auto;
-    /* Transparency del cuerpo del blog (93% opaco, 7% transparente) */
-    background-color: rgba(20, 22, 25, 0.55); 
-    border: 2px solid #22262a;
+    /* Transparencia del cuerpo del blog (55% opaco, 45% transparente) */
+    background-color: rgba(var(--mr-surface-rgb), 0.55); 
+    border: 2px solid var(--mr-border);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
     border-radius: 6px;
     overflow: hidden;
@@ -59,7 +70,8 @@ body {
 /* ==========================================
    CABECERA CON LOGO PNG Y TEXTOS ESTILIZADOS
    ========================================== */
-.main-header {
+.main-header,
+.macross-header {
     background-color: rgba(5, 6, 7, 0.4);
     padding: 5vh 2vw; /* Equilibrio de márgenes internos */
     text-align: center;
@@ -77,14 +89,19 @@ body {
     width: 100%;
 }
 
-.logo-container {
+.logo-container,
+.macross-header .logo-link {
     width: 100%;
-    max-width: 650px; 
+    max-width: 650px;
+}
+
+.logo-container {
     padding: 0 20px;
     margin-bottom: 20px; /* Separación entre el logo y el texto de abajo */
 }
 
-.blog-logo {
+.blog-logo,
+.macross-header .logo {
     width: 100%;       
     height: auto;      
     display: block;
@@ -100,8 +117,8 @@ body {
 
 /* Primer renglón (Eslogan principal en Conthrax discreto) */
 .header-subtitle {
-    font-family: 'Conthrax', monospace, sans-serif;
-    color: #8a949e; /* Gris suave para que no compita visualmente con el logo */
+    font-family: var(--mr-font-display);
+    color: var(--mr-muted); /* Gris suave para que no compita visualmente con el logo */
     font-size: calc(11px + 0.2vw); /* Fluido y responsivo */
     letter-spacing: 0.5px;
     margin-bottom: 12px;
@@ -110,8 +127,8 @@ body {
 
 /* Segundo renglón (Objetivo en letra monoespaciada tecnológica limpia) */
 .header-objective {
-    font-family: 'Conthrax', 'Courier New', Monaco, monospace;
-    color: #8a949e; /* Gris suave para que no compita visualmente con el logo */
+    font-family: var(--mr-font-display);
+    color: var(--mr-muted); /* Gris suave para que no compita visualmente con el logo */
     font-size: calc(12px + 0.1vw);
     line-height: 1.6;
 }
@@ -154,10 +171,10 @@ body {
     border-radius: 50px; /* Bordes ovalados tipo cabina de mandos */
     
     /* TU TIPOGRAFÍA CONTHRAX LOCAL */
-    font-family: 'Conthrax', monospace, sans-serif;
-    color: #00ffcc; /* Color turquesa brillante */
+    font-family: var(--mr-font-display);
+    color: var(--mr-accent); /* Color turquesa brillante */
     font-size: 15px; 
-    font-weight: regular;
+    font-weight: normal;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 1.5px;
@@ -175,8 +192,8 @@ body {
     */
     background: linear-gradient(135deg, rgba(9, 19, 30, 0.75) 0%, rgba(23, 40, 58, 0.75) 100%);
     
-    border-color: #00ffcc; /* El borde pasa al mismo color de la tipografía */
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4); /* Resplandor de energía cyan */
+    border-color: var(--mr-accent); /* El borde pasa al mismo color de la tipografía */
+    box-shadow: 0 0 15px rgba(var(--mr-accent-rgb), 0.4); /* Resplandor de energía cyan */
     cursor: pointer;
 }
 
@@ -195,7 +212,7 @@ body {
 }
 
 .post-preview-box {
-    background-color: #1b1e22;
+    background-color: var(--mr-surface-raised);
     border: 2px solid #282e33;
     padding: 25px;
     border-radius: 4px;
@@ -215,7 +232,7 @@ body {
 }
 
 .post-body-mock {
-    color: #b9c3cd;
+    color: var(--mr-text-soft);
     font-size: 15px;
 }
 
@@ -239,7 +256,7 @@ body {
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-family: 'Conthrax', sans-serif;
+    font-family: var(--mr-font-display);
 	text-align: center;
 }
 
@@ -294,7 +311,7 @@ body {
 .sidebar-mock-list li,
 .menu-header,
 .submenu li a {
-    font-family: 'Conthrax', sans-serif !important;
+    font-family: var(--mr-font-display) !important;
 }
 
 .sidebar-mock-list {
@@ -364,7 +381,7 @@ body {
 }
 
 .submenu li a:hover {
-    color: #00ffcc;
+    color: var(--mr-accent);
 }
 
 /* ==========================================
@@ -398,7 +415,7 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     width: 100%;
     height: 100%;
     overflow: visible;
-    filter: drop-shadow(0 0 4px #00ffcc) drop-shadow(0 0 7px rgba(0, 255, 204, 0.5));
+    filter: drop-shadow(0 0 4px var(--mr-accent)) drop-shadow(0 0 7px rgba(var(--mr-accent-rgb), 0.5));
     transition: all 0.15s ease;
 }
 
@@ -407,11 +424,11 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     top: 115%;
     left: 55%;                    /* Empuja el texto hacia la derecha */
     transform: translateX(0);     /* Quitamos el centrado */
-    font-family: 'Conthrax', monospace, sans-serif;
+    font-family: var(--mr-font-display);
     font-size: 8px;               /* Más pequeño (antes 9px) */
     letter-spacing: 1.2px;
-    color: #ff6b00;
-    text-shadow: 0 0 6px #ff6b00;
+    color: var(--mr-accent-warm);
+    text-shadow: 0 0 6px var(--mr-accent-warm);
     opacity: 0;
     transition: opacity 0.2s ease;
     white-space: nowrap;
@@ -426,15 +443,15 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 
 /* Cuando está en hover, el cuadrado también cambia a naranja */
 .custom-cursor.hover .corner-square {
-    fill: #ff6b00;
+    fill: var(--mr-accent-warm);
 }
 
 .custom-cursor.hover .reticle-svg {
-    filter: drop-shadow(0 0 5px #ff6b00) drop-shadow(0 0 10px rgba(255, 107, 0, 0.6));
+    filter: drop-shadow(0 0 5px var(--mr-accent-warm)) drop-shadow(0 0 10px rgba(var(--mr-accent-warm-rgb), 0.6));
 }
 
 .custom-cursor.hover .reticle-svg path {
-    stroke: #ff6b00;
+    stroke: var(--mr-accent-warm);
 }
 
 .custom-cursor.hover .lock-text {
@@ -457,9 +474,9 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     border-radius: 5px;
     box-shadow:
         0 0 10px rgba(0, 119, 182, 0.18),
-        inset 0 0 15px rgba(0, 255, 204, 0.035);
+        inset 0 0 15px rgba(var(--mr-accent-rgb), 0.035);
     color: #d8e5ed;
-    font-family: 'Conthrax', monospace, sans-serif;
+    font-family: var(--mr-font-display);
     overflow: hidden;
 }
 
@@ -473,18 +490,18 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     gap: 8px;
     padding-bottom: 12px;
     margin-bottom: 14px;
-    border-bottom: 1px solid rgba(0, 255, 204, 0.3);
+    border-bottom: 1px solid rgba(var(--mr-accent-rgb), 0.3);
 }
 
 #megaroad-radio .radio-icon {
-    color: #00ffcc;
+    color: var(--mr-accent);
     font-size: 22px;
-    text-shadow: 0 0 8px rgba(0, 255, 204, 0.7);
+    text-shadow: 0 0 8px rgba(var(--mr-accent-rgb), 0.7);
 }
 
 #megaroad-radio .radio-title {
     flex: 1;
-    color: #00ffcc;
+    color: var(--mr-accent);
     font-size: 13px;
     font-weight: normal;
     letter-spacing: 1px;
@@ -504,9 +521,9 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     width: 7px;
     height: 7px;
     display: inline-block;
-    background: #00ffcc;
+    background: var(--mr-accent);
     border-radius: 50%;
-    box-shadow: 0 0 7px #00ffcc;
+    box-shadow: 0 0 7px var(--mr-accent);
 }
 
 #megaroad-radio #playlist-select {
@@ -517,15 +534,15 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     background-color: #0b151d;
     border: 1px solid #245267;
     border-radius: 3px;
-    color: #00ffcc;
-    font-family: 'Conthrax', monospace, sans-serif;
+    color: var(--mr-accent);
+    font-family: var(--mr-font-display);
     font-size: 10px;
     cursor: pointer;
 }
 
 #megaroad-radio #playlist-select:focus {
-    outline: 1px solid #00ffcc;
-    border-color: #00ffcc;
+    outline: 1px solid var(--mr-accent);
+    border-color: var(--mr-accent);
 }
 
 #megaroad-radio #playlist-select option {
@@ -588,8 +605,8 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 #megaroad-radio #progress-bar {
     width: 0%;
     height: 100%;
-    background: #00ffcc;
-    box-shadow: 0 0 7px rgba(0, 255, 204, 0.6);
+    background: var(--mr-accent);
+    box-shadow: 0 0 7px rgba(var(--mr-accent-rgb), 0.6);
     transition: width 0.15s linear;
 }
 
@@ -619,7 +636,7 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     background: linear-gradient(180deg, #10232e, #09131a);
     border: 1px solid #245267;
     border-radius: 3px;
-    color: #00ffcc;
+    color: var(--mr-accent);
     font-size: 14px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -627,8 +644,8 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 
 #megaroad-radio #player-controls button:hover {
     background: #12313d;
-    border-color: #00ffcc;
-    box-shadow: 0 0 9px rgba(0, 255, 204, 0.25);
+    border-color: var(--mr-accent);
+    box-shadow: 0 0 9px rgba(var(--mr-accent-rgb), 0.25);
 }
 
 #megaroad-radio #player-controls #playBtn {
@@ -640,7 +657,7 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 
 #megaroad-radio .radio-footer {
     padding-top: 10px;
-    border-top: 1px solid rgba(0, 255, 204, 0.2);
+    border-top: 1px solid rgba(var(--mr-accent-rgb), 0.2);
     color: #42616e;
     font-size: 7px;
     letter-spacing: 1px;
@@ -663,3 +680,114 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 #megaroad-radio .radio-video {
     display: none;
 }
+
+
+/* ==========================================
+   COMPONENTES COMPARTIDOS ENTRE PÁGINAS
+   ========================================== */
+
+.macross-header {
+    flex-direction: column;
+}
+
+.macross-header .logo-link {
+    display: inline-block;
+}
+
+.macross-header h1 {
+    margin: 20px 0 0;
+    color: var(--mr-accent);
+    font-family: var(--mr-font-display);
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    line-height: 1.4;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(var(--mr-accent-rgb), 0.35);
+    overflow-wrap: anywhere;
+}
+
+.site-button,
+.boton-bitacora,
+.nav-bottom a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    max-width: 100%;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(6, 11, 17, 0.4) 0%, rgba(17, 27, 39, 0.4) 100%);
+    border: 1.5px solid #fff;
+    border-radius: 50px;
+    color: var(--mr-accent);
+    font-family: var(--mr-font-display);
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.site-button:hover,
+.boton-bitacora:hover,
+.nav-bottom a:hover {
+    background: linear-gradient(135deg, rgba(9, 19, 30, 0.75) 0%, rgba(23, 40, 58, 0.75) 100%);
+    border-color: var(--mr-accent);
+    box-shadow: 0 0 15px rgba(var(--mr-accent-rgb), 0.4);
+    color: var(--mr-accent);
+}
+
+.site-button:focus-visible,
+.boton-bitacora:focus-visible,
+.nav-bottom a:focus-visible {
+    outline: 2px solid var(--mr-accent);
+    outline-offset: 3px;
+}
+
+.macross-footer {
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 3%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.nav-bottom {
+    width: 100%;
+    margin: 24px auto;
+    padding: 0 3%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.nav-bottom ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Efecto de fondo experimental, limitado a Inicio. */
+.home-page {
+    transition: background-size 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
+    will-change: background-size;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page {
+        transition: none;
+        will-change: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .macross-header h1 {
+        margin-top: 16px;
+        letter-spacing: 1.5px;
+    }
+}
+

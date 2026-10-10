@@ -1,318 +1,155 @@
-/* ==========================================
-   IMPORTACIÓN DE FUENTE LOCAL (Carpeta Fonts)
-   ========================================== */
-@font-face {
-    font-family: 'Conthrax';
-    /* Sube un nivel fuera de 'css' con ../ y entra a 'fonts' */
-    src: url('../fonts/conthrax-sb.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+/* Estilos propios del chat de Alysia.
+   La fuente, el fondo, los colores base, los botones y el cursor
+   se heredan de indexstyle.css. */
 
-/* ==========================================
-   RESETEO GLOBAL Y CONFIGURACIÓN DINÁMICA
-   ========================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    /* 
-       IMAGEN DE FONDO FIJA:
-       ⚠️ Recuerda verificar el nombre y extensión exacta de tu imagen en la carpeta 'img'
-    */
-    background-image: url('../img/Galaxia.jpg'); 
-    background-color: #0b0c0d; /* Fondo de emergencia por si la imagen tarda en cargar */
-    background-repeat: no-repeat;
-    background-size: cover;       /* Cubre toda la pantalla sin deformarse */
-    background-position: center;  /* Centra el fondo espacial */
-    background-attachment: fixed; /* EFECTO FIJO: El fondo no se mueve al hacer scroll */
-    
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #e0e0e0;
-    line-height: 1.6;
-    padding: 4vh 2vw; 
-}
-
-/* CONTENEDOR PRINCIPAL: Dos columnas con altura fija y estilo Sci-Fi */
 #alysia-wrapper {
-    max-width: 1920px;
-    margin: 20px auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgba(20, 22, 25, 0.55); /* Transparencia calibrada de la plantilla */
-    border: 2px solid #22262a; /* Borde idéntico al wrapper principal */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
-    border-radius: 6px;
-    overflow: hidden;
     display: flex;
-    height: 600px; /* Altura fija original intacta */
-    backdrop-filter: blur(1px); /* Efecto vidrio esmerilado sci-fi */
+    width: min(100%, 1920px);
+    height: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: rgba(20, 22, 25, 0.55);
+    border: 2px solid var(--mr-border);
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(1px);
 }
 
-/* COLUMNA IZQUIERDA (Chat) */
 #alysia-chat-column {
-    flex: 1;
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
-    background: rgba(5, 6, 7, 0.4); /* Fondo oscuro transparente basado en .main-header */
+    min-width: 0;
     height: 100%;
     overflow: hidden;
+    background: rgba(5, 6, 7, 0.4);
 }
 
-/* Contenedor de mensajes con scroll interno */
 #alysia-chat-messages {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     gap: 12px;
+    min-height: 0;
+    padding: 15px;
+    overflow-y: auto;
 }
 
 .alysia-message {
+    max-width: 85%;
     padding: 10px 14px;
     border-radius: 12px;
-    max-width: 85%;
-    line-height: 1.4;
-    word-wrap: break-word;
     font-size: 14px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
 }
 
-/* Mensaje del usuario (Estilo Naranja de los hovers/textos especiales) */
 .alysia-message.user {
-    background: linear-gradient(135deg, rgba(255, 107, 0, 0.3) 0%, rgba(138, 58, 0, 0.5) 100%);
-    color: #ffffff;
     align-self: flex-end;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(var(--mr-accent-warm-rgb), 0.3), rgba(138, 58, 0, 0.5));
+    border: 1px solid var(--mr-accent-warm);
     border-bottom-right-radius: 2px;
-    border: 1px solid #ff6b00;
-    box-shadow: 0 0 10px rgba(255, 107, 0, 0.2);
+    box-shadow: 0 0 10px rgba(var(--mr-accent-warm-rgb), 0.2);
 }
 
-/* Mensaje del bot (Estilo Turquesa/Cyan principal de los botones) */
 .alysia-message.bot {
-    background: linear-gradient(135deg, rgba(6, 11, 17, 0.6) 0%, rgba(17, 27, 39, 0.6) 100%);
-    color: #e0e0e0;
     align-self: flex-start;
+    color: var(--mr-text);
+    background: linear-gradient(135deg, rgba(6, 11, 17, 0.6), rgba(17, 27, 39, 0.6));
+    border: 1px solid var(--mr-accent);
     border-bottom-left-radius: 2px;
-    border: 1px solid #00ffcc;
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.15);
+    box-shadow: 0 0 10px rgba(var(--mr-accent-rgb), 0.15);
 }
 
-/* Área de escritura inferior */
 #alysia-chat-input-area {
     display: flex;
-    padding: 12px;
-    border-top: 2px solid #1f2326;
-    background: rgba(15, 17, 19, 0.8);
     flex-shrink: 0;
+    gap: 8px;
+    padding: 12px;
+    background: rgba(15, 17, 19, 0.8);
+    border-top: 2px solid var(--mr-border);
 }
 
-/* Input de texto */
 #alysia-user-input {
-    flex: 1;
+    flex: 1 1 auto;
+    min-width: 0;
     padding: 10px 14px;
-    border: 1.5px solid #282e33;
+    color: #fff;
     background: #0f1113;
-    color: #ffffff;
+    border: 1.5px solid #282e33;
     border-radius: 6px;
     outline: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
+    font: 14px var(--mr-font-body);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #alysia-user-input:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+    border-color: var(--mr-accent);
+    box-shadow: 0 0 10px rgba(var(--mr-accent-rgb), 0.3);
 }
 
-/* Botón de enviar (Estilo Botón Ovalado de la cabina de mandos adaptado) */
 #alysia-send-btn {
-    background: linear-gradient(135deg, rgba(6, 11, 17, 0.4) 0%, rgba(17, 27, 39, 0.4) 100%);
-    color: #00ffcc;
-    border: 1.5px solid #ffffff;
-    padding: 0 20px;
-    margin-left: 8px;
-    border-radius: 50px; /* Bordes ovalados de la plantilla */
-    font-family: 'Conthrax', monospace, sans-serif;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    flex: 0 0 auto;
+    min-height: 44px;
+    margin: 0;
+    padding: 8px 20px;
     font-size: 13px;
-    transition: all 0.3s ease;
 }
 
-#alysia-send-btn:hover {
-    background: linear-gradient(135deg, rgba(9, 19, 30, 0.75) 0%, rgba(23, 40, 58, 0.75) 100%);
-    border-color: #00ffcc; /* Pasa a naranja en hover como los elementos interactivos */
-    color: #00ffcc;
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-}
-
-/* COLUMNA DERECHA: La imagen de Alysia */
 #alysia-image-column {
-    flex: 0 0 250px;
-	background-color: rgba(20, 22, 25, 0.75); /* Transparencia calibrada de la plantilla */
+    position: relative;
     display: flex;
+    flex: 0 0 250px;
     align-items: flex-end;
     justify-content: center;
-    position: relative;
-    border-left: 2px solid #1f2326;
     height: 100%;
     overflow: hidden;
+    background-color: rgba(20, 22, 25, 0.75);
+    border-left: 2px solid var(--mr-border);
 }
 
 #alysia-image-column img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: bottom;
-    display: block;
 }
 
 #alysia-image-column .error-msg {
-    color: #8a949e;
-    font-family: 'Conthrax', sans-serif;
-    font-size: 11px;
-    text-align: center;
-    padding: 20px;
     position: absolute;
     top: 50%;
+    padding: 20px;
+    color: var(--mr-muted);
+    font-family: var(--mr-font-display);
+    font-size: 11px;
+    text-align: center;
     transform: translateY(-50%);
 }
 
-/* INTEGRACIÓN CON EL CURSOR RETÍCULA PERSONALIZADO */
-#alysia-wrapper, 
-#alysia-user-input, 
-#alysia-send-btn,
-#alysia-chat-messages {
-    cursor: none !important; /* Desactiva el cursor original para mantener tu retícula SVG */
-}
-
-/* Adaptación para móviles (responsive) */
 @media (max-width: 600px) {
     #alysia-wrapper {
         flex-direction: column-reverse;
+        width: auto;
         height: auto;
         margin: 10px;
     }
+
     #alysia-chat-column {
         height: 450px;
     }
+
     #alysia-image-column {
         flex: 0 0 auto;
         height: 220px;
-        border-left: none;
-        border-bottom: 2px solid #1f2326;
+        border: 0;
+        border-bottom: 2px solid var(--mr-border);
     }
 }
 
-/* ==========================================
-   CURSOR RETÍCULA CON PUNTAS A 45°
-   ========================================== */
-
-body, a, button, .menu-header, .nav-links li a, .submenu li a {
-    cursor: none !important;
-}
-
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 46px;
-    height: 40px;
-    pointer-events: none;
-    z-index: 99999;
-    transform: translate(-50%, -50%);
-    transition: width 0.15s ease, height 0.15s ease;
-    will-change: transform;
-}
-
-/* Cuadrado de la esquina */
-.custom-cursor .corner-square {
-    transition: fill 0.15s ease;
-}
-
-
-.reticle-svg {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    filter: drop-shadow(0 0 4px #00ffcc) drop-shadow(0 0 7px rgba(0, 255, 204, 0.5));
-    transition: all 0.15s ease;
-}
-
-.lock-text {
-    position: absolute;
-    top: 115%;
-    left: 55%;                    /* Empuja el texto hacia la derecha */
-    transform: translateX(0);     /* Quitamos el centrado */
-    font-family: 'Conthrax', monospace, sans-serif;
-    font-size: 8px;               /* Más pequeño (antes 9px) */
-    letter-spacing: 1.2px;
-    color: #ff6b00;
-    text-shadow: 0 0 6px #ff6b00;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    white-space: nowrap;
-    pointer-events: none;
-}
-
-/* 2. TU CÓDIGO MODIFICADO: Eliminamos el margin-left y agregamos display: inline-block */
-nav ul {
-    display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center;     /* Centra los elementos verticalmente */
-    list-style: none;        /* Quita los puntos de la lista */
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li a {
-    display: inline-block; /* Permite que el padding y los bordes funcionen correctamente */
-    background: linear-gradient(135deg, rgba(6, 11, 17, 0.4) 0%, rgba(17, 27, 39, 0.4) 100%);
-    color: #00ffcc;
-    border: 1.5px solid #ffffff;
-    padding: 20px;
-    border-radius: 50px; 
-    font-family: 'Conthrax', monospace, sans-serif;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 13px;
-    transition: all 0.3s ease;
-    text-decoration: none; /* Opcional: quita el subrayado del enlace */
-}
-
-/* 3. TU HOVER (Se mantiene igual) */
-nav ul li:hover a {
-    background: linear-gradient(135deg, rgba(9, 19, 30, 0.75) 0%, rgba(23, 40, 58, 0.75) 100%);
-    border-color: #00ffcc; 
-    color: #00ffcc;
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-}
-
-/* ===== HOVER ===== */
-.custom-cursor.hover {
-    width: 56px;
-    height: 48px;
-}
-
-/* Cuando está en hover, el cuadrado también cambia a naranja */
-.custom-cursor.hover .corner-square {
-    fill: #ff6b00;
-}
-
-.custom-cursor.hover .reticle-svg {
-    filter: drop-shadow(0 0 5px #ff6b00) drop-shadow(0 0 10px rgba(255, 107, 0, 0.6));
-}
-
-.custom-cursor.hover .reticle-svg path {
-    stroke: #ff6b00;
-}
-
-.custom-cursor.hover .lock-text {
-    opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+    #alysia-user-input {
+        transition: none;
+    }
 }
