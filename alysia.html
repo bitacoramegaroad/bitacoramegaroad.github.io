@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatea con Alysia</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/alysia.css">
+</head>
+<body>
+
+<div id="alysia-wrapper">
+  <!-- COLUMNA IZQUIERDA: Chat (Sin barra de título redundante) -->
+  <div id="alysia-chat-column">
+    <div id="alysia-chat-messages">
+      <div class="alysia-message bot">¡Hola! Soy Alysia, archivista meltran del Megaroad 007. ¿En qué puedo ayudarte hoy?</div>
+    </div>
+    <div id="alysia-chat-input-area">
+      <input type="text" id="alysia-user-input" placeholder="Pregúntale algo a nuestra archivista..." />
+      <button id="alysia-send-btn" onclick="sendToAlysia()">Enviar</button>
+    </div>
+  </div>
+
+  <!-- COLUMNA DERECHA: Imagen de Alysia -->
+  <div id="alysia-image-column">
+    <img src="img/alysiaG.png" alt="Alysia Full Body" onerror="this.style.display='none'; this.parentNode.innerHTML='<div class=error-msg>Imagen de Alysia no disponible</div>';" />
+  </div>
+</div>
+
+<!-- Cursor retícula con cuadrado más grande y hacia afuera -->
+<div class="custom-cursor">
+    <svg class="reticle-svg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Bracket izquierdo -->
+        <path d="M28 6 
+                 L2 18 
+                 L2 62 
+                 L28 74" 
+              fill="none" 
+              stroke="#00ffcc" 
+              stroke-width="6" 
+              stroke-linecap="square"
+              stroke-linejoin="miter"/>
+
+        <!-- Bracket derecho -->
+        <path d="M72 6 
+                 L98 18 
+                 L98 62 
+                 L72 74" 
+              fill="none" 
+              stroke="#00ffcc" 
+              stroke-width="6" 
+              stroke-linecap="square"
+              stroke-linejoin="miter"/>
+
+        <!-- Cuadrado más grande y más hacia afuera -->
+        <rect class="corner-square" 
+              x="79" y="75.5" 
+              width="13" height="20" 
+              fill="#00ffcc" 
+              transform="rotate(63 85 70)"/>
+    </svg>
+    <div class="lock-text">LOCK ON</div>
+</div>
+
+<script>
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw4ZjtOl1ssbcVmmQ46zIYxBhcrK2Mf8rXQqCTCIGtnuzo-X9Cp2lREZ2uOS210kE02/exec";
+
+  document.getElementById("alysia-user-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      sendToAlysia();
+    }
+  });
+
+  async function sendToAlysia() {
+    const inputField = document.getElementById("alysia-user-input");
+    const messageContainer = document.getElementById("alysia-chat-messages");
+    const userText = inputField.value.trim();
+
+    if (!userText) return;
+
+    appendMessage(userText, "user");
+    inputField.value = "";
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+
+    const loadingMsg = appendMessage("Alysia está pensando...", "bot");
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ message: userText })
+      });
+
+      const data = await response.json();
+      loadingMsg.innerText = data.reply;
+    } catch (error) {
+      loadingMsg.innerText = "Lo siento, parece que hay un problema de conexión. Intenta nuevamente más tarde.";
+      console.error("Error:", error);
+    }
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+  }
+
+  function appendMessage(text, sender) {
+    const messageContainer = document.getElementById("alysia-chat-messages");
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "alysia-message " + sender;
+    msgDiv.innerText = text;
+    messageContainer.appendChild(msgDiv);
+    return msgDiv;
+  }
+  
+// ===== SONIDO DE HOVER =====
+    const hoverSound = new Audio('snd/s02.ogg'); // Cambia el nombre si es necesario
+    hoverSound.volume = 0.4;
+
+    function playHoverSound() {
+        hoverSound.currentTime = 0;
+        hoverSound.play().catch(() => {});
+    }
+
+    // Elementos que reproducen sonido
+    document.querySelectorAll('.nav-links li a, .menu-header, .submenu li a').forEach(el => {
+        el.addEventListener('mouseenter', playHoverSound);
+    });
+
+    // ===== CURSOR PERSONALIZADO =====
+const cursor = document.querySelector('.custom-cursor');
+
+if (cursor) {
+    // Movimiento del cursor
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
+
+    // Efecto al pasar sobre elementos interactivos
+    const interactiveElements = document.querySelectorAll(
+        'a, button, .menu-header, .nav-links li a, .submenu li a'
+    );
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+    });
+} 
+
+// Esperamos a que todo el contenido de la página esté cargado
+document.addEventListener("DOMContentLoaded", () => {
+    const customCursor = document.querySelector('.custom-cursor');
+    // Buscamos específicamente los enlaces dentro de tu menú de navegación
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    // Si ambos elementos existen en la página, añadimos los eventos
+    if (customCursor && navLinks.length > 0) {
+        navLinks.forEach(link => {
+            // Cuando el mouse entra al botón, se añade la clase 'hover'
+            link.addEventListener('mouseenter', () => {
+                customCursor.classList.add('hover');
+            });
+
+            // Cuando el mouse sale del botón, se quita la clase 'hover'
+            link.addEventListener('mouseleave', () => {
+                customCursor.classList.remove('hover');
+            });
+        });
+    }
+}); 
+</script>
+<nav role="navigation" class="nav-bottom">
+        <ul>
+            <li><a href="https://bitacoramegaroad.github.io/" class="text-shadow" id="close-button">VOLVER A LA BITACORA DEL MEGAROAD</a></li>
+        </ul>
+    </nav>	
+</body>
+</html>
