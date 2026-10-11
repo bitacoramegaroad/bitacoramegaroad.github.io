@@ -77,6 +77,13 @@
   opacity: 0;
   transition: max-height .28s ease, opacity .2s ease, padding .2s ease;
 }
+/* El index abre todos los .submenu descendientes de un padre activo.
+   En este árbol solo se muestra el submenu hijo inmediato. */
+.catalogo-arbol .menu-item.active .submenu {
+  max-height: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
 .catalogo-arbol .menu-item.active > .submenu {
   max-height: 2400px;
   padding-bottom: 8px;
