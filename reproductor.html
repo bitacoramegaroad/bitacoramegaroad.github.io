@@ -179,6 +179,36 @@
       document.querySelectorAll(".tree-leaf[aria-pressed='true']").forEach((item) => item.setAttribute("aria-pressed", "false"));
     }
 
+    function actualizarControlMenu(item, abierto) {
+      const boton = item.firstElementChild;
+      if (!boton || !boton.classList.contains("menu-header")) return;
+      boton.setAttribute("aria-expanded", String(abierto));
+      const icono = boton.querySelector(".toggle-icon");
+      if (icono) icono.textContent = abierto ? "−" : "+";
+    }
+
+    function cerrarMenu(item) {
+      item.classList.remove("active");
+      actualizarControlMenu(item, false);
+      item.querySelectorAll(".menu-item").forEach((descendiente) => {
+        descendiente.classList.remove("active");
+        actualizarControlMenu(descendiente, false);
+      });
+    }
+
+    function alternarMenu(boton) {
+      const item = boton.parentElement;
+      const abierto = item.classList.contains("active");
+      Array.from(item.parentElement.children)
+        .filter((hermano) => hermano !== item && hermano.classList.contains("menu-item"))
+        .forEach(cerrarMenu);
+      if (abierto) cerrarMenu(item);
+      else {
+        item.classList.add("active");
+        actualizarControlMenu(item, true);
+      }
+    }
+
     function crearElementoMenu(titulo, contenido, clase = "") {
       const item = document.createElement("li");
       item.className = "menu-item " + clase;
@@ -193,11 +223,7 @@
       boton.append(icono, document.createTextNode(" " + titulo));
       const submenu = document.createElement("ul");
       submenu.className = "submenu";
-      boton.addEventListener("click", () => {
-        const abierto = item.classList.toggle("active");
-        boton.setAttribute("aria-expanded", String(abierto));
-        icono.textContent = abierto ? "−" : "+";
-      });
+      boton.addEventListener("click", () => alternarMenu(boton));
       item.append(boton, submenu);
       contenido.forEach((nodo) => submenu.appendChild(nodo));
       return item;
@@ -255,7 +281,11 @@
           aviso.textContent = "Todavía no hay episodios u opciones cargados.";
           nodos.push(aviso);
         }
-        return crearElementoMenu(produccion.titulo || "Producción", nodos, "menu-produccion");
+        const menuProduccion = crearElementoMenu(produccion.titulo || "Producción", nodos, "menu-produccion");
+        if (Array.isArray(produccion.episodios) && produccion.episodios.length > 10) {
+          menuProduccion.querySelector(":scope > .submenu").classList.add("submenu-scrollable");
+        }
+        return menuProduccion;
       });
       if (!producciones.length) {
         const aviso = document.createElement("li");
@@ -325,16 +355,12 @@
     }
 
     document.querySelectorAll("#catalogo-arbol > .menu-item > .menu-header").forEach((header) => {
-      header.addEventListener("click", () => {
-        const item = header.parentElement;
-        const abierto = item.classList.toggle("active");
-        header.setAttribute("aria-expanded", String(abierto));
-        header.querySelector(".toggle-icon").textContent = abierto ? "−" : "+";
-      });
+      header.addEventListener("click", () => alternarMenu(header));
     });
     cargarFranquicia("macross");
     cargarFranquicia("robotech");
   </script>
 </body>
 </html>
+
 
