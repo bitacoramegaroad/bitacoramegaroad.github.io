@@ -260,41 +260,31 @@ body {
     padding: 0;
 }
 
-.sidebar-interest-list li {
-    min-width: 0;
-}
+.sidebar-interest-list li { min-width: 0; }
 
 .sidebar-interest-list a {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     aspect-ratio: 1 / 1;
-    padding: 12px;
-    border: 2px solid #b8ff3b;
-    border-radius: 0;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
-    background:
-        repeating-linear-gradient(0deg, rgba(184, 255, 59, 0.07) 0 1px, transparent 1px 4px),
-        radial-gradient(circle at 50% 50%, transparent 0 32%, rgba(184, 255, 59, 0.16) 33% 34%, transparent 35%),
-        linear-gradient(180deg, rgba(226, 235, 218, 0.28) 0%, rgba(67, 83, 67, 0.78) 38%, rgba(11, 21, 17, 0.96) 100%);
-    color: #e3f3d1;
+    padding: 10px;
+    border: 1.5px solid var(--mr-accent);
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(6, 11, 17, 0.4), rgba(17, 27, 39, 0.4));
+    color: #d9faff;
     text-align: center;
     text-decoration: none;
     overflow-wrap: anywhere;
     font-family: var(--mr-font-display);
     font-size: 12px;
     line-height: 1.4;
-    text-shadow: 0 0 8px rgba(184, 255, 59, 0.42);
-    box-shadow: inset 0 0 12px rgba(184, 255, 59, 0.2), 0 0 8px rgba(184, 255, 59, 0.16);
-    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .sidebar-interest-list a:hover {
-    color: #ffffff;
-    border-color: #d5ff72;
-    filter: brightness(1.2);
-    box-shadow: inset 0 0 18px rgba(184, 255, 59, 0.34), 0 0 16px rgba(184, 255, 59, 0.4);
+    border-color: var(--mr-accent);
+    background: linear-gradient(135deg, rgba(9, 19, 30, 0.75), rgba(23, 40, 58, 0.75));
+    box-shadow: 0 0 15px rgba(var(--mr-accent-rgb), 0.4);
 }
 .sidebar-box h3 {
     color: #ffffff;
@@ -945,4 +935,68 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 @media (max-width: 768px) {
     .crew-intro-grid { grid-template-columns: 1fr; }
     .crew-portrait img { max-width: 480px; margin: 0 auto; }
+}
+
+/* Botones principales de inicio: paneles cian con emblema vectorial */
+.nav-links > li > a,
+.nav-links > li > .nav-dropdown > summary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    min-height: 70px;
+    padding: 10px 14px;
+    border: 2px solid var(--mr-accent);
+    border-radius: 5px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+    background:
+        repeating-linear-gradient(0deg, rgba(var(--mr-accent-rgb), 0.1) 0 1px, transparent 1px 4px),
+        linear-gradient(90deg, rgba(var(--mr-accent-rgb), 0.15), transparent 22%, rgba(var(--mr-accent-rgb), 0.08) 82%, rgba(var(--mr-accent-rgb), 0.24)),
+        linear-gradient(180deg, rgba(75, 224, 232, 0.9) 0%, rgba(19, 171, 188, 0.94) 48%, rgba(4, 53, 68, 0.98) 100%);
+    color: #e8fdff;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--mr-font-display);
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.35;
+    text-shadow: 0 0 8px rgba(var(--mr-accent-rgb), 0.65);
+    box-shadow: inset 0 0 8px rgba(210, 255, 255, 0.48), inset 0 -8px 14px rgba(0, 32, 48, 0.48), 0 0 9px rgba(var(--mr-accent-rgb), 0.28);
+    transition: filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-insignia {
+    display: block;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    overflow: visible;
+    filter: drop-shadow(0 0 4px rgba(235, 255, 255, 0.75));
+}
+
+.nav-insignia path {
+    fill: #efffff;
+    stroke: rgba(var(--mr-accent-rgb), 0.95);
+    stroke-width: 1.8;
+    stroke-linejoin: round;
+}
+
+.nav-links > li > a span,
+.nav-links > li > .nav-dropdown > summary span { flex: 1; }
+
+.nav-links > li > a:hover,
+.nav-links > li.active > a,
+.nav-links > li > .nav-dropdown > summary:hover,
+.nav-links > li > .nav-dropdown[open] > summary {
+    color: #ffffff;
+    filter: brightness(1.18);
+    border-color: #baf7ff;
+    box-shadow: inset 0 0 12px rgba(230, 255, 255, 0.7), inset 0 -8px 14px rgba(0, 32, 48, 0.35), 0 0 18px rgba(var(--mr-accent-rgb), 0.55);
+}
+
+@media (max-width: 768px) {
+    .nav-links > li > a,
+    .nav-links > li > .nav-dropdown > summary { min-height: 60px; }
+    .nav-insignia { flex-basis: 40px; width: 40px; height: 40px; }
 }
