@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /snd/
+Disallow: /img/
+
+Sitemap: https://bitacoramegaroad.github.io/
