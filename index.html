@@ -47,7 +47,15 @@
         <nav class="main-nav">
             <ul class="nav-links">
                 <li class="active"><a href="#">Inicio</a></li>
-                <li><a href="#">Puente de mando</a></li>
+                <li class="nav-dropdown-item">
+                    <details class="nav-dropdown">
+                        <summary>Puente de mando</summary>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                            <li><a href="trayectoria.html">Nuestra trayectoria</a></li>
+                        </ul>
+                    </details>
+                </li>
                 <li><a href="#">Descargo Legal</a></li>
                 <li><a href="reproductor.html">Ver Series Online</a></li>
                 <li><a href="#">Botón de FOLD</a></li>
@@ -334,7 +342,7 @@
     }
 
     // Elementos que reproducen sonido
-    document.querySelectorAll('.nav-links li a, .menu-header, .submenu li a').forEach(el => {
+    document.querySelectorAll('.nav-links li a, .nav-dropdown summary, .menu-header, .submenu li a').forEach(el => {
         el.addEventListener('mouseenter', playHoverSound);
     });
 
@@ -365,7 +373,7 @@ if (cursor) {
 
     // Efecto al pasar sobre elementos interactivos
     const interactiveElements = document.querySelectorAll(
-        'a, button, .menu-header, .nav-links li a, .submenu li a'
+        'a, button, summary, .menu-header, .nav-links li a, .submenu li a'
     );
 
     interactiveElements.forEach(el => {
