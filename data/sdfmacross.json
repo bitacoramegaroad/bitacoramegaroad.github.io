@@ -1,0 +1,41 @@
+{
+  "sdfmacross": {
+    "titulo": "SDF Macross",
+    "producciones": [
+      {
+        "titulo": "SDF Macross TV",
+        "tipo": "serie",
+        "versiones": [
+          {
+            "titulo": "Serie completa",
+            "url": "https://www.youtube.com/playlist?list=PLLcl7CvuTI64"
+          }
+        ]
+      },
+      {
+        "titulo": "SDF Macross: Do You Remember Love?",
+        "tipo": "pelicula",
+        "versiones": [
+          {
+            "titulo": "Español latino 1 Versión Carlos Amador",
+            "url": "https://www.youtube.com/watch?v=GDY_sQlLygs"
+          },
+          {
+            "titulo": "Español latino 2 Versión Locomotion",
+            "url": "https://www.youtube.com/watch?v=OOluW7PBAYs"
+          }
+        ]
+      },
+      {
+        "titulo": "SDF Macross: Flashback 2012",
+        "tipo": "especial",
+        "versiones": [
+          {
+            "titulo": "Video completo",
+            "url": "https://www.mp4upload.com/embed-reixh9gl8xf3.html"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "robotech": {
+    "titulo": "ROBOTECH",
+    "producciones": [
+      {
+        "titulo": "Primera Generación",
+        "tipo": "serie",
+        "versiones": [
+          {
+            "titulo": "Playlist completa",
+            "url": "https://www.youtube.com/playlist?list=PLCvHNiBJ_IiA"
+          }
+        ]
+      },
+      {
+        "titulo": "Robotech 2: The Sentinels",
+        "tipo": "pelicula",
+        "versiones": [
+          {
+            "titulo": "Opción 1",
+            "url": "https://www.youtube.com/embed/Rhg6lXcUSTQ"
+          }
+        ]
+      },
+      {
+        "titulo": "Segunda Generación",
+        "tipo": "serie",
+        "versiones": [
+          {
+            "titulo": "Playlist completa",
+            "url": "https://www.youtube.com/playlist?list=PLdP_ImEmrqEg"
+          }
+        ]
+      },
+      {
+        "titulo": "Tercera Generación",
+        "tipo": "serie",
+        "versiones": [
+          {
+            "titulo": "Playlist completa",
+            "url": "https://www.youtube.com/playlist?list=PLbsllLPy30a8"
+          }
+        ]
+      },
+      {
+        "titulo": "Robotech: The Shadow Chronicles",
+        "tipo": "pelicula",
+        "versiones": [
+          {
+            "titulo": "Opción 1",
+            "url": "https://www.youtube.com/embed/EV21xnqOPFA"
+          }
+        ]
+      },
+      {
+        "titulo": "Robotech: Love Live Alive",
+        "tipo": "pelicula",
+        "versiones": [
+          {
+            "titulo": "Opción 1",
+            "url": "https://www.youtube.com/embed/_zs6eLWTZic"
+          }
+        ]
+      }
+    ]
+  }
+}
