@@ -791,3 +791,105 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     }
 }
 
+
+
+/* Puente de mando: enlaces a las páginas institucionales */
+.nav-dropdown { position: relative; }
+.nav-dropdown > summary {
+    display: flex; align-items: center; justify-content: center; min-height: 65px;
+    padding: 10px 20px; background: linear-gradient(135deg, rgba(6, 11, 17, 0.4), rgba(17, 27, 39, 0.4));
+    border: 1.5px solid #fff; border-radius: 50px; color: var(--mr-accent);
+    font-family: var(--mr-font-display); font-size: 15px; letter-spacing: 1.5px;
+    text-transform: uppercase; text-align: center; cursor: pointer; list-style: none;
+    transition: all 0.3s ease;
+}
+.nav-dropdown > summary::-webkit-details-marker { display: none; }
+.nav-dropdown > summary::marker { content: ""; }
+.nav-dropdown > summary:hover, .nav-dropdown[open] > summary {
+    background: linear-gradient(135deg, rgba(9, 19, 30, 0.75), rgba(23, 40, 58, 0.75));
+    border-color: var(--mr-accent); box-shadow: 0 0 15px rgba(var(--mr-accent-rgb), 0.4);
+}
+.nav-dropdown-menu {
+    position: absolute; z-index: 20; top: calc(100% + 8px); left: 0; right: 0;
+    list-style: none; padding: 8px; background: rgba(8, 13, 19, 0.97);
+    border: 1px solid var(--mr-accent); border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+}
+.nav-dropdown-menu li + li { margin-top: 5px; }
+.nav-links .nav-dropdown-menu a {
+    min-height: 44px; padding: 8px 10px; border: 1px solid rgba(var(--mr-accent-rgb), 0.22);
+    border-radius: 4px; font-size: 11px; letter-spacing: 0.8px;
+}
+
+/* Páginas institucionales */
+.document-page-body { padding-top: 3vh; }
+.document-page {
+    max-width: 1000px; width: 95vw; margin: 30px auto;
+    padding: clamp(22px, 4vw, 48px); background: rgba(var(--mr-surface-rgb), 0.82);
+    border: 2px solid var(--mr-border); border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); backdrop-filter: blur(2px);
+}
+.document-content { color: var(--mr-text-soft); font-size: 16px; line-height: 1.85; }
+.document-kicker {
+    margin: 0 0 10px; color: var(--mr-accent); font-family: var(--mr-font-display);
+    font-size: 11px; letter-spacing: 1.5px; text-align: center;
+}
+.document-content h2 {
+    margin: 24px 0 15px; color: #fff; font-family: var(--mr-font-display);
+    font-size: clamp(18px, 2.4vw, 25px); line-height: 1.5;
+}
+.document-content h3 {
+    margin: 30px 0 12px; padding-left: 14px; border-left: 3px solid var(--mr-accent);
+    color: var(--mr-accent); font-family: var(--mr-font-display); font-size: clamp(15px, 2vw, 19px);
+    line-height: 1.6;
+}
+.document-content p { margin: 0 0 1.1em; }
+.document-content .document-lead { color: #eaf3f5; font-size: 17px; }
+.document-content .document-closing { margin-top: 24px; color: var(--mr-accent); font-weight: 600; }
+.document-content blockquote {
+    margin: 20px 0 24px; padding: 18px 22px; background: rgba(5, 10, 15, 0.72);
+    border-left: 3px solid var(--mr-accent-warm); color: #c8d1d9; font-style: italic;
+}
+.document-content blockquote p:last-child { margin-bottom: 0; }
+.document-page-body .nav-bottom ul { flex-wrap: wrap; gap: 12px; }
+.document-page-body .nav-bottom a { min-height: 44px; }
+@media (max-width: 768px) {
+    .nav-dropdown > summary { min-height: 50px; }
+    .nav-dropdown-menu { position: static; margin-top: 8px; }
+    .document-page { margin-top: 20px; }
+    .document-content { font-size: 15px; }
+    .document-content .document-lead { font-size: 16px; }
+}
+
+
+/* Retrato de Alysia en la presentación de la tripulación */
+.crew-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.85fr) minmax(0, 1.4fr);
+    gap: clamp(20px, 3vw, 32px);
+    align-items: start;
+    margin: 14px 0 26px;
+}
+.crew-portrait { margin: 0; }
+.crew-portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(var(--mr-accent-rgb), 0.65);
+    border-radius: 4px;
+    box-shadow: 0 0 18px rgba(var(--mr-accent-rgb), 0.14);
+}
+.crew-portrait figcaption {
+    margin-top: 8px;
+    color: var(--mr-muted);
+    font-family: var(--mr-font-display);
+    font-size: 10px;
+    letter-spacing: 0.4px;
+    text-align: center;
+}
+.crew-intro-copy .document-lead { margin-bottom: 12px; }
+.crew-intro-copy p:last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+    .crew-intro-grid { grid-template-columns: 1fr; }
+    .crew-portrait img { max-width: 480px; margin: 0 auto; }
+}
