@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Quiénes somos",
+    "url": "quienes-somos.html",
+    "type": [
+      "Institucional"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": []
+  },
+  {
+    "title": "Nuestra trayectoria",
+    "url": "trayectoria.html",
+    "type": [
+      "Institucional"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": []
+  },
+  {
+    "title": "Descargo legal",
+    "url": "descargo-legal.html",
+    "type": [
+      "Institucional"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": []
+  },
+  {
+    "title": "Guía básica de conceptos artísticos",
+    "url": "guia-conceptos-artisticos.html",
+    "type": [
+      "Informe"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": [
+      "Serie de TV",
+      "OVA",
+      "ONA",
+      "Película",
+      "Novela ligera",
+      "Manga",
+      "Drama radiofónico"
+    ]
+  }
+]
