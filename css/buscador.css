@@ -38,3 +38,7 @@
 .publication-body img { max-width: 100%; height: auto; }
 .publication-body a { color: var(--mr-accent); }
 .publication-entry .search-tags { margin-top: 16px; }
+
+.publication-body.document-content { font-size: 16px; line-height: 1.85; }
+.publication-body.document-content p { margin: 0 0 1.1em; }
+.publication-body.document-content h2 { font-size: clamp(17px, 1.8vw, 21px); margin: 28px 0 14px; }
