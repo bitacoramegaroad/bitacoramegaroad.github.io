@@ -31,7 +31,7 @@
   },
   {
     "title": "Guía básica de conceptos artísticos",
-    "url": "guia-conceptos-artisticos.html",
+    "url": "https://github.com/bitacoramegaroad/Archivos-del-Megaroad/blob/main/guia-conceptos-artisticos.html",
     "type": [
       "Informe"
     ],
@@ -45,6 +45,8 @@
       "Novela ligera",
       "Manga",
       "Drama radiofónico"
-    ]
+    ],
+    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/guia-conceptos-artisticos.html",
+    "summary": "Conceptos artísticos, formatos, tropos, clichés, gusto, calidad y hamparte."
   }
 ]
