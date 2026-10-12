@@ -1,7 +1,8 @@
 [
   {
     "title": "Guía básica de conceptos artísticos",
-    "url": "https://github.com/bitacoramegaroad/Archivos-del-Megaroad/blob/main/guia-conceptos-artisticos.html",
+    "id": "guia-conceptos-artisticos",
+    "url": "nota.html?id=guia-conceptos-artisticos",
     "type": [
       "Informe"
     ],
@@ -64,7 +65,8 @@
   },
   {
     "title": "La importancia de la escritura y el respeto hacia ella",
-    "url": "https://github.com/bitacoramegaroad/Archivos-del-Megaroad/blob/main/la-importancia-de-la-escritura.html",
+    "id": "la-importancia-de-la-escritura",
+    "url": "nota.html?id=la-importancia-de-la-escritura",
     "type": [
       "Análisis"
     ],
