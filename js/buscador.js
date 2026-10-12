@@ -50,6 +50,14 @@
     const body = item.contentHtml || `<p>${escapeHtml(item.summary || "")}</p>`;
     return `<article class="publication-entry"><h2><a href="${escapeHtml(item.url)}"${target}>${escapeHtml(item.title)}</a></h2><div class="post-body-mock publication-body document-content">${body}</div>${tags ? `<div class="search-tags">${tags}</div>` : ""}</article>`;
   }
+  function renderPublicationCard(item) {
+    return `<a class="publication-card" href="${escapeHtml(item.url)}" aria-label="Abrir nota: ${escapeHtml(item.title)}"><svg class="publication-card-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="publication-card-insignia-gap" d="M50 3 V97" /></svg><span>${escapeHtml(item.title)}</span></a>`;
+  }
+  function renderFeaturedPublication(item) {
+    const preview = item.previewHtml || escapeHtml(item.summary || "");
+    const author = item.author ? `<p class="featured-publication-author"><strong>Autor:</strong> ${escapeHtml(item.author)}</p>` : "";
+    return `<article class="featured-publication"><h2><a href="${escapeHtml(item.url)}">${escapeHtml(item.title)}</a></h2>${author}<p class="featured-publication-preview">${preview}</p><a class="featured-publication-more" href="${escapeHtml(item.url)}">Leer nota completa <span aria-hidden="true">›</span></a></article>`;
+  }
   function render() {
     const query = normalize(input.value).split(/\s+/).filter(Boolean);
     const hasFilter = Object.values(filters).some(select => select.value);
@@ -62,7 +70,10 @@
       return query.every(word => haystack.includes(word));
     });
     const visible = isBrowsing ? matches : matches.filter(item => !(item.type || []).includes("Institucional")).slice(0, 1);
-    output.innerHTML = visible.length ? visible.map(renderPublication).join("") : '<p class="search-empty">No encontramos publicaciones con esos términos y etiquetas.</p>';
+    output.classList.toggle("publication-catalog-list", Boolean(isBrowsing));
+    output.innerHTML = visible.length
+      ? (isBrowsing ? visible.map(renderPublicationCard) : [renderFeaturedPublication(visible[0])]).join("")
+      : '<p class="search-empty">No encontramos publicaciones con esos términos y etiquetas.</p>';
     if (isBrowsing) {
       status.textContent = `${visible.length} ${visible.length === 1 ? "publicación encontrada" : "publicaciones encontradas"}`;
       clearButton.hidden = false;
@@ -102,11 +113,15 @@
           const source = new DOMParser().parseFromString(await page.text(), "text/html");
           const content = source.querySelector(".document-content") || source.querySelector("main") || source.body;
           item.text = [...content.querySelectorAll("h1, h2, h3, h4, p, li, blockquote")].map(node => node.textContent).join(" ").replace(/\s+/g, " ").trim();
+          const authorNode = content.querySelector(".document-author") || [...content.querySelectorAll("p")].find(node => /^Autor\s*:/i.test(node.textContent.trim()));
+          item.author = authorNode?.textContent.replace(/^\s*Autor\s*:\s*/i, "").trim() || item.author || "";
           const displayContent = content.cloneNode(true);
-          displayContent.querySelectorAll(".article-tags, .document-kicker").forEach(node => node.remove());
+          displayContent.querySelectorAll(".article-tags, .document-kicker, .document-author").forEach(node => node.remove());
+          [...displayContent.querySelectorAll("p")].filter(node => /^Autor\s*:/i.test(node.textContent.trim())).forEach(node => node.remove());
           const firstHeading = displayContent.querySelector("h1");
           if (firstHeading && normalize(firstHeading.textContent) === normalize(item.title)) firstHeading.remove();
           item.contentHtml = safeContentHtml(displayContent.innerHTML, contentUrl);
+          item.previewHtml = safeContentHtml([...displayContent.querySelectorAll("p")].map(node => node.innerHTML).join(" "), contentUrl);
         } catch { item.text = item.summary || ""; }
       }));
       fillFilters();
