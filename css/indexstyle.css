@@ -41,7 +41,7 @@ body {
        IMAGEN DE FONDO FIJA:
        ⚠️ Recuerda verificar el nombre y extensión exacta de tu imagen en la carpeta 'img'
     */
-    background-image: url('../img/Galaxia.jpg'); 
+    background-image: url('../img/Galaxia.webp'); 
     background-color: var(--mr-bg); /* Fondo de emergencia por si la imagen tarda en cargar */
     background-repeat: no-repeat;
     background-size: cover;       /* Cubre toda la pantalla sin deformarse */
