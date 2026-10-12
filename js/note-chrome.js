@@ -21,6 +21,12 @@
       layout.append(page, sidebar);
       page.classList.add("document-page-in-layout");
 
+      // Las páginas institucionales usan el mismo contenedor central que Inicio.
+      const siteWrapper = document.createElement("div");
+      siteWrapper.className = "wrapper document-site-wrapper";
+      document.body.insertBefore(siteWrapper, header);
+      siteWrapper.append(header, navigation, layout);
+
       setupMenu(sidebar);
       setupCategoryLinks(sidebar);
       setupCursor();

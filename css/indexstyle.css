@@ -911,9 +911,9 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 .page-site-nav {
     /* En las páginas documentales conserva el mismo flujo visual que en Inicio. */
     position: static;
-    width: min(1400px, 95vw);
-    margin: 0 auto;
-    padding: 3vh 0 1vh;
+    width: auto;
+    margin: 0;
+    padding: 3vh 3vw 1vh;
     background: transparent;
     backdrop-filter: none;
     border: 0;
@@ -923,7 +923,7 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     grid-template-columns: minmax(0, 7fr) minmax(280px, 3fr);
     align-items: start;
     gap: 3vw;
-    width: min(1400px, 95vw);
+    width: 100%;
     margin: 30px auto;
 }
 .document-page-in-layout {
@@ -944,7 +944,7 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     .nav-dropdown > summary { min-height: 50px; }
     .nav-dropdown-menu { position: static; margin-top: 8px; }
     .document-page { margin-top: 20px; }
-    .document-site-layout { grid-template-columns: minmax(0, 1fr); width: 95vw; margin-top: 20px; }
+    .document-site-layout { grid-template-columns: minmax(0, 1fr); width: 100%; margin: 20px 0 0; }
     .document-site-layout > .sidebar { position: static; max-height: none; overflow: visible; }
     .document-content { font-size: 15px; }
     .document-content .document-lead { font-size: 16px; }
