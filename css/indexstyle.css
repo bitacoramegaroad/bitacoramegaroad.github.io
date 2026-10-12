@@ -933,12 +933,9 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     margin: 0;
 }
 .document-site-layout > .sidebar {
-    position: sticky;
-    top: 12px;
-    max-height: calc(100vh - 24px);
-    overflow-y: auto;
-    scrollbar-color: rgba(var(--mr-accent-rgb), 0.55) rgba(0, 0, 0, 0.25);
-    scrollbar-width: thin;
+    position: static;
+    max-height: none;
+    overflow: visible;
 }
 @media (max-width: 768px) {
     .nav-dropdown > summary { min-height: 50px; }
