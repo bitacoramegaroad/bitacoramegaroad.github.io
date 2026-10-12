@@ -8,7 +8,9 @@
   const status = document.querySelector("#publication-feed-status");
   const clearButton = document.querySelector("#clear-search");
   let publications = [];
-  let activeMenuTag = "";
+  const pageParams = new URLSearchParams(window.location.search);
+  let activeMenuTag = pageParams.get("filterTag") || "";
+  const initialTypeFilter = pageParams.get("filterType") || "";
   const standardTypes = ["Institucional", "Informe", "Crítica", "Análisis"];
 
   function escapeHtml(value) {
@@ -108,6 +110,9 @@
         } catch { item.text = item.summary || ""; }
       }));
       fillFilters();
+      if (initialTypeFilter && [...filters.type.options].some(option => option.value === initialTypeFilter)) {
+        filters.type.value = initialTypeFilter;
+      }
       render();
     } catch { status.textContent = "No se pudo cargar el catálogo de publicaciones."; }
   }
