@@ -29,3 +29,12 @@
 .search-status-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .search-clear { padding: 3px 7px; color: var(--mr-accent); background: transparent; border: 1px solid rgba(var(--mr-accent-rgb), .4); border-radius: 2px; font: 10px var(--mr-font-body); }
 .search-clear[hidden] { display: none; }
+
+#publication-feed-status { margin: 0 0 12px; color: var(--mr-accent); font-size: 12px; }
+.publication-entry + .publication-entry { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(var(--mr-accent-rgb), .28); }
+.publication-entry h2 a { color: inherit; text-decoration: none; }
+.publication-entry h2 a:hover { color: var(--mr-accent); }
+.publication-body { line-height: 1.65; }
+.publication-body img { max-width: 100%; height: auto; }
+.publication-body a { color: var(--mr-accent); }
+.publication-entry .search-tags { margin-top: 16px; }
