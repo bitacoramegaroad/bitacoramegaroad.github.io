@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Buscá informes, análisis y otros textos de La Bitácora del Megaroad por palabras, obra, género o formato.">
+  <title>Buscador | La Bitácora del Megaroad</title>
+  <link rel="icon" href="img/favicon.ico"><link rel="stylesheet" href="css/indexstyle.css"><link rel="stylesheet" href="css/buscador.css">
+</head>
+<body class="document-page-body search-page-body">
+  <header class="macross-header"><a href="index.html" class="logo-link" aria-label="Volver al inicio"><img src="img/LaBitacoraDelMegaroad.png" alt="La Bitácora del Megaroad" class="logo"></a><h1>Buscador de textos</h1></header>
+  <main class="document-page search-page">
+    <section aria-labelledby="search-heading">
+      <p class="document-kicker">ARCHIVO DE BITÁCORAS</p><h2 id="search-heading">Encontrá una publicación</h2>
+      <label class="search-label" for="search-query">Palabras del título o del texto</label>
+      <input id="search-query" type="search" placeholder="Ej.: Macross, animación, derechos…" autocomplete="off">
+      <div class="search-filters" aria-label="Filtros por etiquetas">
+        <label>Tipo de texto<select id="filter-type"><option value="">Cargando…</option></select></label>
+        <label>Obra o franquicia<select id="filter-works"><option value="">Cargando…</option></select></label>
+        <label>Género<select id="filter-genres"><option value="">Cargando…</option></select></label>
+        <label>Formato<select id="filter-formats"><option value="">Cargando…</option></select></label>
+      </div>
+      <div class="search-tools"><p id="search-status" role="status" aria-live="polite">Cargando textos…</p><button id="clear-search" type="button">Limpiar búsqueda</button></div>
+      <div id="search-results" class="search-results" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="macross-footer"><nav class="nav-bottom" aria-label="Navegación"><ul><li><a href="index.html">Volver al inicio</a></li></ul></nav></footer>
+  <script src="js/buscador.js" defer></script>
+</body></html>
