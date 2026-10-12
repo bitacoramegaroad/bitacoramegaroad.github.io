@@ -26,6 +26,7 @@
 
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/indexstyle.css">
+    <link rel="stylesheet" href="css/buscador.css">
 </head>
 <body class="home-page">
 
@@ -62,6 +63,27 @@
                 <li><a href="https://ikaruss1177.github.io/Ikaruss/"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Ikaruss Retro Gaming</span></a></li>
             </ul>
         </nav>
+
+
+        <!-- BUSCADOR COMPACTO DE BITÁCORAS -->
+        <section class="site-search" aria-label="Buscador de publicaciones">
+            <form id="site-search-form" class="site-search-form" role="search">
+                <label class="visually-hidden" for="search-query">Buscar en títulos y textos</label>
+                <input id="search-query" type="search" placeholder="Buscar en la Bitácora…" autocomplete="off">
+                <button type="submit">Buscar</button>
+            </form>
+            <details class="site-search-filters">
+                <summary>Filtros</summary>
+                <div class="search-filters">
+                    <label>Tipo de texto<select id="filter-type"><option value="">Todos</option></select></label>
+                    <label>Obra o franquicia<select id="filter-works"><option value="">Todas</option></select></label>
+                    <label>Género<select id="filter-genres"><option value="">Todos</option></select></label>
+                    <label>Formato<select id="filter-formats"><option value="">Todos</option></select></label>
+                </div>
+            </details>
+            <div id="search-status" class="search-status" role="status" aria-live="polite"></div>
+            <div id="search-results" class="search-results" aria-live="polite"></div>
+        </section>
 
         <!-- CUERPO EN DOS COLUMNAS -->
         <div class="main-layout">
@@ -121,7 +143,7 @@
 <!-- FIN MEGARОAD RADIO -->
     </div>
     <div class="sidebar-box"><h3>Menú lateral</h3><ul class="sidebar-mock-list">
-        <li class="menu-item"><button type="button" class="menu-header" aria-expanded="false"><span class="toggle-icon" aria-hidden="true">+</span> Bitácoras</button><ul class="submenu"><li><a href="buscador.html">Buscador de textos</a></li><li><a href="#">Informes</a></li><li><a href="#">Críticas</a></li><li><a href="#">Análisis</a></li><li><a href="#">Desechos de la Protocultura</a></li></ul></li>
+        <li class="menu-item"><button type="button" class="menu-header" aria-expanded="false"><span class="toggle-icon" aria-hidden="true">+</span> Bitácoras</button><ul class="submenu"><li><a href="#">Informes</a></li><li><a href="#">Críticas</a></li><li><a href="#">Análisis</a></li><li><a href="#">Desechos de la Protocultura</a></li></ul></li>
         <li class="menu-item"><button type="button" class="menu-header" aria-expanded="false"><span class="toggle-icon" aria-hidden="true">+</span> Zona Interactiva</button><ul class="submenu"><li><a href="alysia.html">Archivista Alysia Guseva</a></li><li><a href="https://bluegazer.github.io/360-Macross-G/indexMenu.html">Macross Girls Gallery 360º</a></li><li><a href="https://bluegazer.github.io/360-Macross-VF/IndexMenu.html">Macross Ships Gallery 360º</a></li><li><a href="https://perchance.org/ai-detail" onclick="window.open(this.href, 'PerchancePopUp', 'width=800,height=600,scrollbars=yes,resizable=yes'); return false;">Perchance IA - Generación de Imágenes</a></li></ul></li>
         <li class="menu-item"><button type="button" class="menu-header" aria-expanded="false"><span class="toggle-icon" aria-hidden="true">+</span> Noticias</button><ul class="submenu"><li><a href="#">Noticias de Macross y Robotech</a></li><li><a href="#">Noticias del Mundo Geek</a></li></ul></li>
         <li class="menu-item"><button type="button" class="menu-header" aria-expanded="false"><span class="toggle-icon" aria-hidden="true">+</span> Fanworks</button><ul class="submenu">
@@ -249,7 +271,7 @@ if (cursor) {
 
     // Efecto al pasar sobre elementos interactivos
     const interactiveElements = document.querySelectorAll(
-        'a, button, summary, .menu-header, .nav-links li a, .submenu li a'
+        'a, button, summary, input, select, .menu-header, .nav-links li a, .submenu li a'
     );
 
     interactiveElements.forEach(el => {
@@ -403,5 +425,6 @@ playlistSelect.addEventListener("change", function () {
         }, 350);
     });
 </script>
+    <script src="js/buscador.js" defer></script>
 </body>
 </html>
