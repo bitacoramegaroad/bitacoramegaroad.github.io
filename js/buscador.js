@@ -46,7 +46,7 @@
     const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
     const tags = Object.entries(groups).flatMap(([key, label]) => (item[key] || []).map(tag => `<span class="search-tag"><span>${label}:</span> ${escapeHtml(tag)}</span>`)).join("");
     const body = item.contentHtml || `<p>${escapeHtml(item.summary || "")}</p>`;
-    return `<article class="publication-entry"><p class="post-meta">${escapeHtml((item.type || []).join(" · "))}</p><h2><a href="${escapeHtml(item.url)}"${target}>${escapeHtml(item.title)}</a></h2><div class="post-body-mock publication-body">${body}</div>${tags ? `<div class="search-tags">${tags}</div>` : ""}</article>`;
+    return `<article class="publication-entry"><h2><a href="${escapeHtml(item.url)}"${target}>${escapeHtml(item.title)}</a></h2><div class="post-body-mock publication-body document-content">${body}</div>${tags ? `<div class="search-tags">${tags}</div>` : ""}</article>`;
   }
   function render() {
     const query = normalize(input.value).split(/\s+/).filter(Boolean);
