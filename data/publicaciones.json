@@ -101,7 +101,8 @@
   },
   {
     "title": "El respeto hacia el arte y los artistas",
-    "url": "https://github.com/bitacoramegaroad/Archivos-del-Megaroad/blob/main/la-importancia-del-arte.html",
+    "id": "el-respeto-hacia-el-arte-y-los-artistas",
+    "url": "nota.html?id=el-respeto-hacia-el-arte-y-los-artistas",
     "type": [
       "Informe"
     ],
