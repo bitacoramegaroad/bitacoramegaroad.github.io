@@ -61,5 +61,66 @@
     "genres": [],
     "formats": [],
     "menuTags": []
+  },
+  {
+    "title": "La importancia de la escritura y el respeto hacia ella",
+    "url": "https://github.com/bitacoramegaroad/Archivos-del-Megaroad/blob/main/la-importancia-de-la-escritura.html",
+    "type": [
+      "Análisis"
+    ],
+    "works": [
+      "Macross",
+      "Robotech",
+      "Chernobyl",
+      "Ven y Mira",
+      "The Last of Us",
+      "El Eternauta",
+      "Vampiro: La Mascarada"
+    ],
+    "genres": [
+      "Drama",
+      "Bélico",
+      "Ciencia ficción"
+    ],
+    "formats": [
+      "Juego de rol",
+      "Serie de TV",
+      "Película",
+      "Música",
+      "Artes visuales",
+      "Danza"
+    ],
+    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/la-importancia-de-la-escritura.html",
+    "summary": "Una reflexión sobre la escritura, la construcción de personajes y el lugar de la narración en distintas formas de arte.",
+    "menuTags": [
+      "Bitácoras/Análisis"
+    ],
+    "publishedAt": "2026-10-11T23:06:38-03:00"
+  },
+  {
+    "title": "El respeto hacia el arte y los artistas",
+    "url": "https://github.com/bitacoramegaroad/Archivos-del-Megaroad/blob/main/la-importancia-del-arte.html",
+    "type": [
+      "Informe"
+    ],
+    "works": [
+      "Macross",
+      "Robotech",
+      "Star Wars",
+      "Candy Candy"
+    ],
+    "genres": [],
+    "formats": [
+      "Fanart",
+      "Imagen digital",
+      "Meme",
+      "Comisión artística"
+    ],
+    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/la-importancia-del-arte.html",
+    "summary": "Una reflexión sobre el respeto hacia el arte, el fanart, la IA, la tecnología y el trabajo de los artistas.",
+    "menuTags": [
+      "Bitácoras/Informes"
+    ],
+    "publishedAt": "2026-10-12"
   }
 ]
