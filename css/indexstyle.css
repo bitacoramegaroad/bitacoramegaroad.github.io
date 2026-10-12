@@ -41,7 +41,7 @@ body {
        IMAGEN DE FONDO FIJA:
        ⚠️ Recuerda verificar el nombre y extensión exacta de tu imagen en la carpeta 'img'
     */
-    background-image: url('../img/Galaxia.webp'); 
+    background-image: url('../img/Galaxia.jpg'); 
     background-color: var(--mr-bg); /* Fondo de emergencia por si la imagen tarda en cargar */
     background-repeat: no-repeat;
     background-size: cover;       /* Cubre toda la pantalla sin deformarse */
@@ -909,12 +909,14 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 .document-page-body .nav-bottom ul { flex-wrap: wrap; gap: 12px; }
 .document-page-body .nav-bottom a { min-height: 44px; }
 .page-site-nav {
-    position: sticky;
-    top: 0;
-    z-index: 30;
-    background: rgba(5, 8, 11, 0.94);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(var(--mr-accent-rgb), 0.2);
+    /* En las páginas documentales conserva el mismo flujo visual que en Inicio. */
+    position: static;
+    width: min(1400px, 95vw);
+    margin: 0 auto;
+    padding: 3vh 0 1vh;
+    background: transparent;
+    backdrop-filter: none;
+    border: 0;
 }
 .document-site-layout {
     display: grid;
