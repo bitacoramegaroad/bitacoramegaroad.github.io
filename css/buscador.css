@@ -60,6 +60,38 @@
 .featured-publication-preview em { color: #e0e5e8; }
 .featured-publication-more { color: #d2b447; font: 12px var(--mr-font-display); text-decoration: none; }
 .featured-publication-more:hover { color: #ffe27a; text-shadow: 0 0 8px rgba(255, 204, 51, 0.35); }
+.note-share { margin-top: 22px; }
+.note-share-toggle,
+.note-share-options a,
+.note-share-options button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 9px 13px;
+  border: 1px solid rgba(var(--mr-accent-rgb), 0.55);
+  background: rgba(8, 14, 19, 0.92);
+  color: #c6cdd2;
+  font: 12px var(--mr-font-display);
+  text-decoration: none;
+  cursor: pointer;
+}
+.note-share-toggle img { display: block; width: 34px; height: 34px; }
+.note-share-toggle:hover,
+.note-share-options a:hover,
+.note-share-options button:hover,
+.note-share-toggle:focus-visible,
+.note-share-options a:focus-visible,
+.note-share-options button:focus-visible {
+  border-color: #8df5ff;
+  color: #efffff;
+  box-shadow: 0 0 12px rgba(var(--mr-accent-rgb), 0.24);
+  outline: none;
+}
+.note-share-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.note-share-options[hidden] { display: none; }
+.note-share-status { min-height: 1.4em; margin: 8px 0 0; color: var(--mr-accent); font-size: 12px; }
 .publication-card {
   position: relative;
   isolation: isolate;
