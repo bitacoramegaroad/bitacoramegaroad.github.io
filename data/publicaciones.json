@@ -7,7 +7,8 @@
     ],
     "works": [],
     "genres": [],
-    "formats": []
+    "formats": [],
+    "menuTags": []
   },
   {
     "title": "Nuestra trayectoria",
@@ -17,7 +18,8 @@
     ],
     "works": [],
     "genres": [],
-    "formats": []
+    "formats": [],
+    "menuTags": []
   },
   {
     "title": "Descargo legal",
@@ -27,7 +29,8 @@
     ],
     "works": [],
     "genres": [],
-    "formats": []
+    "formats": [],
+    "menuTags": []
   },
   {
     "title": "Guía básica de conceptos artísticos",
@@ -47,6 +50,15 @@
       "Drama radiofónico"
     ],
     "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/guia-conceptos-artisticos.html",
-    "summary": "Conceptos artísticos, formatos, tropos, clichés, gusto, calidad y hamparte."
+    "summary": "Conceptos artísticos, formatos, tropos, clichés, gusto, calidad y hamparte.",
+    "menuTags": [
+      "Bitácoras/Informes",
+      "Manganime/OVAS y ONAS",
+      "Manganime/Películas",
+      "Manganime/Series de Anime",
+      "Manganime/Mangas",
+      "Cine y TV/Cine",
+      "Cine y TV/Series de TV"
+    ]
   }
 ]
