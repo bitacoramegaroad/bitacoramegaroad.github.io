@@ -1,5 +1,35 @@
 [
   {
+    "title": "Guía básica de conceptos artísticos",
+    "url": "https://github.com/bitacoramegaroad/Archivos-del-Megaroad/blob/main/guia-conceptos-artisticos.html",
+    "type": [
+      "Informe"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": [
+      "Serie de TV",
+      "OVA",
+      "ONA",
+      "Película",
+      "Novela ligera",
+      "Manga",
+      "Drama radiofónico"
+    ],
+    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/guia-conceptos-artisticos.html",
+    "summary": "Conceptos artísticos, formatos, tropos, clichés, gusto, calidad y hamparte.",
+    "menuTags": [
+      "Bitácoras/Informes",
+      "Manganime/OVAS y ONAS",
+      "Manganime/Películas",
+      "Manganime/Series de Anime",
+      "Manganime/Mangas",
+      "Cine y TV/Cine",
+      "Cine y TV/Series de TV"
+    ],
+    "publishedAt": "2026-10-11"
+  },
+  {
     "title": "Quiénes somos",
     "url": "quienes-somos.html",
     "type": [
@@ -31,34 +61,5 @@
     "genres": [],
     "formats": [],
     "menuTags": []
-  },
-  {
-    "title": "Guía básica de conceptos artísticos",
-    "url": "https://github.com/bitacoramegaroad/Archivos-del-Megaroad/blob/main/guia-conceptos-artisticos.html",
-    "type": [
-      "Informe"
-    ],
-    "works": [],
-    "genres": [],
-    "formats": [
-      "Serie de TV",
-      "OVA",
-      "ONA",
-      "Película",
-      "Novela ligera",
-      "Manga",
-      "Drama radiofónico"
-    ],
-    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/guia-conceptos-artisticos.html",
-    "summary": "Conceptos artísticos, formatos, tropos, clichés, gusto, calidad y hamparte.",
-    "menuTags": [
-      "Bitácoras/Informes",
-      "Manganime/OVAS y ONAS",
-      "Manganime/Películas",
-      "Manganime/Series de Anime",
-      "Manganime/Mangas",
-      "Cine y TV/Cine",
-      "Cine y TV/Series de TV"
-    ]
   }
 ]
