@@ -25,3 +25,7 @@
 .search-empty { margin: 6px 0; padding: 9px 12px; color: var(--mr-text-soft); background: rgba(4, 9, 14, .85); font-size: 13px; }
 @media (max-width: 720px) { .site-search .search-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .site-search { margin-top: 0; } .site-search-form button { min-width: 72px; padding: 0 9px; } .site-search .search-filters { grid-template-columns: 1fr 1fr; } }
+
+.search-status-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.search-clear { padding: 3px 7px; color: var(--mr-accent); background: transparent; border: 1px solid rgba(var(--mr-accent-rgb), .4); border-radius: 2px; font: 10px var(--mr-font-body); }
+.search-clear[hidden] { display: none; }
