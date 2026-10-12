@@ -44,7 +44,7 @@
   function renderPublication(item) {
     const isExternal = /^https?:\/\//.test(item.url);
     const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
-    const tags = Object.entries(groups).flatMap(([key, label]) => (item[key] || []).map(tag => `<span class="search-tag"><span>${label}:</span> ${escapeHtml(tag)}</span>`)).join("");
+    const tags = Object.entries(groups).filter(([key]) => key !== "type").flatMap(([key, label]) => (item[key] || []).map(tag => `<span class="search-tag"><span>${label}:</span> ${escapeHtml(tag)}</span>`)).join("");
     const body = item.contentHtml || `<p>${escapeHtml(item.summary || "")}</p>`;
     return `<article class="publication-entry"><h2><a href="${escapeHtml(item.url)}"${target}>${escapeHtml(item.title)}</a></h2><div class="post-body-mock publication-body document-content">${body}</div>${tags ? `<div class="search-tags">${tags}</div>` : ""}</article>`;
   }
@@ -101,6 +101,7 @@
           const content = source.querySelector(".document-content") || source.querySelector("main") || source.body;
           item.text = [...content.querySelectorAll("h1, h2, h3, h4, p, li, blockquote")].map(node => node.textContent).join(" ").replace(/\s+/g, " ").trim();
           const displayContent = content.cloneNode(true);
+          displayContent.querySelectorAll(".article-tags, .document-kicker").forEach(node => node.remove());
           const firstHeading = displayContent.querySelector("h1");
           if (firstHeading && normalize(firstHeading.textContent) === normalize(item.title)) firstHeading.remove();
           item.contentHtml = safeContentHtml(displayContent.innerHTML, contentUrl);
