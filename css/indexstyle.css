@@ -1205,3 +1205,50 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     image-rendering: auto;
 }
 
+
+/* Disuasión de copia de texto e imágenes */
+body.copy-protection-active,
+body.copy-protection-active * {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
+}
+
+body.copy-protection-active input,
+body.copy-protection-active textarea,
+body.copy-protection-active select,
+body.copy-protection-active [contenteditable="true"],
+body.copy-protection-active [contenteditable="true"] * {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  user-select: text !important;
+}
+
+body.copy-protection-active img,
+body.copy-protection-active picture,
+body.copy-protection-active canvas {
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+#content-copy-warning {
+  position: fixed;
+  z-index: 2147483647;
+  top: 50%;
+  left: 50%;
+  width: min(320px, 90vw);
+  max-height: 85vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+#content-copy-warning[hidden] { display: none; }
+
+#content-copy-warning img {
+  display: block;
+  width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  margin: 0 auto;
+}
