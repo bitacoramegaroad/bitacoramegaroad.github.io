@@ -312,35 +312,35 @@ body {
 
 .contact-brand {
     display: block;
-    width: min(150px, 75%);
-    height: 120px;
+    width: min(180px, 100%);
+    height: 58px;
     object-fit: contain;
-    margin: 0 auto 12px;
+    margin: 0 auto 8px;
 }
-.contact-intro { margin: 0 0 14px; color: #aeb9c1; font-size: 13px; line-height: 1.55; }
-.sidebar-contact-form { display: grid; gap: 8px; }
-.sidebar-contact-form label { margin-top: 3px; color: #c2ccd2; font-size: 12px; }
+.sidebar-contact { padding: 14px; }
+.sidebar-contact-form { display: grid; gap: 5px; }
+.sidebar-contact-form label { margin-top: 2px; color: #c2ccd2; font-size: 12px; }
 .sidebar-contact-form input,
 .sidebar-contact-form select,
 .sidebar-contact-form textarea {
     box-sizing: border-box;
     width: 100%;
     min-width: 0;
-    padding: 9px 10px;
+    padding: 7px 9px;
     border: 1px solid rgba(var(--mr-accent-rgb), .42);
     border-radius: 2px;
     background: #080e13;
     color: var(--mr-text-soft);
     font: 13px var(--mr-font-body);
 }
-.sidebar-contact-form textarea { min-height: 110px; resize: vertical; line-height: 1.5; }
+.sidebar-contact-form textarea { min-height: 72px; resize: vertical; line-height: 1.45; }
 .sidebar-contact-form input:focus,
 .sidebar-contact-form select:focus,
 .sidebar-contact-form textarea:focus { outline: 1px solid var(--mr-accent); box-shadow: 0 0 8px rgba(var(--mr-accent-rgb), .2); }
 .sidebar-contact-form button {
-    min-height: 40px;
-    margin-top: 5px;
-    padding: 9px 12px;
+    min-height: 36px;
+    margin-top: 4px;
+    padding: 7px 10px;
     border: 1px solid var(--mr-accent);
     border-radius: 2px;
     background: rgba(var(--mr-accent-rgb), .1);
