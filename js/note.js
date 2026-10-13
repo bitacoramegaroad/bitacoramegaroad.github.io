@@ -49,7 +49,11 @@
       document.title = `${articleTitle} | La Bitácora del Megaroad`;
       const description = source.querySelector('meta[name="description"]')?.content;
       if (description) document.querySelector('meta[name="description"]').content = description;
-      content.innerHTML = sanitize(sourceContent.innerHTML, item.contentUrl);
+      const articleBody = sourceContent.cloneNode(true);
+      articleBody.querySelectorAll("h1").forEach(node => {
+        if (node.textContent.trim() === articleTitle) node.remove();
+      });
+      content.innerHTML = sanitize(articleBody.innerHTML, item.contentUrl);
     } catch (error) {
       title.textContent = "Publicación no disponible";
       status.textContent = error.message || "No se pudo cargar la publicación.";
