@@ -125,5 +125,26 @@
       "Bitácoras/Informes"
     ],
     "publishedAt": "2026-10-12"
+  },
+  {
+    "title": "Macross Shooting Insight",
+    "id": "macross-shooting-insight",
+    "url": "nota.html?id=macross-shooting-insight",
+    "type": [
+      "Crítica"
+    ],
+    "works": [
+      "Macross"
+    ],
+    "genres": [],
+    "formats": [
+      "Videojuego"
+    ],
+    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/macross-shooting-insight.html",
+    "summary": "Una crítica a Macross Shooting Insight centrada en su lanzamiento, apartado visual, controles, jugabilidad y duración.",
+    "menuTags": [
+      "Bitácoras/Críticas",
+      "Juegos/Análisis Jugabilísticos"
+    ]
   }
 ]
