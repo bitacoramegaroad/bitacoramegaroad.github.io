@@ -310,6 +310,48 @@ body {
 	text-align: center;
 }
 
+.contact-brand {
+    display: block;
+    width: min(150px, 75%);
+    height: 120px;
+    object-fit: contain;
+    margin: 0 auto 12px;
+}
+.contact-intro { margin: 0 0 14px; color: #aeb9c1; font-size: 13px; line-height: 1.55; }
+.sidebar-contact-form { display: grid; gap: 8px; }
+.sidebar-contact-form label { margin-top: 3px; color: #c2ccd2; font-size: 12px; }
+.sidebar-contact-form input,
+.sidebar-contact-form select,
+.sidebar-contact-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 9px 10px;
+    border: 1px solid rgba(var(--mr-accent-rgb), .42);
+    border-radius: 2px;
+    background: #080e13;
+    color: var(--mr-text-soft);
+    font: 13px var(--mr-font-body);
+}
+.sidebar-contact-form textarea { min-height: 110px; resize: vertical; line-height: 1.5; }
+.sidebar-contact-form input:focus,
+.sidebar-contact-form select:focus,
+.sidebar-contact-form textarea:focus { outline: 1px solid var(--mr-accent); box-shadow: 0 0 8px rgba(var(--mr-accent-rgb), .2); }
+.sidebar-contact-form button {
+    min-height: 40px;
+    margin-top: 5px;
+    padding: 9px 12px;
+    border: 1px solid var(--mr-accent);
+    border-radius: 2px;
+    background: rgba(var(--mr-accent-rgb), .1);
+    color: var(--mr-accent);
+    font: 12px var(--mr-font-display);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.sidebar-contact-form button:hover,
+.sidebar-contact-form button:focus-visible { background: rgba(var(--mr-accent-rgb), .2); box-shadow: 0 0 10px rgba(var(--mr-accent-rgb), .25); }
+
 /* ==========================================
    PIE DE PÁGINA (Footer)
    ========================================== */
