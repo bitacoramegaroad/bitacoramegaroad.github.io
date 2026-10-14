@@ -6,6 +6,7 @@
     { id: "james-bond", file: "data/radio/james-bond.json" },
     { id: "macross", file: "data/radio/macross.json" },
     { id: "robotech", file: "data/radio/robotech.json" },
+    { id: "stalker", file: "data/radio/stalker.json" },
     { id: "vision-of-escaflowne", file: "data/radio/vision-of-escaflowne.json" }
   ];
 
@@ -80,7 +81,7 @@
     const updatePlaylists = (preferredId = "") => {
       const catalog = catalogs.find((item) => item.id === franchiseSelect.value);
       playlistSelect.replaceChildren();
-      const playlists = (catalog?.playlists || []).map((item) => ({ title: item.titulo, id: playlistIdFromUrl(item.url) })).filter((item) => item.title && item.id);
+      const playlists = (catalog?.playlists || []).map((item) => ({ title: item.titulo, id: playlistIdFromUrl(item.link) })).filter((item) => item.title && item.id);
       if (!playlists.length) {
         playlistSelect.add(new Option("Todavía no hay playlists", ""));
         playlistSelect.disabled = true;
