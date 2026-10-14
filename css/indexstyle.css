@@ -623,6 +623,7 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     box-shadow: 0 0 7px var(--mr-accent);
 }
 
+#megaroad-radio #franchise-select,
 #megaroad-radio #playlist-select {
     display: block;
     width: 100%;
@@ -637,14 +638,24 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     cursor: pointer;
 }
 
+#megaroad-radio #franchise-select:focus,
 #megaroad-radio #playlist-select:focus {
     outline: 1px solid var(--mr-accent);
     border-color: var(--mr-accent);
 }
 
+#megaroad-radio #franchise-select option,
 #megaroad-radio #playlist-select option {
     background-color: #0b151d;
     color: #d8e5ed;
+}
+
+.radio-select-label {
+    display: block;
+    margin: 0 0 5px;
+    color: #7d9aa7;
+    font-size: 9px;
+    letter-spacing: .5px;
 }
 
 #megaroad-radio .radio-video {
@@ -774,6 +785,14 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 }
 
 /* Ocultar la pantalla de video de MEGARОAD RADIO */
+.radio-select-label {
+    display: block;
+    margin: 0 0 5px;
+    color: #7d9aa7;
+    font-size: 9px;
+    letter-spacing: .5px;
+}
+
 #megaroad-radio .radio-video {
     display: none;
 }
@@ -1181,6 +1200,7 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 }
 
 #megaroad-radio .radio-title { margin: 0; }
+#megaroad-radio #franchise-select,
 #megaroad-radio #playlist-select { margin-bottom: 8px; padding: 8px; }
 #megaroad-radio #track-info { gap: 2px; margin-bottom: 7px; }
 #megaroad-radio #time-display { margin-bottom: 8px; }
@@ -1207,23 +1227,6 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
 
 
 /* Disuasión de copia de texto e imágenes */
-body.copy-protection-active,
-body.copy-protection-active * {
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  user-select: none !important;
-}
-
-body.copy-protection-active input,
-body.copy-protection-active textarea,
-body.copy-protection-active select,
-body.copy-protection-active [contenteditable="true"],
-body.copy-protection-active [contenteditable="true"] * {
-  -webkit-user-select: text !important;
-  -moz-user-select: text !important;
-  user-select: text !important;
-}
-
 body.copy-protection-active img,
 body.copy-protection-active picture,
 body.copy-protection-active canvas {
