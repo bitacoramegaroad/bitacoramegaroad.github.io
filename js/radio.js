@@ -22,41 +22,90 @@
     const progress = radio.querySelector("#progress-container");
     const time = radio.querySelector("#time-display");
     const setOption = (select, value, label) => select.replaceChildren(new Option(label, value));
-    const playlistIdFromUrl = (value) => {
+    const playlistIdFromLink = (value) => {
       try {
         const url = new URL(value);
         if (url.protocol !== "https:" || !["youtube.com", "www.youtube.com", "m.youtube.com"].includes(url.hostname.toLowerCase()) || url.pathname !== "/playlist") return "";
         return url.searchParams.get("list") || "";
       } catch { return ""; }
     };
-    let player;
+
+    let player = null;
+    let apiReady = false;
     let ready = false;
     let currentPlaylist = "";
-    let timer;
+    let timer = null;
 
     const formatTime = (value) => `${Math.floor((value || 0) / 60)}:${String(Math.floor((value || 0) % 60)).padStart(2, "0")}`;
+    const resetProgress = () => {
+      progressBar.style.width = "0%";
+      time.textContent = "0:00 / 0:00";
+    };
     const update = () => {
-      if (!ready) return;
+      if (!ready || !player) return;
       const duration = player.getDuration() || 0;
       const current = player.getCurrentTime() || 0;
       progressBar.style.width = `${duration ? current / duration * 100 : 0}%`;
       time.textContent = `${formatTime(current)} / ${formatTime(duration)}`;
     };
 
+    const createPlayer = () => {
+      if (!apiReady || !currentPlaylist) return;
+      ready = false;
+      if (player) {
+        const previousPlayer = player;
+        player = null;
+        previousPlayer.destroy();
+      }
+
+      const video = radio.querySelector(".radio-video");
+      video.replaceChildren();
+      const target = document.createElement("div");
+      target.id = "youtube-player";
+      video.appendChild(target);
+
+      const instance = new YT.Player(target, {
+        width: "100%", height: "100%",
+        playerVars: { listType: "playlist", list: currentPlaylist, autoplay: 0, controls: 1, rel: 0 },
+        events: {
+          onReady: () => {
+            if (player !== instance) return;
+            ready = true;
+            trackTitle.textContent = "Lista de reproducción cargada";
+            if (!timer) timer = setInterval(update, 1000);
+            update();
+          },
+          onStateChange: (event) => {
+            if (player !== instance) return;
+            if (event.data === YT.PlayerState.PLAYING) trackTitle.textContent = player.getVideoData().title || "Reproduciendo";
+            else if (event.data === YT.PlayerState.PAUSED) trackTitle.textContent = "En pausa";
+            else if (event.data === YT.PlayerState.ENDED) trackTitle.textContent = "Canción finalizada";
+            update();
+          },
+          onError: () => {
+            if (player === instance) trackTitle.textContent = "No se pudo cargar la playlist. Probá otra.";
+          }
+        }
+      });
+      player = instance;
+    };
+
     const loadPlaylist = (playlistId) => {
       currentPlaylist = playlistId || "";
-      if (!ready) return;
+      ready = false;
+      resetProgress();
       if (!currentPlaylist) {
-        player.stopVideo();
-        trackTitle.textContent = "Elegí una playlist para reproducir";
-        progressBar.style.width = "0%";
-        time.textContent = "0:00 / 0:00";
+        if (player) {
+          const previousPlayer = player;
+          player = null;
+          previousPlayer.destroy();
+        }
+        radio.querySelector(".radio-video").replaceChildren();
+        trackTitle.textContent = "Todavía no hay playlists para esta franquicia";
         return;
       }
-      player.loadPlaylist({ listType: "playlist", list: currentPlaylist, index: 0 });
       trackTitle.textContent = "Cargando lista...";
-      progressBar.style.width = "0%";
-      time.textContent = "0:00 / 0:00";
+      createPlayer();
     };
 
     let catalogs;
@@ -78,65 +127,51 @@
     }
 
     catalogs.forEach((catalog) => franchiseSelect.add(new Option(catalog.title, catalog.id)));
-    const updatePlaylists = (preferredId = "") => {
+    const updatePlaylists = () => {
       const catalog = catalogs.find((item) => item.id === franchiseSelect.value);
+      const playlists = (catalog?.playlists || [])
+        .map((item) => ({ title: item.titulo, id: playlistIdFromLink(item.link) }))
+        .filter((item) => item.title && item.id);
       playlistSelect.replaceChildren();
-      const playlists = (catalog?.playlists || []).map((item) => ({ title: item.titulo, id: playlistIdFromUrl(item.link) })).filter((item) => item.title && item.id);
       if (!playlists.length) {
         playlistSelect.add(new Option("Todavía no hay playlists", ""));
         playlistSelect.disabled = true;
-        trackTitle.textContent = "Todavía no hay playlists para esta franquicia";
         loadPlaylist("");
         return;
       }
       playlists.forEach((playlist) => playlistSelect.add(new Option(playlist.title, playlist.id)));
       playlistSelect.disabled = false;
-      playlistSelect.value = playlists.some((item) => item.id === preferredId) ? preferredId : playlists[0].id;
-      trackTitle.textContent = "Elegí una playlist para reproducir";
+      playlistSelect.value = playlists[0].id;
       loadPlaylist(playlistSelect.value);
     };
 
     franchiseSelect.value = catalogs[0]?.id || "";
     updatePlaylists();
-    franchiseSelect.addEventListener("change", () => updatePlaylists());
+    franchiseSelect.addEventListener("change", updatePlaylists);
     playlistSelect.addEventListener("change", () => loadPlaylist(playlistSelect.value));
 
     window.onYouTubeIframeAPIReady = () => {
-      player = new YT.Player(radio.querySelector("#youtube-player"), {
-        width: "100%", height: "100%",
-        playerVars: { listType: "playlist", list: currentPlaylist, autoplay: 0, controls: 1, rel: 0 },
-        events: {
-          onReady: () => {
-            ready = true;
-            if (currentPlaylist) trackTitle.textContent = "Lista de reproducción cargada";
-            else trackTitle.textContent = "Todavía no hay playlists para esta franquicia";
-            timer = setInterval(update, 1000);
-          },
-          onStateChange: (event) => {
-            if (event.data === YT.PlayerState.PLAYING) trackTitle.textContent = player.getVideoData().title || "Reproduciendo";
-            else if (event.data === YT.PlayerState.PAUSED) trackTitle.textContent = "En pausa";
-            else if (event.data === YT.PlayerState.ENDED) trackTitle.textContent = "Canción finalizada";
-            update();
-          },
-          onError: () => { trackTitle.textContent = "No se pudo cargar la playlist. Probá otra."; }
-        }
-      });
+      apiReady = true;
+      createPlayer();
     };
     const api = document.createElement("script");
     api.src = "https://www.youtube.com/iframe_api";
     document.head.append(api);
 
     [["playBtn", "playVideo"], ["pauseBtn", "pauseVideo"], ["stopBtn", "stopVideo"], ["nextBtn", "nextVideo"], ["prevBtn", "previousVideo"]].forEach(([id, method]) => {
-      radio.querySelector(`#${id}`)?.addEventListener("click", () => { if (ready) player[method](); });
+      radio.querySelector(`#${id}`)?.addEventListener("click", () => { if (ready && player) player[method](); });
     });
     progress.addEventListener("click", (event) => {
-      if (!ready) return;
+      if (!ready || !player) return;
       const duration = player.getDuration() || 0;
       const bounds = progress.getBoundingClientRect();
       if (duration && bounds.width) player.seekTo(duration * Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width)), true);
       update();
     });
-    window.addEventListener("pagehide", () => clearInterval(timer), { once: true });
+    window.addEventListener("pagehide", () => {
+      if (timer) clearInterval(timer);
+      if (player) player.destroy();
+    }, { once: true });
   };
   if (document.querySelector("#megaroad-radio")) window.setupMegaroadRadio(document);
 })();
