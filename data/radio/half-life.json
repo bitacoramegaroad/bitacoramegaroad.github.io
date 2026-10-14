@@ -1,4 +1,13 @@
 {
-  "playlists": [],
-  "franquicia": "Half-Life"
+  "franquicia": "HALF LIFE",
+  "playlists": [
+    {
+      "titulo": "Half Life OST",
+      "link": "https://www.youtube.com/playlist?list=PLB61A980FC7A2E45A"
+    },
+	{
+      "titulo": "Half Life 2 OST",
+      "link": "https://www.youtube.com/playlist?list=PLfFIL7A7tB3YmMBfbW0RsjGe1IUypvSNw"
+    }
+  ]
 }

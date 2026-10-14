@@ -1,4 +1,21 @@
 {
   "franquicia": "COWBOY BEBOP",
-  "playlists": []
+  "playlists": [
+    {
+      "titulo": "Ask DNA",
+      "link": "https://www.youtube.com/playlist?list=OLAK5uy_nrnnPRIm4vl_5ruPVkbAz-eVfmWrJ-w_E"
+    },
+	{
+      "titulo": "Future Blues",
+      "link": "https://www.youtube.com/playlist?list=PLdzi0jBksoL9oC2FNlyO0v1PdWgRXYjaG"
+    },
+	{
+      "titulo": "No Disc",
+      "link": "https://www.youtube.com/playlist?list=PLQvL6GLJiX93dwax2fwn14WVbYunWfsbL"
+    },
+	{
+      "titulo": "Blue",
+      "link": "https://www.youtube.com/playlist?list=PL5C9EB5B050C06883"
+    }
+  ]
 }

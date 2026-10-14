@@ -1,0 +1,17 @@
+{
+  "franquicia": "STALKER",
+  "playlists": [
+    {
+      "titulo": "Shadow of Chernobyl",
+      "link": "https://www.youtube.com/playlist?list=PLE8F092CA00AE6649"
+    },
+	{
+      "titulo": "Clear Sky",
+      "link": "https://www.youtube.com/playlist?list=PL5799D2CD7F1F15F0"
+    },
+	{
+      "titulo": "Call of Pripyat",
+      "link": "https://www.youtube.com/playlist?list=PLB5aOKbC0jAQ2BS_0gW8krEXUOG4xjmIS"
+    }
+  ]
+}

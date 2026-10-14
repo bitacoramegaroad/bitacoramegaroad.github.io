@@ -1,4 +1,13 @@
 {
   "franquicia": "GHOST IN THE SHELL",
-  "playlists": []
+  "playlists": [
+    {
+      "titulo": "Stand Alone Complex",
+      "link": "https://www.youtube.com/playlist?list=PLdo5TiaudcWrl5eITYrmubaQd7hQkVBI0"
+    },
+	{
+      "titulo": "Solid State Society",
+      "link": "https://www.youtube.com/playlist?list=PLRWnp1d__6sMlYc5E8CclA4e5CKgPpf-v"
+    }
+  ]
 }

@@ -1,4 +1,9 @@
 {
-  "playlists": [],
-  "franquicia": "James Bond"
+  "franquicia": "JAMES BOND",
+  "playlists": [
+    {
+      "titulo": "Bond, James Bond",
+      "link": "https://www.youtube.com/playlist?list=PLUXUuAu-HEEE"
+    }
+  ]
 }

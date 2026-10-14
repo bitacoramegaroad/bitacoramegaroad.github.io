@@ -1,4 +1,13 @@
 {
-  "playlists": [],
-  "franquicia": "Robotech"
+  "franquicia": "ROBOTECH",
+  "playlists": [
+    {
+      "titulo": "Robotech OST 1",
+      "link": "https://www.youtube.com/playlist?list=PLk83Uk_KUSSfgq1VTkqMJAAZjtQNRNSFW"
+    },
+	{
+      "titulo": "Robotech OST 2",
+      "link": "https://www.youtube.com/playlist?list=PLk83Uk_KUSSctyF_W5WGTc0qNdPF7QAf6"
+    }
+  ]
 }

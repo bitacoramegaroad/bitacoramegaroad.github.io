@@ -2,32 +2,32 @@
   "franquicia": "MACROSS",
   "playlists": [
     {
-      "url": "https://www.youtube.com/playlist?list=PLCAIoIlM9uT8",
-      "titulo": "Macross Zero OST"
+      "titulo": "Macross Zero OST",
+      "link": "https://www.youtube.com/playlist?list=PLCAIoIlM9uT8"
     },
     {
-      "url": "https://www.youtube.com/playlist?list=PLSeiqrimA2o8",
-      "titulo": "SDF Macross Songs"
+      "titulo": "SDF Macross Songs",
+      "link": "https://www.youtube.com/playlist?list=PLSeiqrimA2o8"
     },
     {
-      "url": "https://www.youtube.com/playlist?list=PLWe53-3G-AWiQaVxsZQynmbWEycn-iPWJ",
-      "titulo": "SDF Macross OST"
+      "titulo": "SDF Macross OST",
+      "link": "https://www.youtube.com/playlist?list=PLWe53-3G-AWiQaVxsZQynmbWEycn-iPWJ"
     },
     {
-      "url": "https://www.youtube.com/playlist?list=PLWtsy7pX9eFg",
-      "titulo": "Macross Plus"
+      "titulo": "Macross Plus",
+      "link": "https://www.youtube.com/playlist?list=PLWtsy7pX9eFg"
     },
     {
-      "url": "https://www.youtube.com/playlist?list=PLDVa9jThGlI4",
-      "titulo": "Macross 7"
+      "titulo": "Macross 7",
+      "link": "https://www.youtube.com/playlist?list=PLDVa9jThGlI4"
     },
     {
-      "url": "https://www.youtube.com/playlist?list=PLHbqWHfqQJVgbPaAIOeopYyfuL98h5OBw",
-      "titulo": "Macross Frontier 2059"
+      "titulo": "Macross Frontier 2059",
+      "link": "https://www.youtube.com/playlist?list=PLHbqWHfqQJVgbPaAIOeopYyfuL98h5OBw"
     },
-	{
-      "url": "https://www.youtube.com/playlist?list=PLcxkdXHgIIl4",
-      "titulo": "Macross II"
+    {
+      "titulo": "Macross II",
+      "link": "https://www.youtube.com/playlist?list=PLcxkdXHgIIl4"
     }
   ]
 }
