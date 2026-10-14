@@ -167,15 +167,27 @@
     }, true);
 
     document.addEventListener("contextmenu", event => {
-      if (isProtectedMedia(event.target)) {
-        event.preventDefault();
-        showWarning();
-      }
+      const element = event.target?.nodeType === Node.TEXT_NODE ? event.target.parentElement : event.target;
+      if (!element?.closest?.("#note-content")) return;
+      event.preventDefault();
+      showWarning();
     }, true);
 
     document.addEventListener("keydown", event => {
-      if (isEditable(event.target) || !(event.ctrlKey || event.metaKey) || event.altKey || event.shiftKey) return;
       const key = event.key.toLowerCase();
+      const devToolsShortcut =
+        (event.ctrlKey && event.shiftKey && ["i", "j", "c", "k", "u"].includes(key)) ||
+        (event.metaKey && event.altKey && ["i", "j", "c", "u"].includes(key)) ||
+        ((event.ctrlKey || event.metaKey) && !event.shiftKey && !event.altKey && key === "u");
+
+      if (event.key === "F12" || devToolsShortcut) {
+        event.preventDefault();
+        event.stopPropagation();
+        showWarning();
+        return;
+      }
+
+      if (isEditable(event.target) || !(event.ctrlKey || event.metaKey) || event.altKey || event.shiftKey) return;
       if (!["a", "c", "x"].includes(key)) return;
       event.preventDefault();
       event.stopPropagation();
@@ -218,7 +230,7 @@
       setupCategoryLinks(sidebar);
       setupCursor();
       setupHoverSound();
-      setupRadio(sidebar);
+      window.setupMegaroadRadio?.(sidebar);
     } catch (error) {
       console.error(error);
     }
@@ -289,67 +301,6 @@
       sound.currentTime = 0;
       sound.play().catch(() => {});
     });
-  }
-
-  function setupRadio(sidebar) {
-    const playlistSelect = sidebar.querySelector("#playlist-select");
-    if (!playlistSelect) return;
-    const trackTitle = sidebar.querySelector("#track-title");
-    const progressBar = sidebar.querySelector("#progress-bar");
-    const progress = sidebar.querySelector("#progress-container");
-    const time = sidebar.querySelector("#time-display");
-    let player;
-    let ready = false;
-    let timer;
-
-    const formatTime = (value) => `${Math.floor((value || 0) / 60)}:${String(Math.floor((value || 0) % 60)).padStart(2, "0")}`;
-    const update = () => {
-      if (!ready) return;
-      const duration = player.getDuration() || 0;
-      const current = player.getCurrentTime() || 0;
-      progressBar.style.width = `${duration ? current / duration * 100 : 0}%`;
-      time.textContent = `${formatTime(current)} / ${formatTime(duration)}`;
-    };
-
-    window.onYouTubeIframeAPIReady = () => {
-      player = new YT.Player("youtube-player", {
-        width: "100%", height: "100%",
-        playerVars: { listType: "playlist", list: playlistSelect.value, autoplay: 0, controls: 1, rel: 0 },
-        events: {
-          onReady: () => { ready = true; trackTitle.textContent = "Lista de reproducción cargada"; timer = setInterval(update, 1000); },
-          onStateChange: (event) => {
-            if (event.data === YT.PlayerState.PLAYING) trackTitle.textContent = player.getVideoData().title || "Reproduciendo";
-            else if (event.data === YT.PlayerState.PAUSED) trackTitle.textContent = "En pausa";
-            else if (event.data === YT.PlayerState.ENDED) trackTitle.textContent = "Canción finalizada";
-            update();
-          },
-          onError: () => { trackTitle.textContent = "No se pudo cargar el video. Probá otra lista."; }
-        }
-      });
-    };
-    const api = document.createElement("script");
-    api.src = "https://www.youtube.com/iframe_api";
-    document.head.append(api);
-
-    playlistSelect.addEventListener("change", () => {
-      if (!ready) return;
-      player.stopVideo();
-      player.loadPlaylist({ listType: "playlist", list: playlistSelect.value, index: 0 });
-      trackTitle.textContent = "Cargando lista...";
-      progressBar.style.width = "0%";
-      time.textContent = "0:00 / 0:00";
-    });
-    [["playBtn", "playVideo"], ["pauseBtn", "pauseVideo"], ["stopBtn", "stopVideo"], ["nextBtn", "nextVideo"], ["prevBtn", "previousVideo"]].forEach(([id, method]) => {
-      sidebar.querySelector(`#${id}`)?.addEventListener("click", () => { if (ready) player[method](); });
-    });
-    progress.addEventListener("click", (event) => {
-      if (!ready) return;
-      const duration = player.getDuration() || 0;
-      const bounds = progress.getBoundingClientRect();
-      if (duration && bounds.width) player.seekTo(duration * Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width)), true);
-      update();
-    });
-    window.addEventListener("pagehide", () => clearInterval(timer), { once: true });
   }
 
   loadChrome();
