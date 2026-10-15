@@ -1255,3 +1255,8 @@ body.copy-protection-active canvas {
   object-fit: contain;
   margin: 0 auto;
 }
+
+/* Fuerza el color cian brillante en los contenedores de Twitter */
+#macross-x-feed a.twitter-timeline {
+    color: var(--mr-accent) !important;
+}
