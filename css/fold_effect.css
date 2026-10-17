@@ -1,0 +1,179 @@
+/* ==========================================================================
+   1. CARGA DE FUENTE LOCAL & CONFIGURACIÓN GLOBAL
+   ========================================================================== */
+@font-face {
+  font-family: 'ConthraxSB';
+  src: url('../fonts/conthrax-sb.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'ConthraxSB', monospace;
+}
+
+.viewport-3d {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================================================
+   2. PROCESAMIENTO DE BLOOM Y VELOCIDAD DE ENERGÍA (GPU LAYER)
+   ========================================================================== */
+.canvas-gpu-bloom-chamber {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 1;
+  
+  /* Los drop-shadow leen las coordenadas RGB del canvas e inyectan el resplandor 
+     de Bloom sobre la imagen webp sin degradar el rendimiento */
+  filter: 
+    blur(2.5px) 
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.4))
+    drop-shadow(0 0 25px currentColor)
+    contrast(1.5) 
+    saturate(1.7);
+    
+  mix-blend-mode: screen;
+  will-change: filter;
+  transform: translateZ(0);
+}
+
+#foldCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Centro del Fold (Singularidad fija con alto brillo neón) */
+.singularity-core {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 25px; height: 25px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 25px #ffffff,
+    0 0 55px #00f0ff,
+    0 0 120px rgba(0, 255, 102, 0.6);
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* ==========================================================================
+   3. MAQUETACIÓN DE LA CABINA TÁCTICA FIJADA
+   ========================================================================== */
+.cockpit-container {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 50vh; 
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.cockpit-console {
+  width: 100vw;
+  max-width: 1200px;
+  height: auto;
+  filter: drop-shadow(0px -10px 30px rgba(0, 0, 0, 0.95)); 
+}
+
+.console-digital-hud {
+  filter: drop-shadow(0px 0px 4px rgba(0, 255, 102, 0.8));
+}
+
+.console-digital-hud text, 
+.console-digital-hud path, 
+.console-digital-hud line {
+  animation: hudGlow 2s infinite alternate ease-in-out;
+}
+
+@keyframes hudGlow {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; filter: brightness(1.2); }
+}
+
+/* ==========================================================================
+   MÓDULO DE TEXTOS PERIFÉRICOS DEL HUD
+   ========================================================================== */
+.hud-peripheral-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 8; /* Flota sobre el túnel pero por debajo del cristal físico de la consola */
+  pointer-events: none;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+/* Estructura común para cada bloque de datos tácticos */
+.hud-block {
+  position: absolute;
+  color: rgba(0, 255, 110, 0.85); /* Tono verde esmeralda analógico */
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px rgba(0, 255, 110, 0.6);
+  font-weight: bold;
+}
+
+/* Títulos con línea discontinua de interfaz militar */
+.hud-title {
+  font-size: 13px;
+  color: #ffffff;
+  border-bottom: 1px dashed rgba(0, 255, 110, 0.4);
+  margin-bottom: 8px;
+  padding-bottom: 3px;
+  text-shadow: 0 0 8px rgba(0, 255, 110, 0.8);
+}
+
+/* Anclajes fijos en las esquinas del monitor */
+.block-top-left     { top: 40px; left: 40px; }
+.block-top-right    { top: 40px; right: 40px; text-align: right; }
+.block-bottom-left  { bottom: 42vh; left: 40px; }  /* Elevado para no cruzarse con la cabina inferior */
+.block-bottom-right { bottom: 42vh; right: 40px; text-align: right; }
+
+/* Configuración de la Alerta Roja de la OVA */
+.hud-alert-block {
+  color: rgba(255, 30, 80, 0.9);
+  text-shadow: 0 0 8px rgba(255, 30, 80, 0.8);
+}
+.hud-alert-title {
+  font-size: 13px;
+  color: #ffffff;
+  border-bottom: 1px dashed rgba(255, 30, 80, 0.5);
+  margin-bottom: 8px;
+  padding-bottom: 3px;
+  text-shadow: 0 0 8px rgba(255, 30, 80, 1);
+  animation: alertPulse 0.4s infinite alternate ease-in-out;
+}
+
+/* Animación de parpadeo táctico para alertar presión dimensional */
+.hud-pulse-text {
+  animation: alertPulse 1s infinite alternate ease-in-out;
+}
+
+@keyframes alertPulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
