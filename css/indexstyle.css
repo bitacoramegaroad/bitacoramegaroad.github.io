@@ -496,11 +496,17 @@ body, a, button, .menu-header, .nav-links li a, .submenu li a {
     width: 46px;
     height: 40px;
     pointer-events: none;
-    z-index: 99999;
+    z-index: 2147483647 !important; /* Máxima prioridad en pantalla */
     transform: translate(-50%, -50%);
     transition: width 0.15s ease, height 0.15s ease;
     will-change: transform;
 }
+
+/* Evita interferencias cuando el cursor se muda dentro del diálogo */
+dialog .custom-cursor {
+    position: fixed !important;
+}
+
 
 /* Cuadrado de la esquina */
 .custom-cursor .corner-square {
@@ -1260,3 +1266,153 @@ body.copy-protection-active canvas {
 #macross-x-feed a.twitter-timeline {
     color: var(--mr-accent) !important;
 }
+
+/* ==========================================
+   VENTANA EMERGENTE (POP-UP) DE DONACIONES
+   ========================================== */
+
+/* Fondo oscurecido total que cubre la pantalla */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 7, 10, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 9999; /* Por debajo del cursor, por encima del contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ocultar el contenedor cuando tiene el atributo hidden */
+.modal-overlay[hidden] {
+    display: none !important;
+}
+
+/* Contenedor principal de la ventana modal */
+.modal-donaciones {
+    position: relative;
+    border: 2px solid var(--mr-accent); /* Borde cian brillante */
+    background: 
+        repeating-linear-gradient(0deg, rgba(var(--mr-accent-rgb), 0.015) 0 1px, transparent 1px 4px),
+        linear-gradient(180deg, rgba(8, 20, 28, 0.98) 0%, rgba(5, 12, 18, 0.99) 100%);
+    color: var(--mr-text-soft);
+    padding: 24px;
+    max-width: 520px;
+    width: 90vw;
+    border-radius: 4px;
+    /* Bisel sci-fi en la esquina inferior derecha */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+    box-shadow: 
+        0 0 25px rgba(var(--mr-accent-rgb), 0.25),
+        inset 0 0 15px rgba(var(--mr-accent-rgb), 0.05);
+}
+
+/* Efecto de líneas de barrido CRT para el pop-up */
+.modal-donaciones::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, transparent 0 2px, rgba(210, 250, 255, 0.08) 3px, transparent 4px);
+    opacity: 0.25;
+    animation: crt-flicker 5s steps(1, end) infinite;
+}
+
+/* Forzar que los elementos internos queden sobre el fondo CRT */
+.modal-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Título de la ventana (Estilo cabina HUD) */
+.modal-title {
+    font-family: var(--mr-font-display);
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(var(--mr-accent-rgb), 0.3);
+    padding-bottom: 8px;
+    margin: 0;
+    text-shadow: 0 0 6px rgba(var(--mr-accent-rgb), 0.4);
+}
+
+/* Cuerpo principal del texto */
+.modal-text-main {
+    font-family: var(--mr-font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0eaf0;
+}
+
+/* Dirección de correo/Paypal destacada en naranja cálido de alerta */
+.paypal-address {
+    display: block;
+    font-family: var(--mr-font-display);
+    color: var(--mr-accent-warm);
+    font-size: 12px;
+    text-align: center;
+    background: rgba(var(--mr-accent-warm-rgb), 0.08);
+    border: 1px dashed rgba(var(--mr-accent-warm-rgb), 0.4);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 5px rgba(var(--mr-accent-warm-rgb), 0.3);
+    word-break: break-all;
+    text-decoration: none; /* NUEVO: Quita el subrayado clásico de los links */
+    cursor: none !important; /* NUEVO: Oculta el puntero nativo para el cursor HUD */
+}
+
+
+/* Texto legal de descargo (Más pequeño e informativo) */
+.modal-text-legal {
+    font-family: var(--mr-font-body);
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--mr-muted);
+    border-top: 1px solid #1f2326;
+    padding-top: 12px;
+}
+
+/* Contenedor del botón de acción */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+/* Botón de cierre con estética idéntica a la barra de contacto del blog */
+.modal-actions button {
+    appearance: none;
+    min-height: 34px;
+    padding: 6px 16px;
+    border: 1px solid var(--mr-accent);
+    border-radius: 2px;
+    background: rgba(var(--mr-accent-rgb), 0.08);
+    color: var(--mr-accent);
+    font-family: var(--mr-font-display);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.modal-actions button:hover {
+    background: rgba(var(--mr-accent-rgb), 0.2);
+    box-shadow: 0 0 10px rgba(var(--mr-accent-rgb), 0.3);
+}
+
+/* Asegurar que el cursor personalizado de la página tenga prioridad total sobre el overlay */
+.custom-cursor {
+    z-index: 100000 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modal-donaciones::after { animation: none; }
+}
+
