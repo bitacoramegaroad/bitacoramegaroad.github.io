@@ -12,6 +12,7 @@
                 </li>
                 <li><a href="descargo-legal.html"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Descargo Legal</span></a></li>
                 <li><a href="reproductor.html"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Ver Series Online</span></a></li>
+                <li><a href="#contacto"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Contacto</span></a></li>
                 <li><a href="#"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Botón de FOLD</span></a></li>
                 <li><a href="https://ikaruss1177.github.io/Ikaruss/"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Ikaruss Retro Gaming</span></a></li>
             </ul>
@@ -82,8 +83,11 @@
     <li><a href="https://www.facebook.com/LaBitacoradelMegaroad"><span>La Bitácora del Megaroad — Facebook</span></a></li>
     <li><a href="https://marciano77.blogspot.com/"><span>El Hombre de Marte</span></a></li>
     <li><a href="http://www.galleryariana.com/"><span>Gallery Ariana</span></a></li></ul></div>
-    <div class="sidebar-box sidebar-contact" id="contacto">
-        <h3>Contacto</h3>
+<dialog class="contact-modal" id="contact-modal" aria-labelledby="contact-modal-title">
+        <div class="contact-modal-header">
+            <h3 id="contact-modal-title">Contacto</h3>
+            <button type="button" class="contact-modal-close" data-close-contact aria-label="Cerrar formulario de contacto">×</button>
+        </div>
         <img class="contact-brand" src="img/megaroad.svg" alt="Megaroad">
         <p class="contact-intro">Enviá una consulta, sugerencia o reclamo a la tripulación.</p>
         <form class="sidebar-contact-form" action="https://formspree.io/f/myekdvaw" method="POST">
@@ -101,6 +105,6 @@
             <textarea id="contact-message" name="message" rows="5" required></textarea>
             <button type="submit">Enviar mensaje</button>
         </form>
-    </div>
+    </dialog>
 </aside>
 
