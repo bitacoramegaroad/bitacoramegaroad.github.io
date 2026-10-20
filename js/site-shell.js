@@ -1,4 +1,24 @@
 (() => {
+  document.addEventListener("click", (event) => {
+    const contactLink = event.target.closest?.('.main-nav a[href="#contacto"]');
+    const dialog = document.querySelector("#contact-modal");
+    if (contactLink && dialog) {
+      event.preventDefault();
+      if (!dialog.open) dialog.showModal();
+      dialog.querySelector("input")?.focus();
+      return;
+    }
+    if (!dialog?.open) return;
+    if (event.target.closest?.("[data-close-contact]")) {
+      dialog.close();
+      return;
+    }
+    if (event.target === dialog) {
+      const bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+    }
+  });
+
   setupContentProtection();
 
   function setupContentProtection() {
