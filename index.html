@@ -59,7 +59,7 @@
                 </li>
                 <li><a href="descargo-legal.html"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Descargo Legal</span></a></li>
                 <li><a href="reproductor.html"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Ver Series Online</span></a></li>
-                <li><a href="#"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Contacto</span></a></li>
+                <li><a href="#contacto"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Contacto</span></a></li>
                 <li><a href="https://ikaruss1177.github.io/Ikaruss/"><svg class="nav-insignia" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 3 C49 27 41 47 15 70 C32 70 44 79 50 97 C56 79 68 70 85 70 C59 47 51 27 50 3 Z" /><path class="nav-insignia-gap" d="M50 3 V97" /></svg><span>Emulador</span></a></li>
             </ul>
         </nav>
@@ -71,8 +71,6 @@
                 <label class="visually-hidden" for="search-query">Buscar en títulos y textos</label>
                 <input id="search-query" type="search" placeholder="Buscar en la Bitácora…" autocomplete="off">
                 <button type="submit" id="btn-buscar">Buscar</button>
-                <!-- NUEVO BOTÓN DE DONACIONES -->
-                <button type="button" id="btn-donaciones">Colaboraciónes</button>
             </form>
             <details class="site-search-filters">
                 <summary>Filtros</summary>
@@ -101,6 +99,7 @@
             <!-- Columna Derecha (Barra Lateral / Widgets) -->
             <aside class="sidebar">
                 <div class="sidebar-box">
+                    <button type="button" id="btn-donaciones" class="sidebar-donation-button">Colaboraciones</button>
 					<!-- MEGARОAD RADIO -->
 <div id="megaroad-radio">
     <div class="radio-heading">        <span class="radio-icon">◉</span>        <h3 class="radio-title">MEGARОAD RADIO</h3>    </div>
@@ -214,9 +213,13 @@
     <li><a href="https://www.facebook.com/LaBitacoradelMegaroad"><span>La Bitácora del Megaroad — Facebook</span></a></li>
     <li><a href="https://marciano77.blogspot.com/"><span>El Hombre de Marte</span></a></li>
     <li><a href="http://www.galleryariana.com/"><span>Gallery Ariana</span></a></li></ul></div>
-    <div class="sidebar-box sidebar-contact" id="contacto">
-        <h3>Contacto</h3>
+<dialog class="contact-modal" id="contact-modal" aria-labelledby="contact-modal-title">
+        <div class="contact-modal-header">
+            <h3 id="contact-modal-title">Contacto</h3>
+            <button type="button" class="contact-modal-close" data-close-contact aria-label="Cerrar formulario de contacto">×</button>
+        </div>
         <img class="contact-brand" src="img/megaroad.svg" alt="Megaroad">
+        <p class="contact-intro">Enviá una consulta, sugerencia o reclamo a la tripulación.</p>
         <form class="sidebar-contact-form" action="https://formspree.io/f/myekdvaw" method="POST">
             <label for="contact-name">Nombre</label>
             <input id="contact-name" name="name" type="text" autocomplete="name" required>
@@ -232,7 +235,7 @@
             <textarea id="contact-message" name="message" rows="5" required></textarea>
             <button type="submit">Enviar mensaje</button>
         </form>
-    </div>
+    </dialog>
 </aside>
 
         </div>
@@ -370,6 +373,7 @@ if (cursor) {
         }, 350);
     });
 </script>
+    <script src="js/site-shell.js" defer></script>
     <script src="js/radio.js" defer></script>
     <script src="js/favicons.js" defer></script>
     <script src="js/buscador.js" defer></script>
@@ -385,6 +389,10 @@ if (cursor) {
                     Si quieres colaborar con la Bitácora del Megaroad puedes enviar una donación a: (click en la direccion de correo) 
                     <!-- DIRECCIÓN CONVERTIDA EN ENLACE DIRECTO A PAYPAL -->
                     <a href="https://www.paypal.com/donate/?hosted_button_id=DV4E33MB9RPQJ" target="_blank" rel="noopener noreferrer" class="paypal-address">PayPal:guilleabm83@gmail.com</a>
+                    <span class="donation-option-label">O invitame un café por Cafecito:</span>
+                    <a href="https://cafecito.app/megaroad" rel="noopener" target="_blank" class="cafecito-link">
+                        <img srcset="https://cdn.cafecito.app/imgs/buttons/button_4.png 1x, https://cdn.cafecito.app/imgs/buttons/button_4_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_4_3.75x.png 3.75x" src="https://cdn.cafecito.app/imgs/buttons/button_4.png" alt="Invitame un café en cafecito.app" loading="lazy">
+                    </a>
                 </p>
                 
                 <p class="modal-text-legal">
@@ -405,7 +413,8 @@ if (cursor) {
         const btnDonaciones = document.getElementById('btn-donaciones');
         const overlayDonaciones = document.getElementById('overlay-donaciones');
         const closePopup = document.getElementById('close-popup');
-        const paypalLink = document.querySelector('.paypal-address'); // Captura el nuevo enlace
+        const paypalLink = document.querySelector('.paypal-address');
+        const cafecitoLink = document.querySelector('.cafecito-link');
         const customCursor = document.querySelector('.custom-cursor');
 
         // Abre el pop-up mostrando el overlay de fondo
@@ -438,7 +447,7 @@ if (cursor) {
 
         // Integración de animación hover ("LOCK ON") en los elementos interactivos
         if (customCursor) {
-            [closePopup, paypalLink].forEach(el => {
+            [closePopup, paypalLink, cafecitoLink].forEach(el => {
                 if (el) {
                     el.addEventListener('mouseenter', () => customCursor.classList.add('hover'));
                     el.addEventListener('mouseleave', () => customCursor.classList.remove('hover'));
