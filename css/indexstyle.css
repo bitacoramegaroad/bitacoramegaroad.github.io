@@ -1327,14 +1327,14 @@ body.copy-protection-active canvas {
 
 /* Fondo oscurecido total que cubre la pantalla */
 .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(4, 7, 10, 0.85);
-    backdrop-filter: blur(4px);
-    z-index: 9999; /* Por debajo del cursor, por encima del contenido */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(4, 7, 10, 0.85) !important;
+    backdrop-filter: blur(4px) !important;
+    z-index: 9999 !important; 
+    display: block !important; /* Desconectamos flex para evitar herencias de la barra lateral */
+    width: 100vw !important;
+    height: 100vh !important;
 }
 
 /* Ocultar el contenedor cuando tiene el atributo hidden */
@@ -1342,23 +1342,43 @@ body.copy-protection-active canvas {
     display: none !important;
 }
 
-/* Contenedor principal de la ventana modal */
+/* 
+   SOLUCIÓN AL HTML DETECTADO:
+   Forzamos coordenadas fijas e independientes del flujo de la barra lateral.
+   'transform: translate(-50%, -50%)' calcula el centro perfecto en base al viewport global.
+*/
 .modal-donaciones {
-    position: relative;
-    border: 2px solid var(--mr-accent); /* Borde cian brillante */
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important; /* Centrado matemático infalible */
+    
+    /* Reseteo completo de las directivas de bloque de la barra lateral */
+    float: none !important;
+    clear: both !important;
+    margin: 0 !important;
+    bottom: auto !important;
+    right: auto !important;
+    
+    /* Eliminación absoluta del bisel */
+    clip-path: none !important; 
+    -webkit-clip-path: none !important;
+    
+    /* Estilos estéticos del cuadro */
+    border: 2px solid var(--mr-accent) !important;
     background: 
         repeating-linear-gradient(0deg, rgba(var(--mr-accent-rgb), 0.015) 0 1px, transparent 1px 4px),
-        linear-gradient(180deg, rgba(8, 20, 28, 0.98) 0%, rgba(5, 12, 18, 0.99) 100%);
-    color: var(--mr-text-soft);
-    padding: 24px;
-    max-width: 520px;
-    width: 90vw;
-    border-radius: 4px;
-    /* Bisel sci-fi en la esquina inferior derecha */
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+        linear-gradient(180deg, rgba(8, 20, 28, 0.98) 0%, rgba(5, 12, 18, 0.99) 100%) !important;
+    color: var(--mr-text-soft) !important;
+    padding: 24px !important;
+    max-width: 520px !important;
+    width: 90vw !important;
+    max-height: min(90vh, 760px) !important; 
+    overflow-y: auto !important; /* Activa barra de desplazamiento si se reduce la pantalla en celulares */
+    border-radius: 4px !important; 
     box-shadow: 
         0 0 25px rgba(var(--mr-accent-rgb), 0.25),
-        inset 0 0 15px rgba(var(--mr-accent-rgb), 0.05);
+        inset 0 0 15px rgba(var(--mr-accent-rgb), 0.05) !important;
 }
 
 /* Efecto de líneas de barrido CRT para el pop-up */
@@ -1453,7 +1473,7 @@ body.copy-protection-active canvas {
     height: auto;
 }
 
-/* Dirección de correo/Paypal destacada en naranja cálido de alerta */
+/* Dirección de correo/Paypal destacada en naranja */
 .paypal-address {
     display: block;
     font-family: var(--mr-font-display);
@@ -1468,12 +1488,11 @@ body.copy-protection-active canvas {
     letter-spacing: 0.5px;
     text-shadow: 0 0 5px rgba(var(--mr-accent-warm-rgb), 0.3);
     word-break: break-all;
-    text-decoration: none; /* NUEVO: Quita el subrayado clásico de los links */
-    cursor: none !important; /* NUEVO: Oculta el puntero nativo para el cursor HUD */
+    text-decoration: none; 
+    cursor: none !important; 
 }
 
-
-/* Texto legal de descargo (Más pequeño e informativo) */
+/* Texto legal de descargo */
 .modal-text-legal {
     font-family: var(--mr-font-body);
     font-size: 11.5px;
@@ -1490,7 +1509,7 @@ body.copy-protection-active canvas {
     margin-top: 5px;
 }
 
-/* Botón de cierre con estética idéntica a la barra de contacto del blog */
+/* Botón de cierre */
 .modal-actions button {
     appearance: none;
     min-height: 34px;
@@ -1510,6 +1529,7 @@ body.copy-protection-active canvas {
     background: rgba(var(--mr-accent-rgb), 0.2);
     box-shadow: 0 0 10px rgba(var(--mr-accent-rgb), 0.3);
 }
+
 
 /* Asegurar que el cursor personalizado de la página tenga prioridad total sobre el overlay */
 .custom-cursor {
