@@ -348,6 +348,29 @@ body {
 .contact-modal .sidebar-contact-form { gap: 8px; }
 .contact-modal .sidebar-contact-form textarea { min-height: 110px; }
 
+/* ==================================================================
+   CORRECCIÓN DEL CURSOR EN EL POP-UP DE CONTACTO
+   ================================================================== */
+.contact-modal {
+    cursor: auto !important;
+}
+
+.contact-modal input,
+.contact-modal select,
+.contact-modal button,
+.contact-modal a,
+.contact-modal .contact-modal-close {
+    cursor: pointer !important;
+}
+
+.contact-modal input[type="text"],
+.contact-modal textarea {
+    cursor: text !important;
+}
+
+.sidebar-contact { padding: 14px; }
+.sidebar-contact-form { display: grid; gap: 5px; }
+
 .sidebar-contact { padding: 14px; }
 .sidebar-contact-form { display: grid; gap: 5px; }
 .sidebar-contact-form label { margin-top: 2px; color: #c2ccd2; font-size: 12px; }
