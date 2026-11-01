@@ -63,15 +63,42 @@ body {
 .singularity-core {
   position: absolute;
   top: 50%; left: 50%;
-  width: 25px; height: 25px;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 
-    0 0 25px #ffffff,
-    0 0 55px #00f0ff,
-    0 0 120px rgba(0, 255, 102, 0.6);
+  width: 15px; height: 15px;
+  
+  /* 1. NÚCLEO SEMI-TRANSPARENTE: Se usa RGBA para fusionarse con el fondo */
+  background: rgba(255, 255, 255, 1); 
+  border-radius: 100%;
+  
   transform: translate(-50%, -50%);
   z-index: 5;
+  
+  /* 2. BLUR FIJO: Suaviza los bordes para eliminar la forma sólida */
+  filter: blur(5px); 
+  
+  /* 3. ANIMACIÓN DE PULSO DINÁMICO: Cambia el tamaño del brillo y la opacidad constantemente */
+  animation: reactorPulse 0.25s infinite alternate ease-in-out;
+}
+
+/* ==========================================================================
+   ANIMACIÓN DE ENERGÍA PARA LA SINGULARIDAD
+   ========================================================================== */
+@keyframes reactorPulse {
+  0% {
+    opacity: 0.1;
+    box-shadow: 
+      0 0 25px 5px rgba(255, 255, 255, 0.4),
+      0 0 55px 15px rgba(0, 240, 255, 0.5),
+      0 0 110px 30px rgba(0, 255, 102, 0.3);
+  }
+  100% {
+    opacity: 1;
+    /* Valores incrementados para forzar una explosión de luz en el pico */
+    box-shadow: 
+      0 0 70px 35px rgba(255, 255, 255, 0.95),    /* Núcleo de luz masivo */
+      0 0 150px 75px rgba(0, 240, 255, 0.9),      /* Bloom cian hiper-expandido */
+      0 0 300px 140px rgba(0, 255, 102, 0.85),    /* Aura esmeralda que inunda la pantalla */
+      0 0 450px 200px rgba(0, 255, 102, 0.4);     /* Destello periférico extremo */
+  }
 }
 
 /* ==========================================================================
