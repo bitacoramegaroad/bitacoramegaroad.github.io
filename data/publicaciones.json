@@ -148,4 +148,28 @@
     ],
     "publishedAt": "2026-10-12T23:05:26-03:00"
   }
+  {
+  "title": "Como comenzar a ver Macross… y no morir en el intento v6.1",
+  "id": "como-ver-macross",
+  "url": "nota.html?id=como-ver-macross",
+  "type": [
+    "Guía"
+  ],
+  "works": [
+    "Macross",
+  ],
+  "genres": [],
+  "formats": [
+    "Serie de TV",
+    "OVA",
+    "Película"
+  ],
+  "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/como-ver-macross.html",
+  "summary": "Guía definitiva (versión 6.1) para comenzar a ver Macross sin morir en el intento. Incluye listas recomendadas y aclaraciones para nuevos espectadores.",
+  "menuTags": [
+    "Bitácoras/Informes"
+
+  ],
+  "publishedAt": "2026-11-02"
+}
 ]
