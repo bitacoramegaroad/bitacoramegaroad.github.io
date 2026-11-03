@@ -1,3 +1,131 @@
+[
+  {
+    "title": "Guía básica de conceptos artísticos",
+    "id": "guia-conceptos-artisticos",
+    "url": "nota.html?id=guia-conceptos-artisticos",
+    "type": [
+      "Informe"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": [
+      "Serie de TV",
+      "OVA",
+      "ONA",
+      "Película",
+      "Novela ligera",
+      "Manga",
+      "Drama radiofónico"
+    ],
+    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/guia-conceptos-artisticos.html",
+    "summary": "Conceptos artísticos, formatos, tropos, clichés, gusto, calidad y hamparte.",
+    "menuTags": [
+      "Bitácoras/Informes",
+      "Manganime/OVAS y ONAS",
+      "Manganime/Películas",
+      "Manganime/Series de Anime",
+      "Manganime/Mangas",
+      "Cine y TV/Cine",
+      "Cine y TV/Series de TV"
+    ],
+    "publishedAt": "2026-10-11"
+  },
+  {
+    "title": "Quiénes somos",
+    "url": "quienes-somos.html",
+    "type": [
+      "Institucional"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": [],
+    "menuTags": []
+  },
+  {
+    "title": "Nuestra trayectoria",
+    "url": "trayectoria.html",
+    "type": [
+      "Institucional"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": [],
+    "menuTags": []
+  },
+  {
+    "title": "Descargo legal",
+    "url": "descargo-legal.html",
+    "type": [
+      "Institucional"
+    ],
+    "works": [],
+    "genres": [],
+    "formats": [],
+    "menuTags": []
+  },
+  {
+    "title": "La importancia de la escritura y el respeto hacia ella",
+    "id": "la-importancia-de-la-escritura",
+    "url": "nota.html?id=la-importancia-de-la-escritura",
+    "type": [
+      "Análisis"
+    ],
+    "works": [
+      "Macross",
+      "Robotech",
+      "Chernobyl",
+      "Ven y Mira",
+      "The Last of Us",
+      "El Eternauta",
+      "Vampiro: La Mascarada"
+    ],
+    "genres": [
+      "Drama",
+      "Bélico",
+      "Ciencia ficción"
+    ],
+    "formats": [
+      "Juego de rol",
+      "Serie de TV",
+      "Película",
+      "Música",
+      "Artes visuales",
+      "Danza"
+    ],
+    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/la-importancia-de-la-escritura.html",
+    "summary": "Una reflexión sobre la escritura, la construcción de personajes y el lugar de la narración en distintas formas de arte.",
+    "menuTags": [
+      "Bitácoras/Análisis"
+    ],
+    "publishedAt": "2026-10-11T23:06:38-03:00"
+  },
+  {
+    "title": "El respeto hacia el arte y los artistas",
+    "id": "el-respeto-hacia-el-arte-y-los-artistas",
+    "url": "nota.html?id=el-respeto-hacia-el-arte-y-los-artistas",
+    "type": [
+      "Informe"
+    ],
+    "works": [
+      "Macross",
+      "Robotech",
+      "Star Wars",
+      "Candy Candy"
+    ],
+    "genres": [],
+    "formats": [
+      "Fanart",
+      "Imagen digital",
+      "Meme",
+      "Comisión artística"
+    ],
+    "contentUrl": "https://raw.githubusercontent.com/bitacoramegaroad/Archivos-del-Megaroad/main/la-importancia-del-arte.html",
+    "summary": "Una reflexión sobre el respeto hacia el arte, el fanart, la IA, la tecnología y el trabajo de los artistas.",
+    "menuTags": [
+      "Bitácoras/Informes"
+    ],
+    "publishedAt": "2026-10-12"
+  },
   {
     "title": "Macross Shooting Insight",
     "id": "macross-shooting-insight",
