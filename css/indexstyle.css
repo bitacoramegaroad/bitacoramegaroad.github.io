@@ -996,15 +996,6 @@ dialog .custom-cursor {
     min-height: 44px; padding: 8px 10px; border: 1px solid rgba(var(--mr-accent-rgb), 0.22);
     border-radius: 4px; font-size: 11px; letter-spacing: 0.8px;
 }
-.nav-links .nav-dropdown-menu .nav-dropdown-link-disabled {
-    display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 10px;
-    border: 1px solid rgba(var(--mr-accent-rgb), 0.22); border-radius: 4px;
-    background: linear-gradient(135deg, rgba(6, 11, 17, 0.4), rgba(17, 27, 39, 0.4));
-    color: #91a9b1; font-family: var(--mr-font-display); font-size: 11px;
-    font-weight: normal; letter-spacing: 0.8px; text-align: center; text-transform: uppercase;
-    opacity: 0.8;
-}
-
 /* Páginas institucionales */
 .document-page-body { padding-top: 3vh; }
 .document-page {
