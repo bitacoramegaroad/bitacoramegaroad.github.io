@@ -996,6 +996,11 @@ dialog .custom-cursor {
     min-height: 44px; padding: 8px 10px; border: 1px solid rgba(var(--mr-accent-rgb), 0.22);
     border-radius: 4px; font-size: 11px; letter-spacing: 0.8px;
 }
+.nav-links .nav-dropdown-menu .nav-dropdown-link-disabled {
+    display: flex; align-items: center; min-height: 44px; padding: 8px 10px;
+    border: 1px solid rgba(var(--mr-accent-rgb), 0.22); border-radius: 4px;
+    color: #91a9b1; font-size: 11px; letter-spacing: 0.8px; opacity: 0.65;
+}
 
 /* Páginas institucionales */
 .document-page-body { padding-top: 3vh; }
