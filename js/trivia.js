@@ -4,8 +4,8 @@
   const ROUND_SIZE = { general: 50, macross: 30, robotech: 30 };
   const CATEGORY_NAMES = {
     general: "Mega Trivia",
-    macross: "Trivia Deculture",
-    robotech: "Trivia Reflex"
+    macross: "Macross Deculture Quiz",
+    robotech: "Robotech Reflex Trivia"
   };
   const QUESTION_FILES = {
     general: "data/trivias/trivia-general.json",
@@ -27,6 +27,21 @@
   const homeMessage = document.getElementById("trivia-home-message");
   const nameForm = document.getElementById("trivia-name-form");
   const nickInput = document.getElementById("trivia-nick");
+
+  const customCursor = document.querySelector(".custom-cursor");
+  if (customCursor) {
+    document.addEventListener("mousemove", (event) => {
+      customCursor.style.left = `${event.clientX}px`;
+      customCursor.style.top = `${event.clientY}px`;
+    });
+    document.addEventListener("mouseover", (event) => {
+      if (event.target.closest("a, button, summary, input, select")) customCursor.classList.add("hover");
+    });
+    document.addEventListener("mouseout", (event) => {
+      const target = event.target.closest("a, button, summary, input, select");
+      if (target && !target.contains(event.relatedTarget)) customCursor.classList.remove("hover");
+    });
+  }
 
   let defaults = null;
   let selectedCategory = null;
