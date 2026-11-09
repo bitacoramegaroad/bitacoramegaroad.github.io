@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Participá en las trivias de La Bitácora del Megaroad.">
+  <title>Trivia | La Bitácora del Megaroad</title>
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="css/indexstyle.css">
+  <link rel="stylesheet" href="css/trivia.css">
+</head>
+<body class="document-page-body">
+  <header class="macross-header">
+    <a href="index.html" class="logo-link" aria-label="Volver al inicio de La Bitácora del Megaroad">
+      <img src="img/LaBitacoraDelMegaroad.webp" alt="La Bitácora del Megaroad" class="logo">
+    </a>
+    <h1>Trivia del Megaroad</h1>
+  </header>
+
+  <main class="document-page trivia-page">
+    <article class="document-content trivia-content">
+      <p class="document-kicker">PONÉ A PRUEBA TUS CONOCIMIENTOS</p>
+
+      <div class="trivia-layout">
+        <figure class="trivia-companion" aria-label="Alysia, archivista del Megaroad">
+          <img src="https://bitacoramegaroad.github.io/img/Alisa%20tablet.webp" alt="Alysia con una tableta">
+        </figure>
+
+        <section class="trivia-main" aria-live="polite">
+          <section class="trivia-view" id="trivia-categories">
+            <h2>Elegí una trivia</h2>
+            <p class="trivia-lead">Cada partida selecciona preguntas al azar. Vas a tener 20 segundos para responder cada una.</p>
+            <div class="trivia-category-list">
+              <button class="trivia-category" type="button" data-category="general">
+                <span class="trivia-category-title">General</span>
+                <span class="trivia-category-count">50 preguntas</span>
+              </button>
+              <button class="trivia-category" type="button" data-category="macross">
+                <span class="trivia-category-title">Macross</span>
+                <span class="trivia-category-count">30 preguntas</span>
+              </button>
+              <button class="trivia-category" type="button" data-category="robotech">
+                <span class="trivia-category-title">Robotech</span>
+                <span class="trivia-category-count">30 preguntas</span>
+              </button>
+            </div>
+            <p class="trivia-message" id="trivia-home-message" role="status"></p>
+          </section>
+
+          <section class="trivia-view" id="trivia-setup" hidden>
+            <button class="trivia-back" type="button" data-action="categories">← Elegir otra trivia</button>
+            <h2 id="setup-title">Preparar partida</h2>
+            <p class="trivia-lead" id="setup-summary"></p>
+            <form id="trivia-name-form" class="trivia-name-form">
+              <label for="trivia-nick">Tu nombre</label>
+              <input id="trivia-nick" name="nick" type="text" maxlength="11" autocomplete="nickname" required>
+              <small>Máximo 11 caracteres.</small>
+              <button class="trivia-primary" type="submit">Empezar</button>
+            </form>
+            <div class="trivia-rules" aria-label="Reglas de puntaje">
+              <span>15–20 s: 3 puntos</span>
+              <span>9–14 s: 2 puntos</span>
+              <span>1–8 s: 1 punto</span>
+              <span>Incorrecta: −1</span>
+              <span>Sin responder: 0</span>
+            </div>
+          </section>
+
+          <section class="trivia-view" id="trivia-game" hidden>
+            <div class="trivia-game-topline">
+              <span id="game-category"></span>
+              <span id="game-progress"></span>
+            </div>
+            <div class="trivia-timer" id="trivia-timer" aria-live="off">
+              <span class="trivia-timer-number" id="timer-number">20</span>
+              <span class="trivia-timer-label">segundos</span>
+            </div>
+            <div class="trivia-timer-track" aria-hidden="true"><div id="timer-bar"></div></div>
+            <h2 class="trivia-question" id="trivia-question"></h2>
+            <div class="trivia-answers" id="trivia-answers"></div>
+            <p class="trivia-feedback" id="trivia-feedback" role="status"></p>
+          </section>
+
+          <section class="trivia-view" id="trivia-results" hidden>
+            <p class="document-kicker">PARTIDA TERMINADA</p>
+            <h2 id="results-heading">Resultado</h2>
+            <p class="trivia-result-score" id="results-score"></p>
+            <p class="trivia-message" id="results-save-message" role="status"></p>
+            <button class="trivia-primary" type="button" data-action="categories">Volver a las trivias</button>
+          </section>
+        </section>
+
+        <aside class="trivia-ranking" id="trivia-ranking" aria-live="polite">
+          <div class="trivia-ranking-heading">
+            <h2>Récords</h2>
+            <span id="ranking-category">Elegí una trivia</span>
+          </div>
+          <p class="trivia-reset-note">Los récords se reinician el día 1 de cada mes.</p>
+          <div id="ranking-content" class="trivia-ranking-content">
+            <p class="trivia-ranking-empty">El ranking aparecerá al elegir una trivia.</p>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </main>
+
+  <footer class="macross-footer">
+    <nav class="nav-bottom" aria-label="Navegación entre páginas">
+      <ul><li><a href="index.html">Volver al inicio</a></li></ul>
+    </nav>
+  </footer>
+
+  <div class="custom-cursor" aria-hidden="true"><svg class="reticle-svg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg"><path d="M28 6 L2 18 L2 62 L28 74" fill="none" stroke="#00ffcc" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><path d="M72 6 L98 18 L98 62 L72 74" fill="none" stroke="#00ffcc" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><rect class="corner-square" x="79" y="75.5" width="13" height="20" fill="#00ffcc" transform="rotate(63 85 70)"/></svg><div class="lock-text">LOCK ON</div></div>
+  <script src="js/favicons.js" defer></script>
+  <script src="js/trivia.js" defer></script>
+  <script src="js/site-shell.js" defer></script>
+</body>
+</html>
