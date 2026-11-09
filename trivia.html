@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Participá en las trivias de La Bitácora del Megaroad.">
+  <meta name="description" content="Participa en las trivias de La Bitácora del Megaroad.">
   <title>Trivia | La Bitácora del Megaroad</title>
   <link rel="icon" href="img/favicon.ico">
   <link rel="stylesheet" href="css/indexstyle.css">
@@ -19,7 +19,7 @@
 
   <main class="document-page trivia-page">
     <article class="document-content trivia-content">
-      <p class="document-kicker">PONÉ A PRUEBA TUS CONOCIMIENTOS</p>
+      <p class="document-kicker">PON A PRUEBA TUS CONOCIMIENTOS</p>
 
       <div class="trivia-layout">
         <figure class="trivia-companion" aria-label="Alysia, archivista del Megaroad">
@@ -28,8 +28,8 @@
 
         <section class="trivia-main" aria-live="polite">
           <section class="trivia-view" id="trivia-categories">
-            <h2>Elegí una trivia</h2>
-            <p class="trivia-lead">Cada partida selecciona preguntas al azar. Vas a tener 20 segundos para responder cada una.</p>
+            <h2>Elige una trivia</h2>
+            <p class="trivia-lead">En cada partida se seleccionan preguntas al azar. Tienes 30 segundos para responder cada una.</p>
             <div class="trivia-category-list">
               <button class="trivia-category" type="button" data-category="general">
                 <span class="trivia-category-title">Mega Trivia</span>
@@ -48,21 +48,21 @@
           </section>
 
           <section class="trivia-view" id="trivia-setup" hidden>
-            <button class="trivia-back" type="button" data-action="categories">← Elegir otra trivia</button>
+            <button class="trivia-back" type="button" data-action="categories">← Cambiar de trivia</button>
             <h2 id="setup-title">Preparar partida</h2>
             <p class="trivia-lead" id="setup-summary"></p>
             <form id="trivia-name-form" class="trivia-name-form">
-              <label for="trivia-nick">Tu nombre</label>
+              <label for="trivia-nick">Escribe un nombre</label>
               <input id="trivia-nick" name="nick" type="text" maxlength="11" autocomplete="nickname" required>
               <small>Máximo 11 caracteres.</small>
-              <button class="trivia-primary" type="submit">Empezar</button>
+              <button class="trivia-primary" type="submit">Comenzar</button>
             </form>
             <div class="trivia-rules" aria-label="Reglas de puntaje">
-              <span>15–20 s: 3 puntos</span>
-              <span>9–14 s: 2 puntos</span>
-              <span>1–8 s: 1 punto</span>
-              <span>Incorrecta: −1</span>
-              <span>Sin responder: 0</span>
+              <span>De 20 a 30 segundos: 3 puntos</span>
+              <span>De 10 a menos de 20 segundos: 2 puntos</span>
+              <span>Menos de 10 segundos: 1 punto</span>
+              <span>Respuesta incorrecta: −1 punto</span>
+              <span>Sin responder: 0 puntos</span>
             </div>
           </section>
 
@@ -72,7 +72,7 @@
               <span id="game-progress"></span>
             </div>
             <div class="trivia-timer" id="trivia-timer" aria-live="off">
-              <span class="trivia-timer-number" id="timer-number">20</span>
+              <span class="trivia-timer-number" id="timer-number">30</span>
               <span class="trivia-timer-label">segundos</span>
             </div>
             <div class="trivia-timer-track" aria-hidden="true"><div id="timer-bar"></div></div>
@@ -85,18 +85,18 @@
             <h2 id="results-heading">Resultado</h2>
             <p class="trivia-result-score" id="results-score"></p>
             <p class="trivia-message" id="results-save-message" role="status"></p>
-            <button class="trivia-primary" type="button" data-action="categories">Volver a las trivias</button>
+            <button class="trivia-primary" type="button" data-action="categories">Elegir otra trivia</button>
           </section>
         </section>
 
         <aside class="trivia-ranking" id="trivia-ranking" aria-live="polite">
           <div class="trivia-ranking-heading">
             <h2>Mejores puntajes</h2>
-            <span id="ranking-category">Elegí una trivia</span>
+            <span id="ranking-category">Elige una trivia</span>
           </div>
-          <p class="trivia-reset-note">Los récords se reinician el día 1 de cada mes.</p>
+          <p class="trivia-reset-note">Los puntajes se reinician el día 1 de cada mes.</p>
           <div id="ranking-content" class="trivia-ranking-content">
-            <p class="trivia-ranking-empty">El ranking aparecerá al elegir una trivia.</p>
+            <p class="trivia-ranking-empty">Los puntajes aparecerán aquí cuando elijas una trivia.</p>
           </div>
         </aside>
       </div>
