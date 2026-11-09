@@ -2,7 +2,11 @@
   "use strict";
 
   const ROUND_SIZE = { general: 50, macross: 30, robotech: 30 };
-  const CATEGORY_NAMES = { general: "General", macross: "Macross", robotech: "Robotech" };
+  const CATEGORY_NAMES = {
+    general: "Mega Trivia",
+    macross: "Trivia Deculture",
+    robotech: "Trivia Reflex"
+  };
   const QUESTION_FILES = {
     general: "data/trivias/trivia-general.json",
     macross: "data/trivias/trivia-macross.json",
@@ -136,7 +140,7 @@
 
     const worst = initial.peor;
     if (worst) {
-      addRankingSection("Récord inicial", [worst], "");
+    addRankingSection("Mención deshonrosa", [worst], "");
     }
   }
 
@@ -146,7 +150,7 @@
     try {
       if (!defaults) await loadDefaults();
       questions = await loadPool(category);
-      document.getElementById("setup-title").textContent = `Trivia ${CATEGORY_NAMES[category]}`;
+      document.getElementById("setup-title").textContent = CATEGORY_NAMES[category];
       document.getElementById("setup-summary").textContent = `${ROUND_SIZE[category]} preguntas seleccionadas al azar. Cada una tiene un límite de 20 segundos.`;
       renderRanking(category);
       nickInput.value = "";
@@ -177,7 +181,6 @@
     document.getElementById("game-category").textContent = CATEGORY_NAMES[selectedCategory];
     document.getElementById("game-progress").textContent = `Pregunta ${questionIndex + 1} de ${questions.length}`;
     document.getElementById("trivia-question").textContent = question.pregunta;
-    document.getElementById("trivia-feedback").textContent = "";
     const answers = document.getElementById("trivia-answers");
     answers.replaceChildren();
     question.opciones.forEach((option, index) => {
@@ -222,22 +225,10 @@
     const question = questions[questionIndex];
     const remainingMs = choiceIndex === null ? 0 : Math.max(0, 20_000 - (performance.now() - questionStartedAt));
     const answerButtons = [...document.querySelectorAll("#trivia-answers button")];
-    answerButtons.forEach((button, index) => {
-      button.disabled = true;
-      if (index === question.correcta) button.classList.add("is-correct");
-      else if (index === choiceIndex) button.classList.add("is-wrong");
-    });
-
-    const feedback = document.getElementById("trivia-feedback");
-    if (choiceIndex === null) {
-      feedback.textContent = "Se terminó el tiempo. 0 puntos.";
-    } else if (choiceIndex === question.correcta) {
-      const gained = awardForTime(remainingMs);
-      score += gained;
-      feedback.textContent = `¡Correcto! +${gained} ${gained === 1 ? "punto" : "puntos"}.`;
-    } else {
-      score -= 1;
-      feedback.textContent = "Incorrecto. −1 punto.";
+    answerButtons.forEach((button) => { button.disabled = true; });
+    if (choiceIndex !== null) {
+      if (choiceIndex === question.correcta) score += awardForTime(remainingMs);
+      else score -= 1;
     }
 
     transitionHandle = window.setTimeout(() => {
