@@ -1,8 +1,8 @@
-.trivia-page { max-width: 1320px; }
+.trivia-page { max-width: 1440px; }
 .trivia-content { min-width: 0; }
 .trivia-layout {
   display: grid;
-  grid-template-columns: minmax(120px, 0.55fr) minmax(320px, 2fr) minmax(220px, 0.9fr);
+  grid-template-columns: minmax(240px, 0.85fr) minmax(360px, 1.5fr) minmax(230px, 0.8fr);
   align-items: start;
   gap: clamp(14px, 2vw, 28px);
   margin-top: 20px;
@@ -16,7 +16,7 @@
 }
 .trivia-companion img {
   display: block;
-  width: min(100%, 280px);
+  width: min(100%, 340px);
   max-height: 54vh;
   height: auto;
   margin: 0 auto;
@@ -141,9 +141,6 @@
 }
 .trivia-answers button:hover:not(:disabled) { border-color: var(--mr-accent); background: rgba(var(--mr-accent-rgb), 0.12); }
 .trivia-answers button:disabled { cursor: default; opacity: 0.78; }
-.trivia-answers button.is-correct { border-color: #6be0a4; background: rgba(42, 149, 97, 0.25); }
-.trivia-answers button.is-wrong { border-color: #ff7a6e; background: rgba(172, 53, 47, 0.24); }
-.trivia-feedback { min-height: 25px; margin: 14px 0 0; color: #fff; font-weight: 600; }
 .trivia-result-score { margin: 10px 0; color: var(--mr-accent); font-family: var(--mr-font-display); font-size: clamp(27px, 4vw, 38px); }
 .trivia-message { min-height: 1.4em; margin: 10px 0; color: #b8d0d4; font-size: 13px; }
 .trivia-ranking {
@@ -167,15 +164,15 @@
 .trivia-companion img:not([src]) { display: none; }
 
 @media (max-width: 1050px) {
-  .trivia-layout { grid-template-columns: minmax(90px, 0.35fr) minmax(0, 1.7fr) minmax(190px, 0.85fr); gap: 14px; }
-  .trivia-companion img { width: min(100%, 220px); }
+  .trivia-layout { grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.5fr) minmax(200px, 0.8fr); gap: 14px; }
+  .trivia-companion img { width: min(100%, 280px); }
   .trivia-ranking { padding: 14px; }
 }
 @media (max-width: 768px) {
   .trivia-layout { grid-template-columns: minmax(0, 1fr); }
   .trivia-main { order: 1; }
   .trivia-companion { position: static; order: 2; margin: 4px 0 0; }
-  .trivia-companion img { width: min(55vw, 220px); max-height: 300px; }
+  .trivia-companion img { width: min(62vw, 280px); max-height: 360px; }
   .trivia-ranking { order: 3; }
 }
 @media (max-width: 420px) {
