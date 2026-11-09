@@ -245,18 +245,16 @@
   function startTimer() {
     questionStartedAt = performance.now();
     const number = document.getElementById("timer-number");
-    const bar = document.getElementById("timer-bar");
+    const gameCard = views.game;
     number.textContent = "30";
-    bar.style.width = "100%";
-    bar.classList.remove("is-yellow", "is-orange");
+    gameCard.classList.remove("is-time-yellow", "is-time-orange");
     timerHandle = window.setInterval(() => {
       const elapsed = performance.now() - questionStartedAt;
       const remainingMs = Math.max(0, QUESTION_TIME_MS - elapsed);
       const seconds = Math.ceil(remainingMs / 1000);
       number.textContent = String(seconds);
-      bar.style.width = `${(remainingMs / QUESTION_TIME_MS) * 100}%`;
-      bar.classList.toggle("is-yellow", remainingMs <= 20_000 && remainingMs > 10_000);
-      bar.classList.toggle("is-orange", remainingMs <= 10_000);
+      gameCard.classList.toggle("is-time-yellow", remainingMs <= 20_000 && remainingMs > 10_000);
+      gameCard.classList.toggle("is-time-orange", remainingMs <= 10_000);
       if (remainingMs <= 0) answerQuestion(null);
     }, 80);
   }
