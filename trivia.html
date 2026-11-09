@@ -32,15 +32,15 @@
             <p class="trivia-lead">Cada partida selecciona preguntas al azar. Vas a tener 20 segundos para responder cada una.</p>
             <div class="trivia-category-list">
               <button class="trivia-category" type="button" data-category="general">
-                <span class="trivia-category-title">General</span>
+                <span class="trivia-category-title">Mega Trivia</span>
                 <span class="trivia-category-count">50 preguntas</span>
               </button>
               <button class="trivia-category" type="button" data-category="macross">
-                <span class="trivia-category-title">Macross</span>
+                <span class="trivia-category-title">Trivia Deculture</span>
                 <span class="trivia-category-count">30 preguntas</span>
               </button>
               <button class="trivia-category" type="button" data-category="robotech">
-                <span class="trivia-category-title">Robotech</span>
+                <span class="trivia-category-title">Trivia Reflex</span>
                 <span class="trivia-category-count">30 preguntas</span>
               </button>
             </div>
@@ -78,7 +78,6 @@
             <div class="trivia-timer-track" aria-hidden="true"><div id="timer-bar"></div></div>
             <h2 class="trivia-question" id="trivia-question"></h2>
             <div class="trivia-answers" id="trivia-answers"></div>
-            <p class="trivia-feedback" id="trivia-feedback" role="status"></p>
           </section>
 
           <section class="trivia-view" id="trivia-results" hidden>
@@ -92,7 +91,7 @@
 
         <aside class="trivia-ranking" id="trivia-ranking" aria-live="polite">
           <div class="trivia-ranking-heading">
-            <h2>Récords</h2>
+            <h2>Mejores puntajes</h2>
             <span id="ranking-category">Elegí una trivia</span>
           </div>
           <p class="trivia-reset-note">Los récords se reinician el día 1 de cada mes.</p>
@@ -113,6 +112,5 @@
   <div class="custom-cursor" aria-hidden="true"><svg class="reticle-svg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg"><path d="M28 6 L2 18 L2 62 L28 74" fill="none" stroke="#00ffcc" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><path d="M72 6 L98 18 L98 62 L72 74" fill="none" stroke="#00ffcc" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><rect class="corner-square" x="79" y="75.5" width="13" height="20" fill="#00ffcc" transform="rotate(63 85 70)"/></svg><div class="lock-text">LOCK ON</div></div>
   <script src="js/favicons.js" defer></script>
   <script src="js/trivia.js" defer></script>
-  <script src="js/site-shell.js" defer></script>
 </body>
 </html>
