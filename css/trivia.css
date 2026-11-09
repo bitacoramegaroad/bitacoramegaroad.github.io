@@ -150,23 +150,24 @@
   background: rgba(5, 12, 19, 0.72);
 }
 .trivia-ranking-heading { display: flex; flex-direction: column; gap: 3px; }
-.trivia-ranking-heading h2 { margin-bottom: 0; color: var(--mr-accent); font-size: 18px; }
-.trivia-ranking-heading > span { color: #b1c6ca; font-size: 12px; }
-.trivia-reset-note { margin: 12px 0 15px; color: #94b1b7; font-size: 11px; line-height: 1.5; }
+.trivia-ranking-heading h2 { margin-bottom: 0; color: var(--mr-accent); font-size: 20px; }
+.trivia-ranking-heading > span { color: #b1c6ca; font-size: 14px; }
+.trivia-reset-note { margin: 12px 0 15px; color: #94b1b7; font-size: 13px; line-height: 1.5; }
 .trivia-ranking-section + .trivia-ranking-section { margin-top: 17px; padding-top: 13px; border-top: 1px solid rgba(151, 193, 199, 0.2); }
-.trivia-ranking-section h3 { margin: 0 0 9px; color: #e8f5f6; font-family: var(--mr-font-display); font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
-.trivia-ranking-list { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
-.trivia-ranking-list li { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 6px; align-items: baseline; color: #c9d9dc; font-size: 12px; }
+.trivia-ranking-section h3 { margin: 0 0 10px; color: #e8f5f6; font-family: var(--mr-font-display); font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; }
+.trivia-ranking-list { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.trivia-ranking-list li { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 8px; align-items: baseline; color: #c9d9dc; font-size: 15px; line-height: 1.4; }
 .trivia-ranking-list .rank-place { color: #85aab1; font-variant-numeric: tabular-nums; }
 .trivia-ranking-list .rank-name { min-width: 0; overflow-wrap: anywhere; }
 .trivia-ranking-list .rank-score { color: var(--mr-accent); font-weight: 700; font-variant-numeric: tabular-nums; }
-.trivia-ranking-empty { margin: 0; color: #95adb1; font-size: 13px; line-height: 1.6; }
+.trivia-ranking-empty { margin: 0; color: #95adb1; font-size: 14px; line-height: 1.6; }
 .trivia-companion img:not([src]) { display: none; }
 
 @media (max-width: 1050px) {
   .trivia-layout { grid-template-columns: minmax(190px, 0.7fr) minmax(0, 1.5fr) minmax(200px, 0.8fr); gap: 14px; }
   .trivia-companion img { width: min(100%, 280px); }
   .trivia-ranking { padding: 14px; }
+  .trivia-ranking-list li { font-size: 14px; }
 }
 @media (max-width: 768px) {
   .trivia-layout { grid-template-columns: minmax(0, 1fr); }
