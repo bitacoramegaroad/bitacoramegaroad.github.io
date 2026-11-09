@@ -15,7 +15,7 @@
     robotech: "data/trivias/trivia-robotech.json"
   };
   const RECORDS_FILE = "data/trivias/records.json";
-  const PREVIEW_STORAGE_KEY = "megaroad-trivia-preview-scores";
+  const SCORES_API_URL = "https://script.google.com/macros/s/AKfycbxT5HTSx-wxrxqDS5RfCpDkCKfgwcIkM0a5JggoY2WSeRo_7WRwlLrcrMJ5_RWgJQoAaQ/exec";
 
   const views = {
     categories: document.getElementById("trivia-categories"),
@@ -46,6 +46,8 @@
   }
 
   let defaults = null;
+  let sharedScores = [];
+  let rankingRequestId = 0;
   let selectedCategory = null;
   let questions = [];
   let questionIndex = 0;
@@ -56,25 +58,45 @@
   let questionStartedAt = 0;
   let locked = false;
 
-  const currentMonth = () => {
-    const now = new Date();
-    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
-  };
+  function loadSharedScores() {
+    return new Promise((resolve, reject) => {
+      const callbackName = `triviaRankingCallback${Date.now()}${++rankingRequestId}`;
+      const script = document.createElement("script");
+      const timeout = window.setTimeout(() => finish(new Error("Tiempo de espera agotado.")), 15000);
 
-  function readPreviewScores() {
-    try {
-      const stored = JSON.parse(localStorage.getItem(PREVIEW_STORAGE_KEY) || "{}");
-      return stored.month === currentMonth() && stored.scores ? stored.scores : {};
-    } catch {
-      return {};
-    }
+      function finish(error, data) {
+        window.clearTimeout(timeout);
+        delete window[callbackName];
+        script.remove();
+        if (error) reject(error);
+        else resolve(Array.isArray(data?.puntajes) ? data.puntajes : []);
+      }
+
+      window[callbackName] = (data) => {
+        if (!data?.ok) finish(new Error("No se pudieron cargar los puntajes."));
+        else finish(null, data);
+      };
+      script.onerror = () => finish(new Error("No se pudo conectar con el ranking."));
+      script.src = `${SCORES_API_URL}?callback=${callbackName}&_=${Date.now()}`;
+      document.head.append(script);
+    });
   }
 
-  function writePreviewScore(category, result) {
-    const monthly = readPreviewScores();
-    monthly[category] = Array.isArray(monthly[category]) ? monthly[category] : [];
-    monthly[category].push(result);
-    localStorage.setItem(PREVIEW_STORAGE_KEY, JSON.stringify({ month: currentMonth(), scores: monthly }));
+  async function saveSharedScore(result) {
+    await fetch(SCORES_API_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(result)
+    });
+
+    sharedScores = await loadSharedScores();
+    const wasSaved = sharedScores.some((entry) =>
+      entry.categoria === result.categoria &&
+      String(entry.nick).trim().toLocaleLowerCase("es") === result.nick.trim().toLocaleLowerCase("es") &&
+      Number(entry.puntaje) === Number(result.puntaje)
+    );
+    if (!wasSaved) throw new Error("No se pudo confirmar el registro.");
   }
 
   async function loadDefaults() {
@@ -148,7 +170,7 @@
     rankingContent.replaceChildren();
     const initial = defaults?.[category]?.predeterminados || {};
     const fixedBest = Array.isArray(initial.mejores) ? initial.mejores : [];
-    const localScores = readPreviewScores()[category] || [];
+    const localScores = sharedScores.filter((entry) => entry.categoria === category);
 
     // Cada participante ocupa un solo lugar, conservando su mejor resultado.
     const bestByPlayer = new Map();
@@ -190,6 +212,11 @@
     homeMessage.textContent = "Cargando preguntas y puntajes…";
     try {
       if (!defaults) await loadDefaults();
+      try {
+        sharedScores = await loadSharedScores();
+      } catch {
+        sharedScores = [];
+      }
       questions = await loadPool(category);
       document.getElementById("setup-title").textContent = CATEGORY_NAMES[category];
       document.getElementById("setup-summary").textContent = `${ROUND_SIZE[category]} preguntas seleccionadas al azar. Cada una tiene un límite de 30 segundos.`;
@@ -289,16 +316,23 @@
   function finishGame() {
     clearInterval(timerHandle);
     const result = { nick, puntaje: score, categoria: selectedCategory, fecha: new Date().toISOString() };
-    try {
-      writePreviewScore(selectedCategory, result);
-      document.getElementById("results-save-message").textContent = "Puntaje guardado.";
-    } catch {
-      document.getElementById("results-save-message").textContent = "No se pudo guardar el puntaje.";
-    }
+    const saveMessage = document.getElementById("results-save-message");
+    saveMessage.textContent = "Enviando puntaje…";
     document.getElementById("results-heading").textContent = `¡Bien hecho, ${nick}!`;
     document.getElementById("results-score").textContent = `${score} ${score === 1 ? "punto" : "puntos"}`;
     renderRanking(selectedCategory);
     showView("results");
+
+    saveSharedScore(result).then(() => {
+      if (!views.results.hidden && selectedCategory === result.categoria) {
+        saveMessage.textContent = "Puntaje registrado.";
+        renderRanking(result.categoria);
+      }
+    }).catch(() => {
+      if (!views.results.hidden && selectedCategory === result.categoria) {
+        saveMessage.textContent = "No se pudo confirmar el registro. La partida terminó correctamente.";
+      }
+    });
   }
 
   document.querySelectorAll(".trivia-category").forEach((button) => {
