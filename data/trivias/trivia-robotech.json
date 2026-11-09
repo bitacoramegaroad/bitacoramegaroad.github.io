@@ -1,0 +1,362 @@
+[
+  {
+    "pregunta": "¿Qué significan las siglas VF en Robotech?",
+    "opciones": [
+      "Varitech Fighter",
+      "Valkyrie Fighter",
+      "Veritech Fighter"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quien comanda el SDF 3 en Robotech?",
+    "opciones": [
+      "Liza Hays",
+      "Misa Hayase",
+      "Rick Hunter"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué facción alienígena ataca la Tierra en la Saga Macross de Robotech?",
+    "opciones": [
+      "Invid",
+      "Zentraedi",
+      "Robotech Masters"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién tuvo la idea de comprar Macross para crear Robotech?",
+    "opciones": [
+      "Carl Macek.",
+      "Revell Toys",
+      "Farouk \"Frank\" Agrama"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué fuente de energía alimenta los mechas en Robotech?",
+    "opciones": [
+      "Termonuclear",
+      "Protocultura",
+      "Micronización"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué rol juega la música de Linn Minmei en la derrota masiva de los zentraedi?",
+    "opciones": [
+      "Como arma de distracción",
+      "Como recordatorio de la Protocultura en los genes zentradi",
+      "Como código de comunicación secreta"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué conflicto terrestre precede a la llegada del SDF-1 y a la invasión de los Zentraedi?",
+    "opciones": [
+      "Guerra de Unificación",
+      "Tercera Guerra Mundial",
+      "Segunda Guerra Robotech"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué buscaban realmente los Zentraedi en el SDF-1?",
+    "opciones": [
+      "La Matriz de Protocultura",
+      "La Matriz de Cybertron",
+      "La Flor de la Vida (tal como estaba en el SDF-1)"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál de estas tres producciones no fue un proyecto cancelado de Robotech?",
+    "opciones": [
+      "Robotech Los Centinelas",
+      "Robotech 3000",
+      "Robotech Academia"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quiénes son los padres de Dana Sterling?",
+    "opciones": [
+      "Rick Hunter y Lisa Hayes",
+      "Max Sterling y Miriya Parina (Sterling)",
+      "Roy Fokker y Claudia Grant"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el arma masiva terrestre que destruyó gran parte de la flota de Dolza durante la “Lluvia de Muerte”?",
+    "opciones": [
+      "Gran Cañón",
+      "Cañón Reflex del SDF-1",
+      "Misiles Neutrón-S"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿En qué isla del Pacífico Sur se estrelló el SDF-1 en 1999?",
+    "opciones": [
+      "Isla Macross",
+      "Isla South Ataria",
+      "Fantoma"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién comandaba originalmente el escuadrón Skull Squadron?",
+    "opciones": [
+      "Rick Hunter",
+      "Roy Fokker",
+      "Max Sterling"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué raza creó a los Zentraedi como guerreros clonados?",
+    "opciones": [
+      "Los Invid",
+      "Los Maestros Robotech (tirolianos)",
+      "Los Haydonitas"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del primer Veritech de combate humano producido en masa?",
+    "opciones": [
+      "VF-1 Valkyrie",
+      "VF-6 Alpha",
+      "VHT-1 Spartas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué nave lideraba la Misión Pionera / Fuerza Expedicionaria Robotech al partir de la Tierra?",
+    "opciones": [
+      "SDF-1",
+      "SDF-2",
+      "SDF-3"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién es el líder de los Invid en la Tierra durante la Tercera Guerra Robotech?",
+    "opciones": [
+      "El Regente",
+      "La Regess",
+      "Corg"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Dónde estaba enterrada la Matriz de Protocultura después de la destrucción del SDF-1?",
+    "opciones": [
+      "En las ruinas de Nueva Ciudad Macross / Punto SX 83 (luego conocido como Punto Reflex)",
+      "En la Luna",
+      "En Tirol"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué arma de destrucción masiva intentó usar la Fuerza Expedicionaria en la Batalla del Punto Reflex?",
+    "opciones": [
+      "Gran Cañón",
+      "Misiles Neutrón-S",
+      "Cañón Reflex"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién canta y actúa como “Yellow Dancer” en la saga Nueva Generación?",
+    "opciones": [
+      "Lynn Minmei",
+      "Lancer (Lance Belmont)",
+      "Sue Graham"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el escuadrón de Dana Sterling en la saga de Los Maestros?",
+    "opciones": [
+      "Skull Squadron",
+      "15.º ATAC (Cuerpo Táctico Acorazado Alfa)",
+      "Escuadrón Vermillion"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué mecha principal usa el Ejército de la Cruz del Sur en tierra durante la Segunda Guerra Robotech?",
+    "opciones": [
+      "VF-1 Valkyrie",
+      "Tanque Hover Veritech VHT-1 (Spartas)",
+      "Caza Alpha"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién destruyó tanto el SDF-1 como el SDF-2 en 2014?",
+    "opciones": [
+      "Dolza",
+      "Khyron",
+      "Breetai"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de estos proyectos se canceló tras solo tres episodios animados (luego convertidos en película)?",
+    "opciones": [
+      "Robotech 3000",
+      "Robotech II: Los Centinelas",
+      "Robotech Academia"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué energía deriva de la Flor de la Vida y es el núcleo de la Robotecnología?",
+    "opciones": [
+      "Protocultura",
+      "Energía Reflex",
+      "Energía Sombra"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién fue el primer comandante humano del SDF-1?",
+    "opciones": [
+      "Rick Hunter",
+      "Henry J. Gloval",
+      "Rolf Emerson"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué año aproximado comienza la invasión Invid de la Tierra (Tercera Guerra Robotech)?",
+    "opciones": [
+      "2011",
+      "2029-2031",
+      "2044"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué personaje humano-zentraedi tiene una hermana menor llamada Maia?",
+    "opciones": [
+      "Dana Sterling",
+      "Bowie Grant",
+      "Zor Prime"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Qué es un “Battloid” en Robotech?",
+    "opciones": [
+      "El modo humanoide de un Veritech",
+      "Un tipo de Destroid no transformable",
+      "Un mecha Zentraedi"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién lidera el grupo de resistencia que llega al Punto Reflex en la Nueva Generación?",
+    "opciones": [
+      "Jonathan Wolfe",
+      "Scott Bernard",
+      "Lancer"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué raza entregó a la Fuerza Expedicionaria la tecnología Sombra y los misiles Neutrón-S (con intenciones ocultas)?",
+    "opciones": [
+      "Los Invid",
+      "Los Haydonitas",
+      "Los Maestros Robotech"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de estas tres sagas no corresponde a una de las tres generaciones originales de la serie de 1985?",
+    "opciones": [
+      "La Saga Macross",
+      "La Saga de los Maestros",
+      "Los Centinelas"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué piloto Zentraedi micronizado se casó con Max Sterling?",
+    "opciones": [
+      "Azonia",
+      "Miriya Parina",
+      "Exedore"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué ocurrió con la flota principal de Dolza al final de la Primera Guerra Robotech?",
+    "opciones": [
+      "Se rindió y se unió a la Tierra",
+      "Fue destruida en gran parte por el Gran Cañón y la operación con Minmei",
+      "Se retiró a Tirol"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál de estos proyectos intentó financiarse por Kickstarter y fue cancelado antes de terminar la campaña?",
+    "opciones": [
+      "Robotech Las Crónicas de la Sombra",
+      "Robotech Academia",
+      "Robotech 3000"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama el científico tiroliano que descubrió la Protocultura y creó la Matriz?",
+    "opciones": [
+      "Zor",
+      "Exedore",
+      "Dolza"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Quién era el comandante supremo de toda la flota Zentraedi durante la Primera Guerra Robotech?",
+    "opciones": [
+      "Breetai",
+      "Dolza",
+      "Khyron"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Qué proceso permite reducir a un Zentraedi al tamaño de un ser humano?",
+    "opciones": [
+      "Transposición",
+      "Micronización",
+      "Regeneración Reflex"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién era el comandante en jefe del Ejército de la Cruz del Sur durante la Segunda Guerra Robotech?",
+    "opciones": [
+      "Rolf Emerson",
+      "Anatole Leonard",
+      "Henry Gloval"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cómo se llama la novia y eventual pareja de Lancer Belmont?",
+    "opciones": [
+      "Mylene",
+      "Marlene",
+      "Sera"
+    ],
+    "correcta": 2
+  }
+]

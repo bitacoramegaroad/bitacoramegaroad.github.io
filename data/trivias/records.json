@@ -1,0 +1,127 @@
+{
+  "macross": {
+    "nuevos": [],
+    "predeterminados": {
+      "mejores": [
+        {
+          "nick": "Alisa",
+          "puntaje": 80
+        },
+        {
+          "nick": "Ikaruss",
+          "puntaje": 70
+        },
+        {
+          "nick": "Bluegazer",
+          "puntaje": 60
+        },
+        {
+          "nick": "MacrossBook",
+          "puntaje": 50
+        }
+      ],
+      "peor": {
+        "nick": "Kawacejas",
+        "puntaje": "-0"
+      }
+    }
+  },
+  "robotech": {
+    "nuevos": [],
+    "predeterminados": {
+      "mejores": [
+        {
+          "nick": "Jesus B",
+          "puntaje": 80
+        },
+        {
+          "nick": "Patricia A",
+          "puntaje": 70
+        },
+        {
+          "nick": "Rocio G",
+          "puntaje": 60
+        },
+        {
+          "nick": "Sylvia G.",
+          "puntaje": 50
+        }
+      ],
+      "peor": {
+        "nick": "Carl M.",
+        "puntaje": "-0"
+      }
+    }
+  },
+  "general": {
+    "nuevos": [],
+    "predeterminados": {
+      "mejores": [
+        {
+          "nick": "Jean-Luc Picard",
+          "puntaje": 120
+        },
+        {
+          "nick": "Gordon Freeman",
+          "puntaje": 115
+        },
+        {
+          "nick": "Chrisjen Avasarala",
+          "puntaje": 110
+        },
+        {
+          "nick": "Isaac",
+          "puntaje": 105
+        },
+        {
+          "nick": "Anakin Skywalker",
+          "puntaje": 100
+        },
+        {
+          "nick": "Alyx Vance",
+          "puntaje": 95
+        },
+        {
+          "nick": "James Bond",
+          "puntaje": 90
+        },
+        {
+          "nick": "Alara Kitan",
+          "puntaje": 85
+        },
+        {
+          "nick": "Amos Burton",
+          "puntaje": 80
+        },
+        {
+          "nick": "Bortus",
+          "puntaje": 75
+        },
+        {
+          "nick": "Camina Drummer",
+          "puntaje": 70
+        },
+        {
+          "nick": "Padmé Amidala",
+          "puntaje": 65
+        },
+        {
+          "nick": "Luke Skywalker",
+          "puntaje": 60
+        },
+        {
+          "nick": "Spock",
+          "puntaje": 55
+        },
+        {
+          "nick": "Naomi Nagata",
+          "puntaje": 50
+        }
+      ],
+      "peor": {
+        "nick": "Jar Jar Binks",
+        "puntaje": "-0"
+      }
+    }
+  }
+}

@@ -1,0 +1,1713 @@
+[
+  {
+    "pregunta": "¿Quien es el comerciante de la region del Cordón?",
+    "opciones": [
+      "Barbas",
+      "Buho",
+      "Sidorovich"
+    ],
+    "correcta": 2,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Cómo se conoce la zona de exclusión alrededor de Chernóbil en los juegos?",
+    "opciones": [
+      "La Zona de Exclusión",
+      "El Área X",
+      "La Tierra Muerta"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Cuál fue el primer título de la trilogía original de STALKER en salir a la venta?",
+    "opciones": [
+      "Clear Sky",
+      "Call of Pripyat",
+      "Shadow of Chernobyl"
+    ],
+    "correcta": 2,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En los juegos, ¿qué facción no considera que la Zona deba ser destruida?",
+    "opciones": [
+      "Libertad",
+      "Cielo Despejado",
+      "Deber"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Quién es el protagonista en Call of Pripyat?",
+    "opciones": [
+      "Marcado",
+      "Degtyarev",
+      "Strelok"
+    ],
+    "correcta": 1,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En la novela, ¿qué objeto concede a quien lo alcanza su deseo más profundo?",
+    "opciones": [
+      "La Esfera Dorada",
+      "El Cuarto de los Deseos",
+      "El Monolito"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En la película de Tarkovsky, ¿quién guía al Escritor y al Profesor a través de la Zona?",
+    "opciones": [
+      "El Stalker",
+      "Redrick Schuhart",
+      "El Marcado"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "El proyecto original de STALKER 2, cancelado en 2012, prometía un mapa de mundo abierto gigantesco. ¿Cuál fue la razón comunicada para cancelarlo?",
+    "opciones": [
+      "No hubo acuerdo sobre los derechos de la franquicia",
+      "Falta de ventas de los juegos anteriores",
+      "Problemas técnicos imposibles de resolver"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Cuál es el apodo del protagonista en Shadow of Chernobyl?",
+    "opciones": [
+      "Marcado",
+      "Degtyarev",
+      "Scar"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la novela rusa que inspiró S.T.A.L.K.E.R.?",
+    "opciones": [
+      "La Zona Prohibida",
+      "Pícnic junto al camino",
+      "El Corazón de Chernóbil"
+    ],
+    "correcta": 1,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En Shadow of Chernobyl, ¿qué dispositivo de Radar emite la barrera psiónica que bloquea el avance hacia las zonas del norte?",
+    "opciones": [
+      "El Cauterizador Cerebral",
+      "La Máquina Milagrosa",
+      "El casco psi de Sajarov"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Qué facción protege la Barrera de los ataques del Monolito en Shadow of Chernobyl?",
+    "opciones": [
+      "Deber",
+      "Militares",
+      "Libertad"
+    ],
+    "correcta": 2,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿En qué año se desarrolla Shadow of Chernobyl?",
+    "opciones": [
+      "2006",
+      "2011",
+      "2012"
+    ],
+    "correcta": 2,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Quién dirige la base de Deber en Rostok?",
+    "opciones": [
+      "Lukash",
+      "Voronin",
+      "Petrenko"
+    ],
+    "correcta": 1,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Quién es el marine que actúa como antagonista principal de Gordon en Half-Life: Opposing Force?",
+    "opciones": [
+      "Adrian Shephard",
+      "Otis Laurey",
+      "Barney Calhoun"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Quién le debe una cerveza a Gordon Freeman?",
+    "opciones": [
+      "Eli Vance",
+      "Barney Calhoun",
+      "Isaac Kleiner"
+    ],
+    "correcta": 1,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cuántos episodios de Half-Life 2 fueron lanzados oficialmente?",
+    "opciones": [
+      "Dos",
+      "Tres",
+      "Cuatro"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿De que color es la ropa interior de Alyx Vance?",
+    "opciones": [
+      "Purpura, de encaje",
+      "Ninguna, nunca se le ve",
+      "Amarilla, suave"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿En qué capítulo de Half-Life 2 se introduce por primera vez a Judith Mossman?",
+    "opciones": [
+      "Water Hazard",
+      "Black Mesa East",
+      "Nova Prospekt"
+    ],
+    "correcta": 1,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cuantas palancas diferentes, usa Gordon a lo largo de las sagas?",
+    "opciones": [
+      "3",
+      "1",
+      "4"
+    ],
+    "correcta": 2,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de la mascota de Alyx?",
+    "opciones": [
+      "Dog",
+      "D0g",
+      "Lamarr"
+    ],
+    "correcta": 1,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cómo llama Alyx Vance a los zombies infectados por headcrabs Combine?",
+    "opciones": [
+      "Zombine",
+      "Necrocombine",
+      "Headcrab Soldier"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿En qué juego de la saga Half-Life controlas a Barney Calhoun como protagonista?",
+    "opciones": [
+      "Opposing Force",
+      "Half-Life: Blue Shift",
+      "Half-Life: Decay"
+    ],
+    "correcta": 1,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cuál es el nombre oficial de la Gravity Gun?",
+    "opciones": [
+      "Manipulador de Campos de Gravedad Zero",
+      "Manipulador de Campos de Energía Oscura",
+      "Cañon de Singularidad"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Qué criatura sirve como jefe final en Half-Life?",
+    "opciones": [
+      "Nihilanth",
+      "Gonarch",
+      "Gene Worm"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cuál es la frase original con que el G-Man despierta a Gordn de su letargo?",
+    "opciones": [
+      "Manos a la obra, señor Freeman. Manos a la obra.",
+      "Hola, Dr Freeman",
+      "Hello there, Gordon"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿De quien era el almuerzo que Gordon quema con jugando con el microndas en el primer juego?",
+    "opciones": [
+      "Eli Vance",
+      "Arne Magnusson",
+      "Judith Mossman"
+    ],
+    "correcta": 1,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿De que empresa rival, es el misterioso barco perdido Borealis, del que se hace mencion?",
+    "opciones": [
+      "Black Mesa East",
+      "Aperture Science",
+      "Valve"
+    ],
+    "correcta": 1,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cuál es la frase con mas peso dentro de la saga?",
+    "opciones": [
+      "No vamos a Ravenholm",
+      "Consecuencias Imprevistas",
+      "Anticiudadano 1"
+    ],
+    "correcta": 1,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Quién es el capitán de la USS Enterprise-D en The Next Generation?",
+    "opciones": [
+      "Kathryn Janeway",
+      "Jean-Luc Picard",
+      "Benjamín Sisko"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿En qué estación espacial está apostado Benjamín Sisko?",
+    "opciones": [
+      "Estación Regula",
+      "Deep Space Nine",
+      "Estrella Base 74"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué especie es Data en The Next Generation?",
+    "opciones": [
+      "Vulcano",
+      "Androide",
+      "Klingon"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Quién es el jefe de seguridad en Deep Space Nine?",
+    "opciones": [
+      "Odo",
+      "Worf",
+      "Kira Nerys"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué nave capitanea Kathryn Janeway?",
+    "opciones": [
+      "USS Enterprise",
+      "USS Defiant",
+      "USS Voyager"
+    ],
+    "correcta": 2,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿A qué especie pertenece Odo en Deep Space Nine?",
+    "opciones": [
+      "A los Fundadores (Cambiantes)",
+      "A los Trill",
+      "A los Borg"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Quién es el ingeniero jefe en The Next Generation?",
+    "opciones": [
+      "Geordi La Forge",
+      "Miles O'Brien",
+      "B'Elanna Torres"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué decisión de Trip muestra sus sentimientos por T’Pol en el episodio «Home»?",
+    "opciones": [
+      "La apoya en su boda vulcana, aunque está enamorado de ella",
+      "Le exige que abandone su compromiso y se case con él",
+      "Pide que la trasladen para no volver a verla"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué película de la serie original presenta a Khan?",
+    "opciones": [
+      "The Search for Spock",
+      "The Wrath of Khan",
+      "The Voyage Home"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué sucede entre Ezri Dax y Julian Bashir hacia el final de Deep Space Nine?",
+    "opciones": [
+      "Reconocen su atracción y comienzan una relación",
+      "Ezri vuelve con Worf",
+      "Bashir se compromete con Leeta"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿De que espia famoso, es fan el Dr Julian Bashir?",
+    "opciones": [
+      "James Bond",
+      "Jason Bourne",
+      "Ethan Hunt"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Cuál es la maniobra Riker en Star Trek Next Generation?",
+    "opciones": [
+      "'Atacar' dos mujeres Klingon",
+      "Sentarse levantando la pierna sobre el asiento",
+      "Autodestruir su nave"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Cuál es el lema de la serie original?",
+    "opciones": [
+      "Al Infinito.... y más allá",
+      "Explorar nuevos mundos extraños... Para ir audazmente a donde nadie ha ido antes",
+      "Hoy es un buen día para viajar..."
+    ],
+    "correcta": 1,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Quién es el barman ferengi en Deep Space Nine?",
+    "opciones": [
+      "Nog",
+      "Quark",
+      "Rom"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué consejero empático sirve en la Enterprise-D?",
+    "opciones": [
+      "Deanna Troi",
+      "Guinan",
+      "Ezri Dax"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué secreto sobre su infancia oculta Julian Bashir durante gran parte de Deep Space Nine?",
+    "opciones": [
+      "Estaba enamorado de Jadzia Dax",
+      "Fue modificado genéticamente",
+      "Tiene un hermano gemelo malvado"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué película de la serie original salva ballenas en el siglo XX?",
+    "opciones": [
+      "The Voyage Home",
+      "The Undiscovered Country",
+      "First Contact"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué importante paso da la relación de Tom Paris y B’Elanna Torres en el episodio «Drive»?",
+    "opciones": [
+      "Tom le propone matrimonio y los dos se casan",
+      "Anuncian que esperan a su hija Miral",
+      "Deciden pedir traslado a naves distintas"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué actor interpreta al capitán Ed Mercer en The Orville?",
+    "opciones": [
+      "Seth MacFarlane",
+      "Adrianne Palicki",
+      "Scott Grimes"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué cargo ocupa Alara Kitan al comienzo de la serie?",
+    "opciones": [
+      "Doctora de la nave",
+      "Jefa de seguridad xelayana",
+      "Ingeniera jefe"
+    ],
+    "correcta": 1,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Cuál es el nombre del primer oficial?",
+    "opciones": [
+      "Gordon Malloy",
+      "Bortus",
+      "Kelly Grayson"
+    ],
+    "correcta": 2,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué especie es Bortus?",
+    "opciones": [
+      "Moclan",
+      "Kaylon",
+      "Krill"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Quién es la doctora de la nave Orville?",
+    "opciones": [
+      "Claire Finn",
+      "John Lamarr",
+      "Yaphit"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "Tras la actualización de su motor cuántico en la tercera temporada, ¿qué velocidad máxima alcanza la Orville?",
+    "opciones": [
+      "10 años luz por hora",
+      "17 años luz por hora",
+      "20 años luz por hora"
+    ],
+    "correcta": 1,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿En honor a quién recibe su nombre la nave Orville?",
+    "opciones": [
+      "A un almirante de la Unión",
+      "A Orville Wright",
+      "A un explorador espacial"
+    ],
+    "correcta": 1,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿En qué siglo transcurren principalmente los acontecimientos de The Orville?",
+    "opciones": [
+      "Siglo XXIV",
+      "Siglo XXV",
+      "Siglo XXVI"
+    ],
+    "correcta": 1,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué planeta natal tienen los Moclans en The Orville?",
+    "opciones": [
+      "Xelaya",
+      "Moclus",
+      "Kaylon"
+    ],
+    "correcta": 1,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué práctica tradicional aplican los Moclans cuando nace una cría de sexo femenino?",
+    "opciones": [
+      "Se realiza una cirugía para asignarle sexo masculino",
+      "Se la envía a una colonia de mujeres",
+      "La cría es expulsada de Moclus"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué condición de Xelaya explica la fuerza extraordinaria de Alara bajo la gravedad terrestre?",
+    "opciones": [
+      "La gravedad de Xelaya es mucho mayor que la terrestre",
+      "La atmósfera de Xelaya tiene más oxígeno",
+      "Los xelayans tienen implantes musculares"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Quién reemplaza a Alara Kitan como jefa de seguridad de la Orville?",
+    "opciones": [
+      "Kelly Grayson",
+      "Alara Kitan",
+      "Talla Keyali"
+    ],
+    "correcta": 2,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Quién fue la primera oficial xelayana a cargo de la seguridad de la Orville?",
+    "opciones": [
+      "Talla Keyali",
+      "Alara Kitan",
+      "Kelly Grayson"
+    ],
+    "correcta": 1,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué canción famosa no logra cantar Bortus en The Orville?",
+    "opciones": [
+      "My Heart Will Go On",
+      "Singin’ in the Rain",
+      "Bohemian Rhapsody"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué nave adopta la tripulación como propia después de que la Canterbury es destruida?",
+    "opciones": [
+      "Donnager",
+      "Tachi, luego renombrada Rocinante",
+      "Gucci"
+    ],
+    "correcta": 1,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Cómo se llama la tecnología alienígena que Protogen estudia y que transforma organismos y materia?",
+    "opciones": [
+      "Protomolécula",
+      "Agua pesada",
+      "Thrust"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué oficial de la Canterbury termina al mando de la Rocinante?",
+    "opciones": [
+      "Jim Holden",
+      "Joe Miller",
+      "Chrisjen Avasarala"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué asteroide queda transformado por la Protomolécula y se convierte en el primer gran foco de la crisis?",
+    "opciones": [
+      "Ceres",
+      "Eros",
+      "Pallas"
+    ],
+    "correcta": 1,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Cómo se conoce a la coalición de movimientos que reivindican los derechos de los habitantes del Cinturón?",
+    "opciones": [
+      "OPA",
+      "ONU",
+      "MCRN"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Quién es la ingeniera cinturonera de la Rocinante en The Expanse?",
+    "opciones": [
+      "Alex Kamal",
+      "Amos Burton",
+      "Naomi Nagata"
+    ],
+    "correcta": 2,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿En qué luna de Saturno estaba la estación de investigación de Protogen vinculada a la Protomolécula?",
+    "opciones": [
+      "Titán",
+      "Febe (Phoebe)",
+      "Encélado"
+    ],
+    "correcta": 1,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué diplomática de la ONU se vuelve una de las principales estrategas políticas durante la crisis de la Protomolécula?",
+    "opciones": [
+      "Sadavir Errinwright",
+      "Chrisjen Avasarala",
+      "Esteban Sorrento-Gillis"
+    ],
+    "correcta": 1,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué tecnología permite a las naves mantener aceleración durante largos trayectos por el sistema solar?",
+    "opciones": [
+      "Motor Epstein",
+      "Puertas de anillo",
+      "Ascensor espacial"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué detective de Ceres recibe el encargo de encontrar a Julie Mao?",
+    "opciones": [
+      "Havelock",
+      "Joe Miller",
+      "Avil"
+    ],
+    "correcta": 1,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿En qué planeta tiene su sede la República Congresional Marciana, de la que depende la MCRN?",
+    "opciones": [
+      "La Tierra",
+      "Marte",
+      "Ganímedes"
+    ],
+    "correcta": 1,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué líder de la OPA controla una de sus principales células en Ceres durante la primera temporada?",
+    "opciones": [
+      "Fred Johnson",
+      "Anderson Dawes",
+      "Camina Drummer"
+    ],
+    "correcta": 1,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué marine marciana termina aliándose con la tripulación de la Rocinante?",
+    "opciones": [
+      "Bobbie Draper",
+      "Cotyar",
+      "Semenov"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué plato prepara Alex para compartir con la tripulación de la Rocinante?",
+    "opciones": [
+      "Kibble",
+      "Proteína sintética",
+      "Lasaña"
+    ],
+    "correcta": 2,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Quién se incorpora formalmente a la tripulación de la Rocinante en la temporada final?",
+    "opciones": [
+      "Bobbie Draper",
+      "Camina Drummer",
+      "Clarissa Mao"
+    ],
+    "correcta": 2,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Quién es el maestro Jedi personal de Obi-Wan Kenobi en las precuelas?",
+    "opciones": [
+      "Yoda",
+      "Qui-Gon Jinn",
+      "Mace Windu"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién fue el maestro Jedi de Anakin Skywalker?",
+    "opciones": [
+      "Qui-Gon Jinn",
+      "Obi-Wan Kenobi",
+      "Mace Windu"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién construye a C-3PO en Episodio I?",
+    "opciones": [
+      "Anakin Skywalker",
+      "Luke Skywalker",
+      "Owen Lars"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué comandante clon recibe la Orden 66 y ataca a Obi-Wan en Utapau?",
+    "opciones": [
+      "Cody",
+      "Rex",
+      "Gree"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién es el mandaloriano protagonista que le da nombre de la serie?",
+    "opciones": [
+      "Boba Fett",
+      "Din Djarin",
+      "Jango Fett"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué capitán clone lidera la 501 en Clone Wars?",
+    "opciones": [
+      "Cody",
+      "Rex",
+      "Wolffe"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién entrena a Ahsoka Tano en Clone Wars?",
+    "opciones": [
+      "Obi-Wan",
+      "Anakin Skywalker",
+      "Plo Koon"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿En qué planeta desértico vive Anakin de niño?",
+    "opciones": [
+      "Hoth",
+      "Tatooine",
+      "Coruscant"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué arma usa Luke para destruir la Estrella de la Muerte en Una Nueva Esperanza?",
+    "opciones": [
+      "Sable láser",
+      "Torpedos de protones",
+      "Cañón láser"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué cazarrecompensas congela a Han Solo en El Imperio Contraataca?",
+    "opciones": [
+      "IG-88",
+      "Boba Fett",
+      "Dengar"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué tipo de cuerpo estelar es Endor en El Retorno del Jedi?",
+    "opciones": [
+      "Un planeta",
+      "Una Luna",
+      "Una estación espacial"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién es la madre de Luke y Leia?",
+    "opciones": [
+      "Breha Organa",
+      "Padmé Amidala",
+      "Shmi Skywalker"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué general separatista lidera droides en La Amenaza Fantasma?",
+    "opciones": [
+      "Grievous",
+      "Nute Gunray",
+      "Wat Tambor"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué general clone ejecuta la Orden 66 contra Aayla Secura?",
+    "opciones": [
+      "Bly",
+      "Neyo",
+      "Bacara"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué criatura ataca a Luke en Hoth?",
+    "opciones": [
+      "Tauntaun",
+      "Wampa",
+      "Bantha"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué emoción prohíbe el código Jedi?",
+    "opciones": [
+      "El amor",
+      "El apego",
+      "Matar"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién es el aprendiz de Ahsoka Tano en la serie Ahsoka?",
+    "opciones": [
+      "Ezra Bridger",
+      "Sabine Wren",
+      "Jacen Syndulla"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién es el líder del escuadrón Bad Batch?",
+    "opciones": [
+      "Hunter",
+      "Crosshair",
+      "Tech"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿En qué planeta se esconde Yoda después de la Orden 66?",
+    "opciones": [
+      "Dagobah",
+      "Tatooine",
+      "Alderaan"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién es el padre de Boba Fett?",
+    "opciones": [
+      "Jango Fett",
+      "Din Djarin",
+      "Cad Bane",
+      "Ninguno: Boba es un clon de Jango Fett, quien lo cría como su hijo"
+    ],
+    "correcta": 3,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué Jedi rescata a Grogu del Templo Jedi durante la Orden 66?",
+    "opciones": [
+      "Luke Skywalker",
+      "Ahsoka Tano",
+      "Kelleran Beq"
+    ],
+    "correcta": 2,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Cuál es el nombre clave por el cual Ahsoka se comunica con Ezra y Kanan?",
+    "opciones": [
+      "Fulcrum",
+      "Delta 1",
+      "Rogue 1"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué modelo de nave reemplaza la Razor Crest original después de ser destruida?",
+    "opciones": [
+      "Caza estelar N-1 modificado de Naboo",
+      "Caza estelar Ala-X",
+      "Nave de asalto clase Firespray"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Quién fue el maestro Jedi de Qui-Gon Jinn?",
+    "opciones": [
+      "Yoda",
+      "Conde Dooku",
+      "Mace Windu"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Qué miembro del Bad Batch permaneció al servicio del Imperio mientras el resto del grupo desertó?",
+    "opciones": [
+      "Hunter",
+      "Crosshair",
+      "Wrecker"
+    ],
+    "correcta": 1,
+    "franquicia": "Star Wars"
+  },
+  {
+    "pregunta": "¿Cuál es el primer libro de James Bond escrito por Ian Fleming?",
+    "opciones": [
+      "From Russia with Love",
+      "Dr. No",
+      "Casino Royale"
+    ],
+    "correcta": 2,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Cómo prefiere Bond, su vodka Martini en los libros y películas?",
+    "opciones": [
+      "Con un toque de naranja",
+      "Agitado, no revuelto",
+      "Con hielo"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Quién fue el primer actor en interpretar a James Bond?",
+    "opciones": [
+      "Barry Nelson",
+      "Sean Connery",
+      "George Lazenby"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué organización criminal es enemiga de Bond en los primeros libros?",
+    "opciones": [
+      "Hydra",
+      "SPECTRE",
+      "SHIELD"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué forma de fumar tabaco es la preferida de James Bond?",
+    "opciones": [
+      "Puros",
+      "Cigarrillos",
+      "Pipa"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿En qué libro James Bond se casa?",
+    "opciones": [
+      "On Her Majesty's Secret Service",
+      "You Only Live Twice",
+      "The Man with the Golden Gun"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué auto icónico conduce Bond en Goldfinger?",
+    "opciones": [
+      "Aston Martin DB5",
+      "Lotus Esprit",
+      "BMW Z3"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿En qué libro de Fleming, Bond usa por primera vez su Walther PPK?",
+    "opciones": [
+      "Casino Royale",
+      "Dr. No",
+      "Moonraker"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué villano de los libros tiene un tercer pezón?",
+    "opciones": [
+      "Goldfinger",
+      "Le Chiffre",
+      "Scaramanga"
+    ],
+    "correcta": 2,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué actriz interpreta a Honey Ryder en Dr. No?",
+    "opciones": [
+      "Honor Blackman",
+      "Ursula Andress",
+      "Daniela Bianchi"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿En qué se especializaba el verdadero James Bond que inspiró el nombre del personaje de Fleming?",
+    "opciones": [
+      "Ornitólogo",
+      "Espía de la Segunda Guerra Mundial",
+      "Oceanógrafo"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué marca de cigarrillos fuma Bond en los libros de Fleming?",
+    "opciones": [
+      "Morland con tres bandas doradas",
+      "Chesterfield",
+      "Lucky Strike"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Quien es Miles Messervy en los libros de James Bond?",
+    "opciones": [
+      "Q",
+      "M",
+      "Miss Moneypenny"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Quién es la secretaria personal de James Bond?",
+    "opciones": [
+      "Mary Goodnight",
+      "Lois Maxwell",
+      "Miss Moneypenny"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Cuál es el nombre de pila de Miss Monepeny en las novelas?",
+    "opciones": [
+      "Eve Moneypenny",
+      "Jane Moneypenny",
+      "Miss Moneypenny"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Quién resultó ser la inspiración y el 'James Bond' de la vida real?",
+    "opciones": [
+      "Sir Ian Fleming",
+      "El ornitólogo caribeño James Bond",
+      "Sir Christopher Lee"
+    ],
+    "correcta": 2,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué villano cambia de bando y ayuda a Bond al final de una película?",
+    "opciones": [
+      "Oddjob",
+      "Jaws",
+      "Rosa Klebb"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué película lleva el nombre de la finca de Fleming y nunca fue un libro?",
+    "opciones": [
+      "Thunderball",
+      "GoldenEye",
+      "Moonraker"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Cuál es considerada la PEOR canción de James Bond?",
+    "opciones": [
+      "No Time to Die (Billie Eilish)",
+      "Another Way to Die (Jack White & Alicia Keys)",
+      "Die Another Day (Madonna)"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Cuál es considerada la MEJOR canción de James Bond?",
+    "opciones": [
+      "Skyfall (Adele)",
+      "Live and Let Die (Paul McCartney)",
+      "You Know My Name (Chris Cornell)"
+    ],
+    "correcta": 2,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Quién es el compositor de la clásica melodía de James Bond?",
+    "opciones": [
+      "John Barry",
+      "Monty Norman",
+      "David Arnold"
+    ],
+    "correcta": 1,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué famosa banda británica quería grabar una canción para James Bond pero jamás le ofrecieron la oportunidad?",
+    "opciones": [
+      "Queen",
+      "The Who",
+      "Oasis"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué marca tiene el traje HEV utilizado por Gordon Freeman en la primera entrega?",
+    "opciones": [
+      "Mark V",
+      "Mark IV",
+      "Mark VI"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Quién es el director científico de la base rebelde White Forest?",
+    "opciones": [
+      "Eli Vance",
+      "Arne Magnusson",
+      "Judith Mossman"
+    ],
+    "correcta": 1,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cuál es el numero prohibido?",
+    "opciones": [
+      "11",
+      "69",
+      "3"
+    ],
+    "correcta": 2,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Qué saga videojuegos se atrevio a mostrar a Gordon Freeman?",
+    "opciones": [
+      "S.T.A.L.K.E.R.",
+      "Portal 2",
+      "METRO"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Qué referencia hace Arne Magnusson a un incidente en Black Mesa con Gordon?",
+    "opciones": [
+      "Explosión de un microondas",
+      "Destrucción del reactor Lambda",
+      "Pérdida de un cristal"
+    ],
+    "correcta": 0,
+    "franquicia": "Half-Life"
+  },
+  {
+    "pregunta": "¿Cómo se llamaba el carguero de hielo donde trabajaba Holden al comienzo de la serie?",
+    "opciones": [
+      "Rocinante",
+      "Canterbury",
+      "Razor Crest"
+    ],
+    "correcta": 1,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué nave construyeron los mormones para un viaje generacional y que la OPA convirtió en el Behemoth?",
+    "opciones": [
+      "Nauvoo",
+      "Donnager",
+      "Tachi"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Cómo se llama la lengua criolla que hablan muchos habitantes del Cinturón?",
+    "opciones": [
+      "Lang Belta",
+      "Estándar marciano",
+      "Estándar de la ONU"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Cómo se llama la flota de belters que Marco Inaros organiza para atacar a los planetas interiores?",
+    "opciones": [
+      "Free Navy",
+      "MCRN",
+      "OPA"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué apodo se ganó Fred Johnson por la masacre de Anderson Station?",
+    "opciones": [
+      "El Carnicero de Anderson Station",
+      "El Almirante de Ceres",
+      "El Fantasma de Tycho"
+    ],
+    "correcta": 0,
+    "franquicia": "The Expanse"
+  },
+  {
+    "pregunta": "¿Qué clase de nave es la USS Orville dentro de la Flota de la Unión?",
+    "opciones": [
+      "Nave exploratoria de tamaño medio",
+      "USS Enterprise, de Star Trek",
+      "Acorazado de la MCRN"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Cómo se llama la pareja de Bortus?",
+    "opciones": [
+      "Klyden",
+      "Talla Keyali",
+      "Claire Finn"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Cómo se llama la hija de Bortus y Klyden?",
+    "opciones": [
+      "Topa",
+      "Anaya",
+      "Lysella"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿De qué especie es Isaac, el oficial científico de la Orville?",
+    "opciones": [
+      "Kaylon",
+      "Moclan",
+      "Xelayan"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué canción de Dolly Parton se convierte en un símbolo de resistencia para las mujeres moclanas?",
+    "opciones": [
+      "9 to 5",
+      "Jolene",
+      "Islands in the Stream"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Cómo se llama la hija de Ed Mercer y la canciller Teleya?",
+    "opciones": [
+      "Anaya",
+      "Topa",
+      "Lysella"
+    ],
+    "correcta": 0,
+    "franquicia": "The Orville"
+  },
+  {
+    "pregunta": "¿Qué instrumento musical aprende a tocar Picard después de vivir la vida de Kamin en «The Inner Light»?",
+    "opciones": [
+      "La flauta ressikana",
+      "La lira vulcana",
+      "El tambor bajorano"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué nombre le da el colectivo Borg a Jean-Luc Picard después de asimilarlo?",
+    "opciones": [
+      "Locutus",
+      "Hugh",
+      "One"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué ser conocido como el Cuidador envía a la Voyager al Cuadrante Delta?",
+    "opciones": [
+      "El Cuidador",
+      "La Reina Borg",
+      "Q"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Cómo se llama la organización secreta de inteligencia de Cardassia dirigida por Enabran Tain?",
+    "opciones": [
+      "La Orden Obsidiana",
+      "El Tal Shiar",
+      "La Sección 31"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Para qué se diseñó originalmente la nave clase Defiant antes de que Sisko la llevara a Deep Space Nine?",
+    "opciones": [
+      "Para combatir la amenaza Borg",
+      "Para explorar el Cuadrante Gamma",
+      "Para servir como nave diplomática"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿En qué año inició su viaje inaugural la Enterprise NX-01?",
+    "opciones": [
+      "2151",
+      "2143",
+      "2161"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué agente del siglo XXXI advierte a Archer sobre la Guerra Fría Temporal?",
+    "opciones": [
+      "Daniels",
+      "Silik",
+      "Shran"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "En Shadow of Chernobyl, ¿qué instalación de Yantar, ubicada en el laboratorio X-16, causa la zombificación de stalkers cercanos?",
+    "opciones": [
+      "La Máquina Milagrosa",
+      "El Cauterizador Cerebral",
+      "Un holocrón"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Cómo te sientes?",
+    "opciones": [
+      "Me siento bien.",
+      "No entiendo la pregunta.",
+      "Dile a madre que me siento bien."
+    ],
+    "correcta": 2,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "En la novela, ¿qué apodo recibe María, la hija de Redrick y Guta?",
+    "opciones": [
+      "Chiquitita",
+      "Monita",
+      "Betty"
+    ],
+    "correcta": 1,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En la novela, ¿cómo se llama la sustancia anómala que vuelve gomosos los huesos de Burbridge?",
+    "opciones": [
+      "La Gelatina de la bruja",
+      "La Esfera Dorada",
+      "Ponche de Frutas"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Quiénes son los «retornados» en la novela?",
+    "opciones": [
+      "Cadáveres de personas muertas y enterradas en la Zona, que regresan lentamente a sus hogares mientras el cuerpo se regenera",
+      "Stalkers que regresan de una incursión",
+      "Stalkers muertos que renacen en cuerpos nuevos"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En tono de broma, ¿qué saga de novelas actuales se parece tanto a la Zona de los Strugatski que da pie a decir que «roza el plagio»?",
+    "opciones": [
+      "Southern Reach",
+      "El color que cayó del cielo",
+      "La Zona Fantasma"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En la película de Tarkovsky, ¿qué arroja el Stalker para tantear el camino en la Zona?",
+    "opciones": [
+      "Tuercas metálicas atadas a tiras de tela",
+      "Casquillos de bala llenos de arena",
+      "Artefactos apagados envueltos en papel"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En la película, ¿qué planea hacer el Profesor con la bomba que llevó a la Zona?",
+    "opciones": [
+      "Destruir la Habitación para impedir que alguien la use",
+      "Volarla para abrir un camino hacia la Habitación",
+      "Entregársela al Stalker como pago"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Qué transporte usan el Stalker, el Escritor y el Profesor para cruzar el límite de la Zona en la película?",
+    "opciones": [
+      "Una vagoneta ferroviaria (dresina)",
+      "Un camión blindado",
+      "Un helicóptero de rescate"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Qué lugar de la película de Tarkovsky promete conceder el deseo más profundo de quien entre?",
+    "opciones": [
+      "La Habitación",
+      "La Esfera Dorada",
+      "El Instituto"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Qué artefacto buscan Redrick y Kirill en su expedición autorizada a la Zona?",
+    "opciones": [
+      "Un «vacío lleno»",
+      "La Esfera Dorada",
+      "Una batería de pulso"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Cuál es el título correcto en español de la novela de los Strugatski?",
+    "opciones": [
+      "Picnic extraterrestre",
+      "Picnic al costado del camino",
+      "Picnic en la Zona"
+    ],
+    "correcta": 1,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Qué deseo hizo infeliz a Puercoespín?",
+    "opciones": [
+      "Deseó revivir a su hermano muerto, pero la Habitación le concedió una fortuna",
+      "Deseó casarse con la mujer que amaba y descubrió que era su hermana",
+      "Deseó que enfermara su peor enemigo, pero terminó enfermándose él"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Qué película moderna basada en una novela suele compararse con STALKER por su zona anómala?",
+    "opciones": [
+      "El color que cayó del cielo",
+      "Aniquilación",
+      "Fundación (la de Asimov)"
+    ],
+    "correcta": 1,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En el sótano de Limansk, en Clear Sky, ¿a qué serie de ciencia ficción hace referencia el dispositivo?",
+    "opciones": [
+      "100 años en el futuro / Guest from the Future",
+      "Star Trek",
+      "2001: Odisea del espacio"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En la novela, ¿qué anomalía provoca la muerte de Kirill Panov después de la expedición de Redrick?",
+    "opciones": [
+      "La telaraña plateada",
+      "La pelusa ardiente (Burnt Fuzz)",
+      "La trituradora de carne"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "¿Qué criatura acompaña al Stalker luego de volver de la Zona?",
+    "opciones": [
+      "Una rata blanca",
+      "Un cuervo",
+      "Un perro"
+    ],
+    "correcta": 2,
+    "franquicia": "STALKER"
+  },
+  {
+    "pregunta": "En la película, ¿cuál era el objetivo real de la Operación Gran Slam de Goldfinger?",
+    "opciones": [
+      "Irradiar el oro de Fort Knox con una bomba nuclear y aumentar el valor de sus propias reservas",
+      "Robar todo el oro de Fort Knox sin activar la alarma",
+      "Destruir Fort Knox y culpar a la Unión Soviética"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué identidad usa Bond para infiltrarse en Piz Gloria en Al servicio secreto de Su Majestad?",
+    "opciones": [
+      "Sir Hilary Bray",
+      "Mark-Ange Draco",
+      "Balthazar de Bleuchamp"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Qué nombre en clave recibe la agente soviética Anya Amasova en La espía que me amó?",
+    "opciones": [
+      "Triple X",
+      "Agente 009",
+      "Octopussy"
+    ],
+    "correcta": 0,
+    "franquicia": "James Bond"
+  },
+  {
+    "pregunta": "¿Cuál era el alimento favorito de Porthos, el perro del capitán Archer?",
+    "opciones": [
+      "Queso",
+      "Pollo",
+      "Filete"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué comandante andoriano se gana la confianza de Archer y se vuelve un aliado recurrente de la Enterprise?",
+    "opciones": [
+      "Thy'lek Shran",
+      "Soval",
+      "Valdore"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué antiguo anfitrión de Dax fue mentor de Sisko antes de que Dax se uniera a Jadzia?",
+    "opciones": [
+      "Curzon",
+      "Torias",
+      "Joran"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Cómo se llamaba Deep Space Nine durante la ocupación cardassiana de Bajor?",
+    "opciones": [
+      "Terok Nor",
+      "Empok Nor",
+      "Cardassia Prime"
+    ],
+    "correcta": 0,
+    "franquicia": "Star Trek"
+  },
+  {
+    "pregunta": "¿Qué es un stalker?",
+    "opciones": [
+      "Persona que ingresa ilegalmente a la Zona de Exclusión para extraer «tesoros» y venderlos",
+      "Persona que gusta de acosar celebridades rusas",
+      "Un felino mutado por la radiación de Chernóbil"
+    ],
+    "correcta": 0,
+    "franquicia": "STALKER"
+  }
+]
