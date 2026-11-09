@@ -140,14 +140,14 @@
     "franquicia": "STALKER"
   },
   {
-    "pregunta": "¿Quién es el marine que actúa como antagonista principal de Gordon en Half-Life: Opposing Force?",
+    "pregunta": "¿Quién es el marine que actúa como antagonista principal de Gordon en Half Life: Opposing Force?",
     "opciones": [
       "Adrian Shephard",
       "Otis Laurey",
       "Barney Calhoun"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Quién le debe una cerveza a Gordon Freeman?",
@@ -157,17 +157,17 @@
       "Isaac Kleiner"
     ],
     "correcta": 1,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
-    "pregunta": "¿Cuántos episodios de Half-Life 2 fueron lanzados oficialmente?",
+    "pregunta": "¿Cuántos episodios de Half Life 2 fueron lanzados oficialmente?",
     "opciones": [
       "Dos",
       "Tres",
       "Cuatro"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿De que color es la ropa interior de Alyx Vance?",
@@ -177,17 +177,17 @@
       "Amarilla, suave"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
-    "pregunta": "¿En qué capítulo de Half-Life 2 se introduce por primera vez a Judith Mossman?",
+    "pregunta": "¿En qué capítulo de Half Life 2 se introduce por primera vez a Judith Mossman?",
     "opciones": [
       "Water Hazard",
       "Black Mesa East",
       "Nova Prospekt"
     ],
     "correcta": 1,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Cuantas palancas diferentes, usa Gordon a lo largo de las sagas?",
@@ -197,17 +197,17 @@
       "4"
     ],
     "correcta": 2,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Cuál es el nombre de la mascota de Alyx?",
     "opciones": [
-      "Dog",
+      "P3rro",
       "D0g",
       "Lamarr"
     ],
     "correcta": 1,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Cómo llama Alyx Vance a los zombies infectados por headcrabs Combine?",
@@ -217,17 +217,17 @@
       "Headcrab Soldier"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
-    "pregunta": "¿En qué juego de la saga Half-Life controlas a Barney Calhoun como protagonista?",
+    "pregunta": "¿En qué juego de la saga Half Life controlas a Barney Calhoun como protagonista?",
     "opciones": [
       "Opposing Force",
-      "Half-Life: Blue Shift",
-      "Half-Life: Decay"
+      "Half Life: Blue Shift",
+      "Half Life: Decay"
     ],
     "correcta": 1,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Cuál es el nombre oficial de la Gravity Gun?",
@@ -237,17 +237,17 @@
       "Cañon de Singularidad"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
-    "pregunta": "¿Qué criatura sirve como jefe final en Half-Life?",
+    "pregunta": "¿Qué criatura sirve como jefe final en Half Life?",
     "opciones": [
       "Nihilanth",
       "Gonarch",
       "Gene Worm"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Cuál es la frase original con que el G-Man despierta a Gordn de su letargo?",
@@ -257,7 +257,7 @@
       "Hello there, Gordon"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿De quien era el almuerzo que Gordon quema con jugando con el microndas en el primer juego?",
@@ -267,7 +267,7 @@
       "Judith Mossman"
     ],
     "correcta": 1,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿De que empresa rival, es el misterioso barco perdido Borealis, del que se hace mencion?",
@@ -277,7 +277,7 @@
       "Valve"
     ],
     "correcta": 1,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Cuál es la frase con mas peso dentro de la saga?",
@@ -287,7 +287,7 @@
       "Anticiudadano 1"
     ],
     "correcta": 1,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Quién es el capitán de la USS Enterprise-D en The Next Generation?",
@@ -1238,7 +1238,7 @@
       "Mark VI"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Quién es el director científico de la base rebelde White Forest?",
@@ -1248,7 +1248,7 @@
       "Judith Mossman"
     ],
     "correcta": 1,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Cuál es el numero prohibido?",
@@ -1258,7 +1258,7 @@
       "3"
     ],
     "correcta": 2,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Qué saga videojuegos se atrevio a mostrar a Gordon Freeman?",
@@ -1268,7 +1268,7 @@
       "METRO"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Qué referencia hace Arne Magnusson a un incidente en Black Mesa con Gordon?",
@@ -1278,7 +1278,7 @@
       "Pérdida de un cristal"
     ],
     "correcta": 0,
-    "franquicia": "Half-Life"
+    "franquicia": "Half Life"
   },
   {
     "pregunta": "¿Cómo se llamaba el carguero de hielo donde trabajaba Holden al comienzo de la serie?",
