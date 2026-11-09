@@ -2,6 +2,8 @@
   "use strict";
 
   const ROUND_SIZE = { general: 50, macross: 30, robotech: 30 };
+  const BEST_SIZE = { general: 10, macross: 4, robotech: 4 };
+  const QUESTION_TIME_MS = 30_000;
   const CATEGORY_NAMES = {
     general: "Mega Trivia",
     macross: "Macross Deculture Quiz",
@@ -77,7 +79,7 @@
 
   async function loadDefaults() {
     const response = await fetch(RECORDS_FILE, { cache: "no-store" });
-    if (!response.ok) throw new Error("No se pudieron cargar los récords iniciales.");
+    if (!response.ok) throw new Error("No se pudieron cargar los puntajes.");
     defaults = await response.json();
   }
 
@@ -146,14 +148,38 @@
     rankingContent.replaceChildren();
     const initial = defaults?.[category]?.predeterminados || {};
     const fixedBest = Array.isArray(initial.mejores) ? initial.mejores : [];
-    const localBest = readPreviewScores()[category] || [];
-    const combinedBest = [...fixedBest, ...localBest]
+    const localScores = readPreviewScores()[category] || [];
+
+    // Cada participante ocupa un solo lugar, conservando su mejor resultado.
+    const bestByPlayer = new Map();
+    localScores.forEach((entry) => {
+      const key = String(entry.nick || "").trim().toLocaleLowerCase("es");
+      const previous = bestByPlayer.get(key);
+      if (!previous || Number(entry.puntaje) > Number(previous.puntaje)) {
+        bestByPlayer.set(key, entry);
+      }
+    });
+    const playerBest = [...bestByPlayer.values()];
+
+    // Si el jugador iguala un puntaje de muestra, reemplaza ese nombre predeterminado.
+    const remainingDefaults = [...fixedBest];
+    playerBest.forEach((entry) => {
+      const tiedDefault = remainingDefaults.findIndex(
+        (fixed) => Number(fixed.puntaje) === Number(entry.puntaje)
+      );
+      if (tiedDefault !== -1) remainingDefaults.splice(tiedDefault, 1);
+    });
+
+    const combinedBest = [...remainingDefaults, ...playerBest]
       .sort((a, b) => Number(b.puntaje) - Number(a.puntaje))
-      .slice(0, 10);
+      .slice(0, BEST_SIZE[category]);
 
     addRankingSection("Mejores puntajes", combinedBest, "Todavía no hay puntajes.");
 
-    const worst = initial.peor;
+    const worst = localScores.reduce((lowest, entry) => {
+      if (!lowest || Number(entry.puntaje) <= Number(lowest.puntaje)) return entry;
+      return lowest;
+    }, initial.peor || null);
     if (worst) {
     addRankingSection("Mención deshonrosa", [worst], "");
     }
@@ -161,18 +187,18 @@
 
   async function chooseCategory(category) {
     selectedCategory = category;
-    homeMessage.textContent = "Cargando preguntas y récords…";
+    homeMessage.textContent = "Cargando preguntas y puntajes…";
     try {
       if (!defaults) await loadDefaults();
       questions = await loadPool(category);
       document.getElementById("setup-title").textContent = CATEGORY_NAMES[category];
-      document.getElementById("setup-summary").textContent = `${ROUND_SIZE[category]} preguntas seleccionadas al azar. Cada una tiene un límite de 20 segundos.`;
+      document.getElementById("setup-summary").textContent = `${ROUND_SIZE[category]} preguntas seleccionadas al azar. Cada una tiene un límite de 30 segundos.`;
       renderRanking(category);
       nickInput.value = "";
       showView("setup");
       nickInput.focus();
     } catch (error) {
-      homeMessage.textContent = error.message || "No se pudo preparar la trivia. Intentá de nuevo.";
+      homeMessage.textContent = error.message || "No se pudo preparar la trivia. Inténtalo de nuevo.";
     }
   }
 
@@ -193,9 +219,17 @@
     clearTimeout(transitionHandle);
     locked = false;
     const question = questions[questionIndex];
-    document.getElementById("game-category").textContent = CATEGORY_NAMES[selectedCategory];
+    const gameLabel = selectedCategory === "general" && question.franquicia
+      ? `Franquicia: ${question.franquicia}`
+      : CATEGORY_NAMES[selectedCategory];
+    document.getElementById("game-category").textContent = gameLabel;
     document.getElementById("game-progress").textContent = `Pregunta ${questionIndex + 1} de ${questions.length}`;
-    document.getElementById("trivia-question").textContent = question.pregunta;
+    const questionHeading = document.getElementById("trivia-question");
+    questionHeading.textContent = question.pregunta;
+    const gameCard = views.game;
+    gameCard.classList.remove("is-question-change");
+    void gameCard.offsetWidth;
+    gameCard.classList.add("is-question-change");
     const answers = document.getElementById("trivia-answers");
     answers.replaceChildren();
     question.opciones.forEach((option, index) => {
@@ -212,24 +246,25 @@
     questionStartedAt = performance.now();
     const number = document.getElementById("timer-number");
     const bar = document.getElementById("timer-bar");
-    number.textContent = "20";
+    number.textContent = "30";
     bar.style.width = "100%";
-    bar.classList.remove("is-low");
+    bar.classList.remove("is-yellow", "is-orange");
     timerHandle = window.setInterval(() => {
       const elapsed = performance.now() - questionStartedAt;
-      const remainingMs = Math.max(0, 20_000 - elapsed);
+      const remainingMs = Math.max(0, QUESTION_TIME_MS - elapsed);
       const seconds = Math.ceil(remainingMs / 1000);
       number.textContent = String(seconds);
-      bar.style.width = `${(remainingMs / 20_000) * 100}%`;
-      bar.classList.toggle("is-low", remainingMs <= 5_000);
+      bar.style.width = `${(remainingMs / QUESTION_TIME_MS) * 100}%`;
+      bar.classList.toggle("is-yellow", remainingMs <= 20_000 && remainingMs > 10_000);
+      bar.classList.toggle("is-orange", remainingMs <= 10_000);
       if (remainingMs <= 0) answerQuestion(null);
     }, 80);
   }
 
   function awardForTime(remainingMs) {
     const seconds = Math.ceil(remainingMs / 1000);
-    if (seconds >= 15) return 3;
-    if (seconds >= 9) return 2;
+    if (seconds >= 20) return 3;
+    if (seconds >= 10) return 2;
     return seconds > 0 ? 1 : 0;
   }
 
@@ -238,7 +273,7 @@
     locked = true;
     clearInterval(timerHandle);
     const question = questions[questionIndex];
-    const remainingMs = choiceIndex === null ? 0 : Math.max(0, 20_000 - (performance.now() - questionStartedAt));
+    const remainingMs = choiceIndex === null ? 0 : Math.max(0, QUESTION_TIME_MS - (performance.now() - questionStartedAt));
     const answerButtons = [...document.querySelectorAll("#trivia-answers button")];
     answerButtons.forEach((button) => { button.disabled = true; });
     if (choiceIndex !== null) {
@@ -262,7 +297,7 @@
     } catch {
       document.getElementById("results-save-message").textContent = "No se pudo guardar el puntaje.";
     }
-    document.getElementById("results-heading").textContent = `¡Bien jugado, ${nick}!`;
+    document.getElementById("results-heading").textContent = `¡Bien hecho, ${nick}!`;
     document.getElementById("results-score").textContent = `${score} ${score === 1 ? "punto" : "puntos"}`;
     renderRanking(selectedCategory);
     showView("results");
@@ -287,6 +322,6 @@
   });
 
   loadDefaults().catch((error) => {
-    homeMessage.textContent = error.message || "No se pudieron cargar los récords.";
+    homeMessage.textContent = error.message || "No se pudieron cargar los puntajes.";
   });
 })();
