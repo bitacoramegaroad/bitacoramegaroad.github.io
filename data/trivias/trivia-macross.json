@@ -1,6 +1,6 @@
 [
   {
-    "pregunta": "¿En qué año se estrenó la serie original Super Dimension Fortress Macross?",
+    "pregunta": "¿En qué año se estrenó Macross TV?",
     "opciones": [
       "1980",
       "1982",
@@ -9,7 +9,7 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿Qué pareja de personajes no tiene parentesco familiar?",
+    "pregunta": "¿Cuáles de estos personajes no tienen parentesco familiar?",
     "opciones": [
       "Claudia La Salle y Edgar La Salle",
       "Roy Focker y Aegis Focker",
@@ -27,7 +27,7 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿Qué avión caza usa Shin Kudo al inicio de Macross Zero?",
+    "pregunta": "¿Qué caza pilotea Shin Kudo al inicio de Macross Zero?",
     "opciones": [
       "F-14 Super Tomcat",
       "VF-0",
@@ -45,7 +45,7 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿A quienes pertenecia la Alien Star Ship (bautizada como SDF 1) antes de estrellarse en la tierra?",
+    "pregunta": "¿A quiénes pertenecía la Alien Star Ship (bautizada como SDF-1) antes de estrellarse en la Tierra?",
     "opciones": [
       "Los Zentradis",
       "La Armada de Supervision",
@@ -54,16 +54,16 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿Qué enemigos atacan la flota en Macross 7?",
+    "pregunta": "¿Qué enemigos atacan la UN Spacy en Macross 7 TV?",
     "opciones": [
       "Zentradi",
       "Protodeviln",
-      "Meltrandi"
+      "Vajras"
     ],
     "correcta": 1
   },
   {
-    "pregunta": "¿Cómo se llama el VF principal de SDF Macross TV?",
+    "pregunta": "¿Cuál es el nombre del VF-1 en Macross TV?",
     "opciones": [
       "Valkyrie",
       "Phoenix",
@@ -72,7 +72,7 @@
     "correcta": 0
   },
   {
-    "pregunta": "¿Qué poder drenan los Protodeviln de la gente en Macross 7?",
+    "pregunta": "¿Qué drenan los Protodeviln de la gente en Macross 7?",
     "opciones": [
       "Energía física",
       "Spiritia",
@@ -81,43 +81,43 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿Qué IA se vuelve rebelde en Macross Plus?",
+    "pregunta": "¿Por qué Sharon Apple se vuelve agresiva en Macross Plus?",
     "opciones": [
-      "Sharon Apple",
-      "Ghost X-9",
-      "VF-19 Excalibur"
+      "Por no soportar las emociones de Myung",
+      "Por un chip militar",
+      "Por un virus digital"
     ],
     "correcta": 0
   },
   {
-    "pregunta": "¿Que cancion canta Minmay Lynn, cuando Hikaru y Misa quedan varados en el planeta tierra?",
+    "pregunta": "¿Qué canción canta Minmay Lynn cuando Hikaru y Misa quedan varados en el planeta Tierra, en la película?",
     "opciones": [
       "Love Drifts Away",
       "Ninguna, solo tararea Do You Remember Love?",
-      "Cindirella"
+      "Cinderella"
     ],
     "correcta": 1
   },
   {
-    "pregunta": "¿Qué raza alienígena ataca la Tierra en Macross original?",
+    "pregunta": "¿Qué raza alienígena ataca la Tierra en Macross TV?",
     "opciones": [
       "Zentradis",
       "Protocultura",
-      "Meltrandi"
+      "Armada de Supervisión"
     ],
     "correcta": 0
   },
   {
-    "pregunta": "¿Cual era el nombre original del proyecto de Studio Nue, mucho antes de convertirse en Macross?",
+    "pregunta": "¿Qué nombre usó el falso proyecto de Studio Nue para conseguir luz verde antes de convertirse en Macross?",
     "opciones": [
-      "Battle City Megaroad",
+      "Space City Megaroad",
       "Genocidous",
       "Super Palace Robot Dokinham"
     ],
     "correcta": 0
   },
   {
-    "pregunta": "¿Quién es el protagonista piloto en Macross original?",
+    "pregunta": "¿Quién es el protagonista piloto en Macross TV?",
     "opciones": [
       "Hikaru Ichijo",
       "Roy Focker",
@@ -126,7 +126,7 @@
     "correcta": 0
   },
   {
-    "pregunta": "¿Cual entrega no tiene pelicula oficial?",
+    "pregunta": "¿Cuál entrega no tiene película oficial?",
     "opciones": [
       "Macross Plus",
       "Macross 7",
@@ -144,7 +144,7 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿A quién se atribuye el desarrollo del concepto original de Genocidous, antecedente de Macross?",
+    "pregunta": "¿Quién fue el autor de la idea principal cuyo proyecto Genocidous dio origen a Macross?",
     "opciones": [
       "Kazutaka Miyatake",
       "Shoji Kawamori",
@@ -153,9 +153,9 @@
     "correcta": 0
   },
   {
-    "pregunta": "¿Qué nave lidera la flota colonial en Macross 7?",
+    "pregunta": "¿Qué nave lidera la flota colonizadora en Macross 7?",
     "opciones": [
-      "Ninguna, la flota en Macross 7 no es colonizadora",
+      "Ninguna, en Macross las flotas son migratorias, no colonizadoras",
       "Macross City 7, comandada por Miria Farina Jenius",
       "Macross Quarter"
     ],
@@ -164,14 +164,14 @@
   {
     "pregunta": "¿Quién no es la hija de Max y Miria en Macross 7?",
     "opciones": [
-      "Mylene Flare Jenius",
+      "Mylene",
       "Sivil",
-      "Emilia Jenius"
+      "Emilia"
     ],
     "correcta": 1
   },
   {
-    "pregunta": "¿Cuál es el nombre del cantante principal en Macross 7?",
+    "pregunta": "¿Cuál es el nombre del cantante principal de Fire Bomber en Macross 7?",
     "opciones": [
       "Basara Nekki",
       "Mylene Jenius",
@@ -189,10 +189,10 @@
     "correcta": 0
   },
   {
-    "pregunta": "¿Cuál es la canción icónica cantada por Minmay Lynn que ayuda a la paz en la serie original?",
+    "pregunta": "¿Qué canción cantada por Minmay Lynn en Macross TV concluyó las hostilidades con los Zentradi?",
     "opciones": [
       "Do You Remember Love?",
-      "Shao Pai Long",
+      "We Will Win",
       "Love Drifts Away"
     ],
     "correcta": 2
@@ -207,25 +207,25 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿Qué antigua raza creó a los Zentradi?",
+    "pregunta": "¿Qué milenaria raza creó a los Zentradi?",
     "opciones": [
       "Protocultura",
       "Zentradi",
-      "Supervinlandi"
+      "Marduk"
     ],
     "correcta": 0
   },
   {
-    "pregunta": "En la serie de TV, ¿qué canción canta Minmay Lynn cuando ella e Hikaru Ichijo quedan encerrados?",
+    "pregunta": "En Macross TV, ¿qué canción canta Minmay cuando ella y Hikaru quedan encerrados?",
     "opciones": [
-      "Love Drifts Away",
-      "Cindirella",
+      "To Be in Love",
+      "Cinderella",
       "Zero G Love"
     ],
     "correcta": 1
   },
   {
-    "pregunta": "¿Qué película es una versión alternativa de la serie original de Macross?",
+    "pregunta": "¿Qué película presenta una versión alternativa de Macross TV?",
     "opciones": [
       "Macross Plus",
       "Macross: Do You Remember Love?",
@@ -252,7 +252,7 @@
     "correcta": 0
   },
   {
-    "pregunta": "¿Como se llama el escuadron especial que aparece en Macross VFX 2?",
+    "pregunta": "¿Cómo se llama el escuadrón especial que aparece en Macross VFX 2?",
     "opciones": [
       "Skull",
       "Ravens",
@@ -279,7 +279,7 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿Quien era el piloto que muere durante el primero combate contra los Vajras a bordo de un VF-25?",
+    "pregunta": "¿Quién era el piloto que muere durante el primer combate contra los Vajras a bordo de un VF-25?",
     "opciones": [
       "Alto Saotome",
       "Henry Gilliam",
@@ -297,7 +297,7 @@
     "correcta": 0
   },
   {
-    "pregunta": "¿Quién es el líder de Fire Bomber?",
+    "pregunta": "¿Quién es el líder de la banda Fire Bomber?",
     "opciones": [
       "Basara Nekki",
       "Mylene Jenius",
@@ -315,7 +315,7 @@
     "correcta": 1
   },
   {
-    "pregunta": "¿Qué es el Tori no Hito que aparece en Macross Zero?",
+    "pregunta": "¿Qué cosa es el Tori no Hito que aparece en Macross Zero?",
     "opciones": [
       "Una réplica artificial de la Reina Vajra, creada por la Protocultura milenios atrás",
       "Una nave de combate olvidada por los Zentradi",
@@ -324,11 +324,11 @@
     "correcta": 0
   },
   {
-    "pregunta": "¿Quién es la hermana menor de Sara Nome?",
+    "pregunta": "¿Quién es la hermana de Sara Nome?",
     "opciones": [
-      "Mao Nome",
-      "Ranka Lee",
-      "Sheryl Nome"
+      "Mao",
+      "Ranka",
+      "Sheryl"
     ],
     "correcta": 0
   },
@@ -344,9 +344,9 @@
   {
     "pregunta": "¿Cómo se llama el escuadrón al que se une Shin Kudo en Macross Zero?",
     "opciones": [
-      "Skull Squadron",
-      "Angel Squadron",
-      "Raven Squadron"
+      "Skull",
+      "Angel",
+      "Vermillon"
     ],
     "correcta": 0
   },
@@ -369,7 +369,7 @@
     "correcta": 2
   },
   {
-    "pregunta": "¿Cuál de estos tres personajes no es estilista?",
+    "pregunta": "¿Cuál de estos tres personajes de personalidad delicada no fue estilista?",
     "opciones": [
       "Mash",
       "Bobby Margot",
@@ -414,7 +414,7 @@
     "correcta": 1
   },
   {
-    "pregunta": "En SDF Macross TV, ¿a qué hacen referencia las oficiales May, Panapp y Pocky?",
+    "pregunta": "En Macross TV, ¿a qué hacen referencia las oficiales May, Panapp y Pocky?",
     "opciones": [
       "Nombres de novias que tuvo Mikimoto",
       "Nombres de gatos que rondaban Studio Nue",
@@ -423,18 +423,18 @@
     "correcta": 2
   },
   {
-    "pregunta": "Passel, Liza y Minmay Canbary son las protagonistas femeninas de ¿qué material de Macross?",
+    "pregunta": "Passel, Liza y Minmay Canary son las protagonistas femeninas de ¿qué material de Macross?",
     "opciones": [
       "Macross Generation CD Drama",
       "Macross 7 Trash Manga",
-      "Macross VFX Digital Mission videogame"
+      "Macross VFX Digital Mission videojuego"
     ],
     "correcta": 0
   },
   {
     "pregunta": "¿En qué obra de Macross no aparece Maria Komilia Jenius?",
     "opciones": [
-      "SDF Macross TV",
+      "Macross TV",
       "Macross 2036",
       "Macross Frontier"
     ],
