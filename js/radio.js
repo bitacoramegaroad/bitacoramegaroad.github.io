@@ -174,4 +174,5 @@
     }, { once: true });
   };
   if (document.querySelector("#megaroad-radio")) window.setupMegaroadRadio(document);
+  else window.addEventListener("site-shell:loaded", () => window.setupMegaroadRadio(document), { once: true });
 })();

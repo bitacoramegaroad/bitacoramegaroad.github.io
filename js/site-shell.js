@@ -1,4 +1,8 @@
 (() => {
+  const returnLabel = "Regresar a la Bitácora";
+  document.querySelectorAll('.nav-bottom a[href="index.html"], .nav-bottom a[href="https://bitacoramegaroad.github.io/"], footer a[href="index.html"], footer a[href="https://bitacoramegaroad.github.io/"], a#btnBitacora, a#close-button')
+    .forEach((link) => { link.textContent = returnLabel; link.classList.add("site-return-button"); });
+
   document.addEventListener("click", (event) => {
     const contactLink = event.target.closest?.('.main-nav a[href="#contacto"]');
     const dialog = document.querySelector("#contact-modal");
@@ -218,42 +222,160 @@
       if (gifObjectUrl) URL.revokeObjectURL(gifObjectUrl);
     }, { once: true });
   }
-  const header = document.querySelector(".macross-header");
-  const page = document.querySelector("main.document-page");
-  if (!header || !page) return;
+  const isHome = document.body.classList.contains("home-page");
+  const isFold = document.body.classList.contains("fold-page-body");
+  if (document.body.classList.contains("logo-only-page")) return;
+  const homeWrapper = isHome ? document.querySelector(".home-page > .wrapper") : null;
+  let page = isHome ? null : document.querySelector("main.document-page");
+  if (!isHome && !page && document.querySelector("#alysia-wrapper")) {
+    const app = document.querySelector("#alysia-wrapper");
+    page = document.createElement("main");
+    page.className = "document-page alysia-page";
+    app.replaceWith(page);
+    page.append(app);
+  }
+  if (isFold) {
+    const viewport = document.querySelector(".viewport-3d");
+    if (viewport) {
+      page = document.createElement("main");
+      page.className = "fold-page-main";
+      viewport.replaceWith(page);
+      page.append(viewport);
+    }
+  }
+  if (!homeWrapper && !page) return;
 
   async function loadChrome() {
     try {
       const response = await fetch("includes/site-shell.html");
-      if (!response.ok) throw new Error("No se pudo cargar la navegación del sitio.");
+      if (!response.ok) throw new Error("No se pudo cargar la estructura compartida del sitio.");
       const fragment = new DOMParser().parseFromString(await response.text(), "text/html");
+      const header = fragment.querySelector(".main-header");
       const navigation = fragment.querySelector(".main-nav");
+      const search = fragment.querySelector(".site-search");
       const sidebar = fragment.querySelector(".sidebar");
-      if (!navigation || !sidebar) throw new Error("La navegación compartida está incompleta.");
+      const donations = fragment.querySelector("#overlay-donaciones");
+      if (!header || !navigation || !search || !sidebar || !donations) throw new Error("La estructura compartida del sitio está incompleta.");
 
-      navigation.classList.add("page-site-nav");
-      header.after(navigation);
+      const layout = isHome ? homeWrapper.querySelector(".main-layout") : null;
+      if (isHome && !layout) throw new Error("No se encontró el área principal de Inicio.");
 
-      const layout = document.createElement("div");
-      layout.className = "document-site-layout";
-      page.before(layout);
-      layout.append(page, sidebar);
-      page.classList.add("document-page-in-layout");
+      if (isHome) {
+        homeWrapper.querySelector(".main-header, .main-nav, .site-search")?.remove();
+        layout.querySelector(".sidebar")?.remove();
+        homeWrapper.insertBefore(header, layout);
+        homeWrapper.insertBefore(navigation, layout);
+        homeWrapper.insertBefore(search, layout);
+        layout.append(sidebar);
+      } else if (isFold) {
+        page.before(header, navigation, search);
+        page.after(sidebar);
+      } else {
+        const oldHeader = document.querySelector(".macross-header");
+        const pageHeading = oldHeader?.querySelector("h1");
+        if (pageHeading) page.prepend(pageHeading);
+        const documentLayout = document.createElement("div");
+        documentLayout.className = "document-site-layout";
+        documentLayout.append(page, sidebar);
+        page.classList.add("document-page-in-layout");
+        navigation.classList.add("page-site-nav");
 
-      // Las páginas institucionales usan el mismo contenedor central que Inicio.
-      const siteWrapper = document.createElement("div");
-      siteWrapper.className = "wrapper document-site-wrapper";
-      document.body.insertBefore(siteWrapper, header);
-      siteWrapper.append(header, navigation, layout);
+        const siteWrapper = document.createElement("div");
+        siteWrapper.className = "wrapper document-site-wrapper";
+        document.body.insertBefore(siteWrapper, oldHeader || page);
+        oldHeader?.remove();
+        siteWrapper.append(header, navigation, search, documentLayout);
+      }
+      document.body.append(donations);
 
       setupMenu(sidebar);
-      setupCategoryLinks(sidebar);
+      if (!isHome) setupCategoryLinks(sidebar);
+      setupSearch(search);
       setupCursor();
       setupHoverSound();
-      window.setupMegaroadRadio?.(sidebar);
+      setupDonations();
+      if (window.setupMegaroadRadio) window.setupMegaroadRadio(sidebar);
+      else if (!document.querySelector('script[src="js/radio.js"]')) {
+        const radioScript = document.createElement("script");
+        radioScript.src = "js/radio.js";
+        document.body.append(radioScript);
+      }
+      if (!document.querySelector('script[src="js/favicons.js"]')) {
+        const faviconScript = document.createElement("script");
+        faviconScript.src = "js/favicons.js";
+        document.body.append(faviconScript);
+      }
+      setupTwitterWidgets(sidebar);
+      window.dispatchEvent(new CustomEvent("site-shell:loaded"));
     } catch (error) {
       console.error(error);
     }
+  }
+
+  function setupDonations() {
+    document.addEventListener("click", (event) => {
+      const overlay = document.querySelector("#overlay-donaciones");
+      if (!overlay) return;
+      if (event.target.closest("#btn-donaciones")) overlay.removeAttribute("hidden");
+      else if (event.target.closest("#close-popup") || event.target === overlay) overlay.setAttribute("hidden", "");
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") document.querySelector("#overlay-donaciones")?.setAttribute("hidden", "");
+    });
+  }
+
+  function setupTwitterWidgets(sidebar) {
+    if (!sidebar.querySelector(".twitter-timeline")) return;
+    if (window.twttr?.widgets) {
+      window.twttr.widgets.load(sidebar);
+      return;
+    }
+    if (document.querySelector('script[src="https://platform.x.com/widgets.js"]')) return;
+    const script = document.createElement("script");
+    script.src = "https://platform.x.com/widgets.js";
+    script.async = true;
+    script.charset = "utf-8";
+    document.body.append(script);
+  }
+
+  function setupSearch(search) {
+    if (isHome) return;
+    const form = search.querySelector("#site-search-form");
+    const input = search.querySelector("#search-query");
+    const filters = ["type", "works", "genres", "formats"];
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const destination = new URL("index.html", window.location.href);
+      if (input.value.trim()) destination.searchParams.set("q", input.value.trim());
+      filters.forEach((key) => {
+        const value = search.querySelector(`#filter-${key}`).value;
+        if (value) destination.searchParams.set(key === "type" ? "filterType" : `filter${key[0].toUpperCase()}${key.slice(1)}`, value);
+      });
+      destination.hash = "buscador";
+      window.location.href = destination.href;
+    });
+    fetch("data/publicaciones.json")
+      .then((response) => response.ok ? response.json() : [])
+      .then((publications) => {
+        const groups = {
+          type: ["Institucional", "Informe", "Crítica", "Análisis", ...publications.flatMap((item) => item.type || [])],
+          works: publications.flatMap((item) => item.works || []),
+          genres: publications.flatMap((item) => item.genres || []),
+          formats: publications.flatMap((item) => item.formats || [])
+        };
+        filters.forEach((key) => {
+          const select = search.querySelector(`#filter-${key}`);
+          const label = select.options[0].textContent;
+          const values = [...new Set(groups[key])].sort((a, b) => a.localeCompare(b, "es"));
+          select.innerHTML = `<option value="">${label}</option>${values.map((value) => {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent = value;
+            return option.outerHTML;
+          }).join("")}`;
+        });
+      })
+      .catch(() => {});
   }
 
   function setupMenu(sidebar) {
@@ -317,7 +439,7 @@
     const sound = new Audio("snd/s02.ogg");
     sound.volume = 0.4;
     document.addEventListener("mouseover", (event) => {
-      if (!event.target.closest(".page-site-nav a, .page-site-nav summary, .sidebar .menu-header, .sidebar .submenu a")) return;
+      if (!event.target.closest(".main-nav a, .main-nav summary, .sidebar .menu-header, .sidebar .submenu a")) return;
       sound.currentTime = 0;
       sound.play().catch(() => {});
     });

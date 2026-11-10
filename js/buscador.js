@@ -1,4 +1,5 @@
 (() => {
+  function initSearch() {
   const normalize = value => (value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("es").trim();
   const groups = { type: "Tipo de texto", works: "Obra o franquicia", genres: "Género", formats: "Formato" };
   const form = document.querySelector("#site-search-form");
@@ -7,10 +8,18 @@
   const output = document.querySelector("#publication-list");
   const status = document.querySelector("#publication-feed-status");
   const clearButton = document.querySelector("#clear-search");
+  if (!form || !input || !filters.type || !output || !status || !clearButton) return;
   let publications = [];
   const pageParams = new URLSearchParams(window.location.search);
   let activeMenuTag = pageParams.get("filterTag") || "";
+  input.value = pageParams.get("q") || "";
   const initialTypeFilter = pageParams.get("filterType") || "";
+  const initialFilters = {
+    type: initialTypeFilter,
+    works: pageParams.get("filterWorks") || "",
+    genres: pageParams.get("filterGenres") || "",
+    formats: pageParams.get("filterFormats") || ""
+  };
   const standardTypes = ["Institucional", "Informe", "Crítica", "Análisis"];
 
   function escapeHtml(value) {
@@ -125,8 +134,8 @@
         } catch { item.text = item.summary || ""; }
       }));
       fillFilters();
-      if (initialTypeFilter && [...filters.type.options].some(option => option.value === initialTypeFilter)) {
-        filters.type.value = initialTypeFilter;
+      for (const [key, value] of Object.entries(initialFilters)) {
+        if (value && [...filters[key].options].some(option => option.value === value)) filters[key].value = value;
       }
       render();
     } catch { status.textContent = "No se pudo cargar el catálogo de publicaciones."; }
@@ -136,4 +145,8 @@
   Object.values(filters).forEach(select => select.addEventListener("change", render));
   fillFilters();
   load();
+  }
+
+  if (document.querySelector("#site-search-form")) initSearch();
+  else window.addEventListener("site-shell:loaded", initSearch, { once: true });
 })();
