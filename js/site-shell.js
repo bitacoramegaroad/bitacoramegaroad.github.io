@@ -223,7 +223,6 @@
     }, { once: true });
   }
   const isHome = document.body.classList.contains("home-page");
-  const isFold = document.body.classList.contains("fold-page-body");
   if (document.body.classList.contains("logo-only-page")) return;
   const homeWrapper = isHome ? document.querySelector(".home-page > .wrapper") : null;
   let page = isHome ? null : document.querySelector("main.document-page");
@@ -233,15 +232,6 @@
     page.className = "document-page alysia-page";
     app.replaceWith(page);
     page.append(app);
-  }
-  if (isFold) {
-    const viewport = document.querySelector(".viewport-3d");
-    if (viewport) {
-      page = document.createElement("main");
-      page.className = "fold-page-main";
-      viewport.replaceWith(page);
-      page.append(viewport);
-    }
   }
   if (!homeWrapper && !page) return;
 
@@ -267,9 +257,6 @@
         homeWrapper.insertBefore(navigation, layout);
         homeWrapper.insertBefore(search, layout);
         layout.append(sidebar);
-      } else if (isFold) {
-        page.before(header, navigation, search);
-        page.after(sidebar);
       } else {
         const oldHeader = document.querySelector(".macross-header");
         const pageHeading = oldHeader?.querySelector("h1");
