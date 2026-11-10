@@ -4,11 +4,7 @@
   font-weight: 600;
 }
 
-:root {
-  color-scheme: dark;
-  background: #050713;
-}
-
+:root { color-scheme: dark; background: #050713; }
 * { box-sizing: border-box; }
 html, body { width: 100%; height: 100%; margin: 0; }
 body {
@@ -36,24 +32,43 @@ body {
   height: 100%;
   overflow: visible;
 }
-.neon-art #neon-system,
+.neon-art #neon-system { opacity: 1; transition: opacity 65ms linear; }
+.neon-art #neon-ring-outer,
+.neon-art #neon-ring-inner,
+.neon-art #letters-halo,
+.neon-art #letters-face,
+.neon-art #letters-hot,
+.neon-art #tm-white,
 .neon-art #plate-illumination,
 .neon-art #ship-off,
 .neon-art #ship-on,
 .neon-art #ship-neon-accent {
-  transition: opacity 65ms linear;
+  transition: opacity 300ms ease-out;
 }
-.neon-art #neon-system { opacity: 1; }
-.neon-art #plate-illumination { opacity: .9; }
-.neon-art #ship-off { opacity: 0; }
-.neon-art #ship-on { opacity: 1; }
-.neon-art #ship-neon-accent {
-  opacity: .62;
-  mix-blend-mode: screen;
-}
+.neon-art #neon-ring-outer,
+.neon-art #neon-ring-inner,
+.neon-art #letters-halo,
+.neon-art #letters-face,
+.neon-art #letters-hot,
+.neon-art #tm-white,
+.neon-art #plate-illumination,
+.neon-art #ship-on,
+.neon-art #ship-neon-accent { opacity: 0; }
+.neon-art #ship-off { opacity: 1; }
+.neon-art #ship-neon-accent { mix-blend-mode: screen; }
 .neon-art #ship-off,
 .neon-art #ship-on,
 .neon-art #ship-neon-accent { pointer-events: none; }
+.sign.frame-lit .neon-art #neon-ring-outer,
+.sign.frame-lit .neon-art #neon-ring-inner { opacity: 1; }
+.sign.frame-lit .neon-art #plate-illumination { opacity: .9; }
+.sign.ship-lit .neon-art #ship-off { opacity: 0; }
+.sign.ship-lit .neon-art #ship-on { opacity: 1; }
+.sign.ship-lit .neon-art #ship-neon-accent { opacity: .62; }
+.sign.title-lit .neon-art #letters-halo,
+.sign.title-lit .neon-art #letters-face,
+.sign.title-lit .neon-art #letters-hot,
+.sign.title-lit .neon-art #tm-white { opacity: 1; }
 .sign.is-dark .neon-art #neon-system { opacity: .015; }
 .sign.is-dark .neon-art #plate-illumination { opacity: 0; }
 .sign.is-dark .neon-art #ship-off { opacity: 1; }
