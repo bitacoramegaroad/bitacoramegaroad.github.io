@@ -1,7 +1,4 @@
-:root {
-  color-scheme: dark;
-  background: #080d13;
-}
+:root { color-scheme: dark; background: #080d13; }
 * { box-sizing: border-box; }
 html, body { width: 100%; min-width: 320px; min-height: 100%; margin: 0; }
 body {
@@ -25,37 +22,24 @@ body {
 }
 .sign-frame {
   position: relative;
-  width: min(92vw, 731px, 105svh);
-  aspect-ratio: 1503 / 1028;
+  width: min(92vw, 716px, 100svh);
+  aspect-ratio: 1502 / 1047;
 }
-.sign-image {
+.sign-base, .neon-traces {
   position: absolute;
   inset: 0;
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  user-select: none;
-  -webkit-user-drag: none;
 }
-.sign-off { z-index: 1; }
-.sign-on {
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 90ms ease-out;
-}
-.sign-frame[data-lit="true"] .sign-on { opacity: 1; }
-.sign-frame[data-glitch="true"] .sign-on {
-  opacity: 0;
-  transition-duration: 30ms;
-}
+.sign-base { z-index: 1; object-fit: contain; user-select: none; -webkit-user-drag: none; }
+.neon-traces { z-index: 2; overflow: visible; pointer-events: none; }
+.steady-neon { opacity: 1; }
+.letter-neon { opacity: 1; transition: opacity 55ms linear; }
+.letter-neon.is-flickering { opacity: .06; }
 @media (max-width: 600px) {
   .stage { padding: 12px; }
-  .sign-frame { width: min(94vw, 731px, 105svh); }
+  .sign-frame { width: min(94vw, 716px, 100svh); }
   body { background-attachment: scroll; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .sign-on { transition: none; }
-}
-
-
+@media (prefers-reduced-motion: reduce) { .letter-neon { transition: none; } }
