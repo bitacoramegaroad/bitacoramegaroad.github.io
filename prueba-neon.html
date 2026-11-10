@@ -11,9 +11,18 @@
 </head>
 <body>
   <main class="stage" aria-label="Cartel de neón de La Bitácora del Megaroad">
-    <div class="sign-frame" id="neonSign" data-lit="true">
-      <img class="sign-image sign-off" src="img/Cartel_neon_off.webp" alt="Cartel de La Bitácora del Megaroad">
-      <img class="sign-image sign-on" src="img/Cartel_neon_on.webp" alt="" aria-hidden="true">
+    <div class="sign-frame" id="neonSign">
+      <img class="sign-base" src="img/Cartel_neon_off.webp" alt="Cartel de La Bitácora del Megaroad">
+      <svg class="neon-traces" id="neonTraces" viewBox="0 0 1502 1047" preserveAspectRatio="none" aria-hidden="true">
+        <defs id="svgDefs">
+          <image id="neonLinesSource" href="img/Cartel_neon_lineas.webp" x="0" y="0" width="1502" height="1047" preserveAspectRatio="none"></image>
+          <mask id="steadyNeonMask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="1502" height="1047" style="mask-type:luminance">
+            <rect x="0" y="0" width="1502" height="1047" fill="white"></rect>
+          </mask>
+        </defs>
+        <use class="steady-neon" href="#neonLinesSource" mask="url(#steadyNeonMask)"></use>
+        <g id="independentLetters"></g>
+      </svg>
     </div>
   </main>
 </body>
