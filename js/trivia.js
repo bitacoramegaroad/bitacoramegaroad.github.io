@@ -29,6 +29,7 @@
   const homeMessage = document.getElementById("trivia-home-message");
   const nameForm = document.getElementById("trivia-name-form");
   const nickInput = document.getElementById("trivia-nick");
+  document.getElementById("results-save-message")?.remove();
 
   const customCursor = document.querySelector(".custom-cursor");
   if (customCursor) {
@@ -83,20 +84,12 @@
   }
 
   async function saveSharedScore(result) {
-    await fetch(SCORES_API_URL, {
+    return fetch(SCORES_API_URL, {
       method: "POST",
       mode: "no-cors",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(result)
     });
-
-    sharedScores = await loadSharedScores();
-    const wasSaved = sharedScores.some((entry) =>
-      entry.categoria === result.categoria &&
-      String(entry.nick).trim().toLocaleLowerCase("es") === result.nick.trim().toLocaleLowerCase("es") &&
-      Number(entry.puntaje) === Number(result.puntaje)
-    );
-    if (!wasSaved) throw new Error("No se pudo confirmar el registro.");
   }
 
   async function loadDefaults() {
@@ -316,23 +309,21 @@
   function finishGame() {
     clearInterval(timerHandle);
     const result = { nick, puntaje: score, categoria: selectedCategory, fecha: new Date().toISOString() };
-    const saveMessage = document.getElementById("results-save-message");
-    saveMessage.textContent = "Enviando puntaje…";
     document.getElementById("results-heading").textContent = `¡Bien hecho, ${nick}!`;
     document.getElementById("results-score").textContent = `${score} ${score === 1 ? "punto" : "puntos"}`;
     renderRanking(selectedCategory);
     showView("results");
 
     saveSharedScore(result).then(() => {
-      if (!views.results.hidden && selectedCategory === result.categoria) {
-        saveMessage.textContent = "Puntaje registrado.";
-        renderRanking(result.categoria);
-      }
-    }).catch(() => {
-      if (!views.results.hidden && selectedCategory === result.categoria) {
-        saveMessage.textContent = "No se pudo confirmar el registro. La partida terminó correctamente.";
-      }
-    });
+      window.setTimeout(() => {
+        loadSharedScores().then((scores) => {
+          sharedScores = scores;
+          if (!views.results.hidden && selectedCategory === result.categoria) {
+            renderRanking(result.categoria);
+          }
+        }).catch(() => {});
+      }, 1000);
+    }).catch(() => {});
   }
 
   document.querySelectorAll(".trivia-category").forEach((button) => {
