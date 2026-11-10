@@ -1,0 +1,71 @@
+@font-face {
+  font-family: Conthrax;
+  src: url('../fonts/conthrax-sb.ttf') format('truetype');
+  font-weight: 600;
+}
+
+:root {
+  color-scheme: dark;
+  background: #050713;
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; }
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #050713 url('../img/Galaxia.webp') center / cover no-repeat fixed;
+}
+.scene {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  place-items: center;
+  padding: 12px;
+}
+.sign {
+  width: min(94vw, 716px, 143.45svh);
+  aspect-ratio: 4533 / 3160;
+}
+.neon-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.neon-art #neon-system,
+.neon-art #plate-illumination,
+.neon-art #ship-off,
+.neon-art #ship-on,
+.neon-art #ship-neon-accent {
+  transition: opacity 65ms linear;
+}
+.neon-art #neon-system { opacity: 1; }
+.neon-art #plate-illumination { opacity: .9; }
+.neon-art #ship-off { opacity: 0; }
+.neon-art #ship-on { opacity: 1; }
+.neon-art #ship-neon-accent {
+  opacity: .62;
+  mix-blend-mode: screen;
+}
+.neon-art #ship-off,
+.neon-art #ship-on,
+.neon-art #ship-neon-accent { pointer-events: none; }
+.sign.is-dark .neon-art #neon-system { opacity: .015; }
+.sign.is-dark .neon-art #plate-illumination { opacity: 0; }
+.sign.is-dark .neon-art #ship-off { opacity: 1; }
+.sign.is-dark .neon-art #ship-on,
+.sign.is-dark .neon-art #ship-neon-accent { opacity: 0; }
+.letter-glyph { transition: opacity 70ms linear; }
+.letter-glyph.is-out { opacity: .06 !important; }
+
+@media (max-width: 600px) {
+  body { background-attachment: scroll; }
+  .sign { width: min(96vw, 716px, 143.45svh); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .neon-art * { transition: none !important; }
+}
