@@ -420,8 +420,14 @@
   }
 
   function setupCursor() {
-    const cursor = document.querySelector(".custom-cursor");
-    if (!cursor) return;
+    let cursor = document.querySelector(".custom-cursor");
+    if (!cursor) {
+      cursor = document.createElement("div");
+      cursor.className = "custom-cursor";
+      cursor.setAttribute("aria-hidden", "true");
+      cursor.innerHTML = '<svg class="reticle-svg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg"><path d="M28 6 L2 18 L2 62 L28 74" fill="none" stroke="#00ffcc" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><path d="M72 6 L98 18 L98 62 L72 74" fill="none" stroke="#00ffcc" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/><rect class="corner-square" x="79" y="75.5" width="13" height="20" fill="#00ffcc" transform="rotate(63 85 70)"/></svg><div class="lock-text">LOCK ON</div>';
+      document.body.append(cursor);
+    }
     document.addEventListener("mousemove", (event) => {
       cursor.style.left = `${event.clientX}px`;
       cursor.style.top = `${event.clientY}px`;
