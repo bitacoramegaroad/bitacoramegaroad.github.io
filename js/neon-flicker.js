@@ -1,9 +1,24 @@
 (() => {
   const sign = document.querySelector('.sign');
-  if (!sign || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!sign) return;
 
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (reducedMotion.matches) {
+    sign.classList.add('frame-lit', 'ship-lit', 'title-lit');
+    return;
+  }
+
+  async function startupSequence() {
+    sign.classList.add('is-starting', 'frame-lit');
+    await wait(1000);
+    sign.classList.add('ship-lit');
+    await wait(1000);
+    sign.classList.add('title-lit');
+    sign.classList.remove('is-starting');
+  }
 
   async function wholeSignLoop() {
     await wait(random(7500, 16000));
@@ -35,6 +50,8 @@
     })();
   }
 
-  wholeSignLoop();
-  ['b', 'm', 'g'].forEach(letterLoop);
+  startupSequence().then(() => {
+    wholeSignLoop();
+    ['b', 'm', 'g'].forEach(letterLoop);
+  });
 })();
