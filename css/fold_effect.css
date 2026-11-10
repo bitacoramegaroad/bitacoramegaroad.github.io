@@ -20,21 +20,6 @@ body {
   font-family: 'ConthraxSB', monospace;
 }
 
-body.fold-page-body {
-  height: auto;
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  display: block;
-  padding: 0;
-}
-
-.fold-page-main {
-  display: block;
-  width: 100%;
-  margin: 0;
-}
-
 .viewport-3d {
   position: relative;
   width: 100vw;
