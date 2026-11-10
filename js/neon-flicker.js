@@ -56,8 +56,9 @@
     groups.push(group);
   }
 
-  const shuffled = [...groups].sort(() => Math.random() - 0.5);
-  const flickeringLetters = new Set(shuffled.slice(0, 9));
+  // Only the L in DEL and the O in MEGAROAD ever flicker.
+  const flickerIds = new Set(['top-l2', 'bottom-o']);
+  const flickeringLetters = new Set(groups.filter((group) => flickerIds.has(group.dataset.glyph)));
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   const pause = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
   const timers = new Map();
@@ -97,4 +98,6 @@
     }
   });
 })();
+
+
 
