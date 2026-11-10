@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="4533"
+   height="3160"
+   viewBox="0 0 4533 3160"
+   version="1.1"
+   id="svg22"
+   sodipodi:docname="Megaroad-plantilla-neon.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+  <sodipodi:namedview
+     id="namedview22"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.25791139"
+     inkscape:cx="2212"
+     inkscape:cy="1599.3865"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="text-bottom" />
+  <title
+     id="title1">Letras Conthrax ajustables — referencia Megaroad apagada</title>
+  <desc
+     id="desc1">Cada letra es un objeto de texto independiente. Selecciónala y muévela o rótala en Inkscape. La imagen gris está en una capa de referencia bloqueada.</desc>
+  <defs
+     id="defs2">
+    <filter id="pink-neon" x="-0.8" y="-0.8" width="2.6" height="2.6"><feGaussianBlur in="SourceAlpha" stdDeviation="34" result="haloAlpha"/><feFlood flood-color="#ff20d2" flood-opacity=".62" result="haloColor"/><feComposite in="haloColor" in2="haloAlpha" operator="in" result="halo"/><feMorphology in="SourceAlpha" operator="erode" radius="9" result="coreAlpha"/><feGaussianBlur in="coreAlpha" stdDeviation="7" result="softCoreAlpha"/><feFlood flood-color="#ff75e8" flood-opacity=".82" result="coreColor"/><feComposite in="coreColor" in2="softCoreAlpha" operator="in" result="core"/><feMerge><feMergeNode in="halo"/><feMergeNode in="SourceGraphic"/><feMergeNode in="core"/></feMerge></filter>
+    <style
+       id="style2">@font-face{font-family:'Conthrax';src:url('../fonts/conthrax-sb.ttf') format('truetype');font-weight:600}text{fill:#ec1ac7;filter:url(#pink-neon)}</style>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="REFERENCIA — logo apagado"
+     id="reference" sodipodi:insensitive="true">
+    <image id="off-background" x="0" y="0" width="4533" height="3160" xlink:href="Megaroad off.png" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="TEXTO SUPERIOR — editar letra por letra"
+     id="text-top">
+    <text
+       id="top-01"
+       x="-488.8555"
+       y="1337.7754"
+       transform="matrix(0.46511837,-0.87906687,0.89545083,0.45760146,0,0)"
+       font-family="Conthrax"
+       font-size="201.811px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"
+       style="stroke-width:1.00905"><title
+   id="title2">L — mover/rotar individualmente</title>L</text>
+    <text
+       id="top-02"
+       x="-107.97752"
+       y="1380.2924"
+       transform="rotate(-54.773194)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title3">A — mover/rotar individualmente</title>A</text>
+    <text
+       id="flicker-b"
+       x="453.51813"
+       y="1342.8451"
+       transform="rotate(-42.446439)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title4">B — mover/rotar individualmente</title>B</text>
+    <text
+       id="top-04"
+       x="715.29199"
+       y="1282.5439"
+       transform="rotate(-36.52359)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title5">I — mover/rotar individualmente</title>I</text>
+    <text
+       id="top-05"
+       x="938.49976"
+       y="1215.6504"
+       transform="rotate(-31.852208)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title6">T — mover/rotar individualmente</title>T</text>
+    <text
+       id="top-06"
+       x="1272.5023"
+       y="1051.2078"
+       transform="rotate(-23.31)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title7">A — mover/rotar individualmente</title>A</text>
+    <text
+       id="top-07"
+       x="1587.6023"
+       y="848.42255"
+       transform="rotate(-15.27)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title8">C — mover/rotar individualmente</title>C</text>
+    <text
+       id="top-08"
+       x="1887.9741"
+       y="587.47412"
+       transform="rotate(-6.62)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title9">O — mover/rotar individualmente</title>O</text>
+    <text
+       id="top-09"
+       x="2152.1746"
+       y="259.08356"
+       transform="rotate(2.69)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title10">R — mover/rotar individualmente</title>R</text>
+    <text
+       id="top-10"
+       x="2360.3005"
+       y="-81.892296"
+       transform="rotate(11.31)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title11">A — mover/rotar individualmente</title>A</text>
+    <text
+       id="top-11"
+       x="2549.3186"
+       y="-632.68414"
+       transform="rotate(24.12)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title12">D — mover/rotar individualmente</title>D</text>
+    <text
+       id="top-12"
+       x="2616.0269"
+       y="-1011.9399"
+       transform="rotate(32.483183)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title13">E — mover/rotar individualmente</title>E</text>
+    <text
+       id="top-13"
+       x="2620.5713"
+       y="-1373.8005"
+       transform="rotate(40.42)"
+       font-family="Conthrax"
+       font-size="200px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title14">L — mover/rotar individualmente</title>L</text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="TEXTO INFERIOR — editar letra por letra"
+     id="text-bottom">
+    <text
+       id="flicker-m"
+       x="2541.5625"
+       y="1933.2924"
+       transform="rotate(21.808535)"
+       font-family="Conthrax"
+       font-size="220px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title15">M — mover/rotar individualmente</title>M</text>
+    <text
+       id="bottom-02"
+       x="2328.405"
+       y="2455.2129"
+       transform="rotate(9.6297905)"
+       font-family="Conthrax"
+       font-size="220px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title16">E — mover/rotar individualmente</title>E</text>
+    <text
+       id="flicker-g"
+       x="2060.0259"
+       y="2854.874"
+       transform="rotate(-0.8)"
+       font-family="Conthrax"
+       font-size="220px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title17">G — mover/rotar individualmente</title>G</text>
+    <text
+       id="bottom-04"
+       x="1782.2401"
+       y="3177.5952"
+       transform="rotate(-10.284528)"
+       font-family="Conthrax"
+       font-size="220px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title18">A — mover/rotar individualmente</title>A</text>
+    <text
+       id="bottom-05"
+       x="1358.2521"
+       y="3488.1465"
+       transform="rotate(-21.47)"
+       font-family="Conthrax"
+       font-size="220px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title19">R — mover/rotar individualmente</title>R</text>
+    <text
+       id="bottom-06"
+       x="956.34399"
+       y="3688.6543"
+       transform="rotate(-31.42)"
+       font-family="Conthrax"
+       font-size="220px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title20">O — mover/rotar individualmente</title>O</text>
+    <text
+       id="bottom-07"
+       x="494.69373"
+       y="3821.47"
+       transform="rotate(-41.9)"
+       font-family="Conthrax"
+       font-size="220px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title21">A — mover/rotar individualmente</title>A</text>
+    <text
+       id="bottom-08"
+       x="106.53856"
+       y="3866.3621"
+       transform="rotate(-51.201983)"
+       font-family="Conthrax"
+       font-size="220px"
+       font-weight="600"
+       text-anchor="middle"
+       dominant-baseline="central"
+       fill="#ff32d5"><title
+   id="title22">D — mover/rotar individualmente</title>D</text>
+  </g>
+</svg>
