@@ -9,7 +9,7 @@
   border-radius: 50px;
   background: linear-gradient(135deg, rgba(6, 11, 17, .4), rgba(17, 27, 39, .4));
   color: var(--mr-accent, #00ffcc) !important;
-  font-family: var(--mr-font-display, Conthrax, monospace);
+  font-family: var(--mr-font-display, ConthraxSB, Conthrax, monospace);
   font-size: 13px;
   line-height: 1.6;
   letter-spacing: 1px;
