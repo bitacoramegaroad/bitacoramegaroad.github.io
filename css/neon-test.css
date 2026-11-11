@@ -23,8 +23,12 @@ body {
   padding: 12px;
 }
 .sign {
+  position: relative;
   width: min(94vw, 716px, 143.45svh);
   aspect-ratio: 4533 / 3160;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 .neon-art {
   display: block;
@@ -76,6 +80,42 @@ body {
 .sign.is-dark .neon-art #ship-neon-accent { opacity: 0; }
 .letter-glyph { transition: opacity 70ms linear; }
 .letter-glyph.is-out { opacity: .06 !important; }
+.sign { cursor: default; }
+.spark-layer { position: absolute; inset: 0; z-index: 4; overflow: visible; pointer-events: none; }
+.spark {
+  position: absolute;
+  left: var(--sx); top: var(--sy);
+  width: var(--sw); height: var(--sh);
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffb347, #fff7c2 58%, #ff7b35);
+  box-shadow: 0 0 5px 2px rgba(255, 193, 92, .95), 0 0 12px 4px rgba(255, 115, 38, .72);
+  transform: translate(-50%, -50%) rotate(var(--angle));
+  animation: spark-fly var(--duration) cubic-bezier(.12,.72,.28,1) forwards;
+}
+@keyframes spark-fly {
+  0% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--angle)) translateX(0) scale(.7); }
+  12% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--angle)) translateX(var(--distance)) scale(.16); }
+}
+.sign.is-click-failing .neon-art #neon-system,
+.sign.is-click-failing .neon-art #plate-illumination,
+.sign.is-click-failing .neon-art #ship-on,
+.sign.is-click-failing .neon-art #ship-neon-accent { animation: click-failure 780ms steps(1,end) both; }
+.sign.is-click-failing .neon-art #ship-on { animation-delay: 35ms; }
+.sign.is-click-failing .neon-art #plate-illumination { animation-delay: 70ms; }
+.sign.is-click-failing .neon-art #ship-neon-accent { animation-delay: 110ms; }
+@keyframes click-failure {
+  0%, 8%, 17%, 25%, 42%, 53%, 68%, 84%, 100% { opacity: 1; }
+  9%, 16%, 26%, 41%, 54%, 67%, 85%, 93% { opacity: .025; }
+}
+.sign.is-broken .neon-art #neon-system,
+.sign.is-broken .neon-art #plate-illumination,
+.sign.is-broken .neon-art #ship-on,
+.sign.is-broken .neon-art #ship-neon-accent { opacity: 0 !important; animation: none !important; }
+.sign.is-broken .neon-art #ship-off { opacity: 1 !important; }
+.sign.is-broken .spark { animation-play-state: running; }
+.sign.is-broken { cursor: default; }
+.sign:focus-visible { outline: 2px solid rgba(255,255,255,.7); outline-offset: 5px; border-radius: 4px; }
 
 @media (max-width: 600px) {
   body { background-attachment: scroll; }
