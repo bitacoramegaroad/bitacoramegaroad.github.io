@@ -1,9 +1,3 @@
-@font-face {
-  font-family: Conthrax;
-  src: url('../fonts/conthrax-sb.ttf') format('truetype');
-  font-weight: 600;
-}
-
 :root { color-scheme: dark; background: #050713; }
 * { box-sizing: border-box; }
 html, body { width: 100%; height: 100%; margin: 0; }
@@ -27,118 +21,37 @@ body {
   width: min(94vw, 716px, 143.45svh);
   aspect-ratio: 4533 / 3160;
   user-select: none;
+  cursor: default;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
-.neon-art {
+.neon-object {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
-  overflow: visible;
+  border: 0;
+  background: transparent;
 }
-.neon-art #neon-system { opacity: 1; transition: opacity 65ms linear; }
-.neon-art #neon-ring-outer,
-.neon-art #neon-ring-inner,
-.neon-art #letters-halo,
-.neon-art #letters-face,
-.neon-art #letters-hot,
-.neon-art #tm-white,
-.neon-art #plate-illumination,
-.neon-art #ship-off,
-.neon-art #ship-on,
-.neon-art #ship-neon-accent {
-  transition: opacity 300ms ease-out;
-}
-.neon-art #neon-ring-outer,
-.neon-art #neon-ring-inner,
-.neon-art #letters-halo,
-.neon-art #letters-face,
-.neon-art #letters-hot,
-.neon-art #tm-white,
-.neon-art #plate-illumination,
-.neon-art #ship-on,
-.neon-art #ship-neon-accent { opacity: 0; }
-.neon-art #ship-off { opacity: 1; }
-.neon-art #ship-neon-accent { mix-blend-mode: screen; }
-.neon-art #ship-off,
-.neon-art #ship-on,
-.neon-art #ship-neon-accent { pointer-events: none; }
-.sign.frame-lit .neon-art #neon-ring-outer,
-.sign.frame-lit .neon-art #neon-ring-inner { opacity: 1; }
-.sign.frame-lit .neon-art #plate-illumination { opacity: .9; }
-.sign.ship-lit .neon-art #ship-off { opacity: 0; }
-.sign.ship-lit .neon-art #ship-on { opacity: 1; }
-.sign.ship-lit .neon-art #ship-neon-accent { opacity: .62; }
-.sign.title-lit .neon-art #letters-halo,
-.sign.title-lit .neon-art #letters-face,
-.sign.title-lit .neon-art #letters-hot,
-.sign.title-lit .neon-art #tm-white { opacity: 1; }
-.sign.is-dark .neon-art #neon-system { opacity: .015; }
-.sign.is-dark .neon-art #plate-illumination { opacity: 0; }
-.sign.is-dark .neon-art #ship-off { opacity: 1; }
-.sign.is-dark .neon-art #ship-on,
-.sign.is-dark .neon-art #ship-neon-accent { opacity: 0; }
-.letter-glyph { transition: opacity 70ms linear; }
-.letter-glyph.is-out { opacity: .06 !important; }
-.sign { cursor: default; }
-.spark-layer { position: absolute; inset: 0; z-index: 4; overflow: visible; pointer-events: none; }
+.spark-layer { position: absolute; inset: 0; z-index: 2; overflow: visible; pointer-events: none; }
 .spark {
   position: absolute;
   left: var(--sx); top: var(--sy);
   width: var(--sw); height: var(--sh);
   border-radius: 999px;
-  background: linear-gradient(90deg, #ffb347, #fff7c2 58%, #ff7b35);
-  box-shadow: 0 0 7px 3px rgba(255, 215, 119, .98), 0 0 17px 6px rgba(255, 115, 38, .82);
+  background: linear-gradient(90deg, #ff9b31 0%, #fffbe1 48%, #ffc252 72%, #ff632b 100%);
+  box-shadow: 0 0 9px 4px rgba(255, 220, 137, 1), 0 0 22px 9px rgba(255, 113, 34, .9);
   transform: translate(-50%, -50%) rotate(var(--angle));
   animation: spark-fly var(--duration) cubic-bezier(.12,.72,.28,1) forwards;
 }
 @keyframes spark-fly {
   0% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--angle)) translateX(0) scale(.7); }
   12% { opacity: 1; }
-  100% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--angle)) translateX(var(--distance)) scale(.16); }
+  100% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--angle)) translateX(var(--distance)) scale(.12); }
 }
-.sign.is-click-failing .neon-art #neon-system,
-.sign.is-click-failing .neon-art #plate-illumination,
-.sign.is-click-failing .neon-art #ship-on,
-.sign.is-click-failing .neon-art #ship-neon-accent { animation: click-failure 780ms steps(1,end) both; }
-.sign.is-click-failing .neon-art #ship-on { animation-delay: 35ms; }
-.sign.is-click-failing .neon-art #plate-illumination { animation-delay: 70ms; }
-.sign.is-click-failing .neon-art #ship-neon-accent { animation-delay: 110ms; }
-@keyframes click-failure {
-  0%, 8%, 17%, 25%, 42%, 53%, 68%, 84%, 100% { opacity: 1; }
-  9%, 16%, 26%, 41%, 54%, 67%, 85%, 93% { opacity: .025; }
-}
-.sign.is-broken .neon-art #neon-system,
-.sign.is-broken .neon-art #plate-illumination,
-.sign.is-broken .neon-art #ship-on,
-.sign.is-broken .neon-art #ship-neon-accent { opacity: 0 !important; animation: none !important; }
-.sign.is-broken .neon-art #ship-off { opacity: 1 !important; }
-.sign.is-broken .spark { animation-play-state: running; }
-.sign.is-broken { cursor: default; }
 .sign:focus-visible { outline: 2px solid rgba(255,255,255,.7); outline-offset: 5px; border-radius: 4px; }
-.sign.is-late-failure .neon-art #neon-system { opacity: 1 !important; }
-.sign.is-late-failure .neon-art #neon-ring-outer,
-.sign.is-late-failure .neon-art #neon-ring-inner,
-.sign.is-late-failure .neon-art #tm-white { opacity: 0 !important; }
-.sign.is-late-failure .neon-art #letters-halo,
-.sign.is-late-failure .neon-art #letters-face,
-.sign.is-late-failure .neon-art #letters-hot { opacity: 1 !important; }
-.sign.is-late-failure .neon-art #letters-halo .letter-glyph,
-.sign.is-late-failure .neon-art #letters-face .letter-glyph,
-.sign.is-late-failure .neon-art #letters-hot .letter-glyph { opacity: 0; }
-.sign.is-late-failure .neon-art .letter-glyph.late-fault {
-  opacity: 1;
-  animation: residual-letter-failure 900ms steps(1, end) forwards;
-}
-@keyframes residual-letter-failure {
-  0%, 10%, 23%, 39%, 52%, 100% { opacity: 1; }
-  11%, 22%, 40%, 51%, 78% { opacity: .03; }
-}
-
 @media (max-width: 600px) {
   body { background-attachment: scroll; }
   .sign { width: min(96vw, 716px, 143.45svh); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .neon-art * { transition: none !important; }
 }
