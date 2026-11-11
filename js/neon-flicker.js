@@ -8,8 +8,12 @@
   const sparkLayer = sign.querySelector('.spark-layer');
   const clickSound = new Audio('snd/neon.ogg');
   const crashSound = new Audio('snd/neon_crash.ogg');
-  clickSound.preload = 'auto';
-  crashSound.preload = 'auto';
+  const crowdReactions = [
+    new Audio('snd/crowd-shocked.mp3'),
+    new Audio('snd/crowd-disappointment.mp3'),
+    new Audio('snd/mama-cortaste-toda-la-loz.mp3')
+  ];
+  [clickSound, crashSound, ...crowdReactions].forEach(sound => { sound.preload = 'auto'; });
 
   let clicks = 0;
   let broken = false;
@@ -39,29 +43,49 @@
       [0.5, 0.18], [0.84, 0.53], [0.16, 0.52]
     ];
 
-    // Four quick bursts, each with three or four sparks.
-    for (let burst = 0; burst < 4; burst += 1) {
-      setTimeout(() => {
-        if (bounds.width === 0 || bounds.height === 0) return;
-        const [ox, oy] = origin[random(0, origin.length - 1)];
-        const count = random(3, 4);
-        for (let i = 0; i < count; i += 1) {
-          const spark = document.createElement('i');
-          const angle = random(0, 359);
-          const length = random(28, 66);
-          spark.className = 'spark';
-          spark.style.setProperty('--sx', `${ox * 100 + random(-2, 2)}%`);
-          spark.style.setProperty('--sy', `${oy * 100 + random(-2, 2)}%`);
-          spark.style.setProperty('--sw', `${random(7, 13)}px`);
-          spark.style.setProperty('--sh', `${random(2, 3)}px`);
-          spark.style.setProperty('--angle', `${angle}deg`);
-          spark.style.setProperty('--distance', `${length}px`);
-          spark.style.setProperty('--duration', `${random(250, 390)}ms`);
-          sparkLayer.appendChild(spark);
-          setTimeout(() => spark.remove(), 450);
-        }
-      }, burst * 105);
+    function burst(count) {
+      if (bounds.width === 0 || bounds.height === 0) return;
+      const [ox, oy] = origin[random(0, origin.length - 1)];
+      for (let i = 0; i < count; i += 1) {
+        const spark = document.createElement('i');
+        spark.className = 'spark';
+        spark.style.setProperty('--sx', `${ox * 100 + random(-2, 2)}%`);
+        spark.style.setProperty('--sy', `${oy * 100 + random(-2, 2)}%`);
+        spark.style.setProperty('--sw', `${random(12, 20)}px`);
+        spark.style.setProperty('--sh', `${random(3, 5)}px`);
+        spark.style.setProperty('--angle', `${random(0, 359)}deg`);
+        spark.style.setProperty('--distance', `${random(44, 96)}px`);
+        spark.style.setProperty('--duration', `${random(250, 390)}ms`);
+        sparkLayer.appendChild(spark);
+        setTimeout(() => spark.remove(), 450);
+      }
     }
+
+    // Four quick bursts, then two isolated sparks after the blackout.
+    for (let burstIndex = 0; burstIndex < 4; burstIndex += 1) {
+      setTimeout(() => burst(random(3, 4)), burstIndex * 105);
+    }
+    setTimeout(() => burst(1), 560);
+    setTimeout(() => burst(1), 720);
+  }
+
+  async function lateLetterFailure() {
+    const candidates = [...sign.querySelectorAll('#letters-face .letter-glyph:not(.flicker-b):not(.flicker-m):not(.flicker-g)')];
+    if (!candidates.length) return;
+
+    const faceLetter = candidates[random(0, candidates.length - 1)];
+    const suffix = faceLetter.id.replace(/^face-/, '');
+    const glowLetters = ['halo', 'face', 'hot']
+      .map(layer => sign.querySelector(`#letters-${layer} #${layer}-${suffix}`))
+      .filter(Boolean);
+    await wait(460);
+    if (!broken) return;
+    sign.classList.add('is-late-failure');
+    glowLetters.forEach(glyph => glyph.classList.add('late-fault'));
+    setTimeout(() => {
+      glowLetters.forEach(glyph => glyph.classList.remove('late-fault'));
+      sign.classList.remove('is-late-failure');
+    }, 1150);
   }
 
   async function breakSign() {
@@ -73,7 +97,10 @@
     sign.classList.add('is-broken');
     sign.setAttribute('aria-disabled', 'true');
     play(crashSound);
+    // Let the impact begin, then layer in one of the two crowd reactions.
+    setTimeout(() => play(crowdReactions[random(0, crowdReactions.length - 1)]), 420);
     emitSparks();
+    void lateLetterFailure();
   }
 
   function interact() {
