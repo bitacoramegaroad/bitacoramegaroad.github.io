@@ -1,7 +1,8 @@
 /* ==========================================
    LOGO NEÓN INTERACTIVO — La Bitácora del Megaroad
-   Reemplaza el logo de la cabecera (.main-header .logo-container img).
-   Lo carga js/site-shell.js después de inyectar la estructura del sitio.
+   Reemplaza el logo de la cabecera (.main-header .logo-container img) y el de las
+   páginas con cabecera antigua (.macross-header, como Trivia y Series Online).
+   Lo carga js/site-shell.js.
    Sonidos: snd/neon.ogg (clic) y snd/neon_crash.ogg (rotura)
    ========================================== */
 (() => {
@@ -52,7 +53,7 @@
           <text class="neon-tm" x="2745" y="2240" text-anchor="middle">TM</text>
         </g>
       </svg>`;
-  const LOGO_SELECTOR = ".main-header .logo-container img, .main-header img.blog-logo";
+  const LOGO_SELECTOR = ".main-header .logo-container img, .main-header img.blog-logo, .macross-header img.logo, .macross-header .logo-link img";
 
   function mountNeonLogo() {
     if (document.querySelector(".neon-logo")) return;

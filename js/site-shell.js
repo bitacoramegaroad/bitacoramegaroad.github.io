@@ -1,7 +1,8 @@
 (() => {
   const returnLabel = "Regresar a la Bitácora";
-  document.querySelectorAll('.nav-bottom a[href="index.html"], .nav-bottom a[href="https://bitacoramegaroad.github.io/"], footer a[href="index.html"], footer a[href="https://bitacoramegaroad.github.io/"], a#btnBitacora, a#close-button')
-    .forEach((link) => { link.textContent = returnLabel; link.classList.add("site-return-button"); });
+  const homeUrl = "https://bitacoramegaroad.github.io/";
+  document.querySelectorAll('.nav-bottom a[href$="index.html"], .nav-bottom a[href="https://bitacoramegaroad.github.io/"], footer a[href$="index.html"], footer a[href="https://bitacoramegaroad.github.io/"], a#btnBitacora, a#close-button')
+    .forEach((link) => { link.textContent = returnLabel; link.href = homeUrl; link.classList.add("site-return-button"); });
 
   document.addEventListener("click", (event) => {
     const contactLink = event.target.closest?.('.main-nav a[href="#contacto"]');
@@ -223,7 +224,10 @@
     }, { once: true });
   }
   const isHome = document.body.classList.contains("home-page");
-  if (document.body.classList.contains("logo-only-page")) return;
+  if (document.body.classList.contains("logo-only-page")) {
+    setupNeonLogo();
+    return;
+  }
   const homeWrapper = isHome ? document.querySelector(".home-page > .wrapper") : null;
   let page = isHome ? null : document.querySelector("main.document-page");
   if (!isHome && !page && document.querySelector("#alysia-wrapper")) {
@@ -301,7 +305,7 @@
   }
 
   function setupNeonLogo() {
-    const logo = document.querySelector(".main-header .logo-container img, .main-header img.blog-logo");
+    const logo = document.querySelector(".main-header .logo-container img, .main-header img.blog-logo, .macross-header img.logo, .macross-header .logo-link img");
     if (!logo) return;
     logo.style.visibility = "hidden";
     if (!document.querySelector('link[href="css/neon-logo.css"]')) {
