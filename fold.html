@@ -5,7 +5,6 @@
   <title>Fold Booster!</title>
   <!-- Enlace al archivo CSS externo -->
   <link rel="stylesheet" href="css/fold_effect.css">
-  <link rel="stylesheet" href="css/site-components.css">
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <style>
     /* 
@@ -80,7 +79,7 @@
 
     <!-- 4. CAPA SUPERIOR: Panel de navegación interactivo -->
     <div class="hud-navigation-panel">
-      <a href="https://bitacoramegaroad.github.io/" id="btnBitacora" class="boton-puente-mando site-return-button">Regresar a la Bitácora</a>
+      <a href="https://bitacoramegaroad.github.io" class="boton-puente-mando">Volver a la Bitacora</a>
     </div>
 
     <!-- 5. CAPA ABSOLUTA (AL FINAL): Nueva cabina de referencia física por encima de todo -->
@@ -218,5 +217,29 @@
       originalDrawScene();   
     };	
   </script>
+  <audio id="ambientAudio" src="snd/VASE Amb SP 01.ogg" autoplay loop preload="auto"></audio>
+<script>
+  const audio = document.getElementById("ambientAudio");
+  audio.volume = 0.6;
+
+  // Intenta forzar la reproducción inmediata al cargar el script
+  window.addEventListener("load", () => {
+    const promesa = audio.play();
+    
+    if (promesa !== undefined) {
+      promesa.catch(() => {
+        // Si el usuario abrió la URL directamente (sin clic previo), 
+        // se activará en el primer roce o movimiento en la pantalla
+        const desbloquear = () => {
+          audio.play();
+          window.removeEventListener("pointerdown", desbloquear);
+          window.removeEventListener("keydown", desbloquear);
+        };
+        window.addEventListener("pointerdown", desbloquear);
+        window.addEventListener("keydown", desbloquear);
+      });
+    }
+  });
+</script>
 </body>
 </html>
