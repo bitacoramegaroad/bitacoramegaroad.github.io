@@ -293,10 +293,33 @@
         document.body.append(faviconScript);
       }
       setupTwitterWidgets(sidebar);
+      setupNeonLogo();
       window.dispatchEvent(new CustomEvent("site-shell:loaded"));
     } catch (error) {
       console.error(error);
     }
+  }
+
+  function setupNeonLogo() {
+    const logo = document.querySelector(".main-header .logo-container img, .main-header img.blog-logo");
+    if (!logo) return;
+    logo.style.visibility = "hidden";
+    if (!document.querySelector('link[href="css/neon-logo.css"]')) {
+      const style = document.createElement("link");
+      style.rel = "stylesheet";
+      style.href = "css/neon-logo.css";
+      document.head.append(style);
+    }
+    if (window.mountNeonLogo) {
+      window.mountNeonLogo();
+      return;
+    }
+    if (document.querySelector('script[src="js/neon-logo.js"]')) return;
+    const script = document.createElement("script");
+    script.src = "js/neon-logo.js";
+    script.onload = () => window.mountNeonLogo?.();
+    script.onerror = () => { logo.style.visibility = ""; };
+    document.body.append(script);
   }
 
   function setupDonations() {
