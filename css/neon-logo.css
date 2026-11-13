@@ -1,0 +1,125 @@
+/* ==========================================
+   LOGO NEÓN INTERACTIVO — La Bitácora del Megaroad
+   Todo está limitado a .neon-logo para no chocar con indexstyle.css
+   ========================================== */
+
+/* Misma fuente que usa el sitio; aquí se declara con peso 600 para que el neón
+   use el archivo real y no una "negrita falsa". Familia propia para no alterar el resto de textos. */
+@font-face {
+    font-family: 'ConthraxNeon';
+    src: url('../fonts/conthrax-sb.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+.neon-logo {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    aspect-ratio: 4533 / 3160;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+.neon-logo:focus-visible { outline: 2px solid rgba(255,255,255,.7); outline-offset: 5px; }
+
+.neon-logo .neon-art { display: block; width: 100%; height: 100%; overflow: visible; }
+.neon-logo .nl-spark-layer { position: absolute; inset: 0; z-index: 2; overflow: visible; pointer-events: none; }
+
+/* --- Placa y tubos --- */
+.neon-logo #plate-fill { transition: fill 500ms ease; }
+.neon-logo #plate-light { filter: url(#plate-blur); transition: opacity 500ms ease; }
+.neon-logo .plate-edge { fill: none; stroke: #173f38; stroke-width: 76; stroke-linecap: round; stroke-linejoin: round; }
+.neon-logo .green-ring { opacity: 0; transition: opacity 300ms ease; }
+.neon-logo .tube-halo { fill: none; stroke: #00edb0; stroke-width: 82; stroke-linecap: round; stroke-linejoin: round; filter: blur(26px); opacity: .9; }
+.neon-logo .tube-body { fill: none; stroke: #19f7bf; stroke-width: 34; stroke-linecap: round; stroke-linejoin: round; }
+.neon-logo .tube-core { fill: none; stroke: #43ffc1; stroke-width: 22; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 12px #00ffc3); opacity: .94; }
+
+/* --- Títulos --- */
+.neon-logo .off-title { fill: #493747; font: 600 200px ConthraxNeon, Conthrax, sans-serif; letter-spacing: .04em; }
+.neon-logo .off-tm { fill: #858b89; font: 600 82px ConthraxNeon, Conthrax, sans-serif; }
+.neon-logo .neon-title { fill: #ff28d2; stroke: #a30c80; stroke-width: 11; stroke-linejoin: round; paint-order: stroke fill; font: 600 200px ConthraxNeon, Conthrax, sans-serif; letter-spacing: .04em; opacity: 0; text-shadow: 0 0 4px #ff4fd8, 0 0 11px #ff4fd8, 0 0 24px #ff4fd8, 0 0 48px #ff4fd8; transition: opacity 220ms ease; }
+.neon-logo .neon-tm { fill: #f4ffff; font: 600 82px ConthraxNeon, Conthrax, sans-serif; opacity: 0; text-shadow: 0 0 4px #42f7d1, 0 0 11px #42f7d1, 0 0 24px #42f7d1; transition: opacity 220ms ease; }
+.neon-logo .neon-art textPath { dominant-baseline: central; }
+
+/* --- Nave --- */
+.neon-logo #ship image { pointer-events: none; transition: opacity 300ms ease; }
+.neon-logo #ship-on { opacity: 0; filter: drop-shadow(0 0 16px rgba(0,227,255,.55)) drop-shadow(0 0 30px rgba(255,31,212,.28)); }
+
+/* --- Encendido por etapas --- */
+.neon-logo .neon-art.frame-lit .green-ring { opacity: 1; }
+.neon-logo .neon-art.frame-lit #plate-fill { fill: #b8c0bd; }
+.neon-logo .neon-art.frame-lit #plate-light { opacity: .38; }
+.neon-logo .neon-art.ship-lit #ship-off { opacity: 0; }
+.neon-logo .neon-art.ship-lit #ship-on { opacity: 1; }
+.neon-logo .neon-art.title-lit #title-off { opacity: 0; }
+.neon-logo .neon-art.title-lit .neon-title,
+.neon-logo .neon-art.title-lit .neon-tm { opacity: 1; }
+.neon-logo .neon-art.title-lit .neon-title { animation: nl-buzz 3.2s linear infinite; }
+
+/* --- Parpadeos de letras sueltas --- */
+.neon-logo .neon-art .flicker-b,
+.neon-logo .neon-art .flicker-m,
+.neon-logo .neon-art .flicker-g { transition: opacity 60ms linear; }
+.neon-logo .neon-art .flicker-b.is-out,
+.neon-logo .neon-art .flicker-m.is-out,
+.neon-logo .neon-art .flicker-g.is-out { opacity: .035; }
+
+/* --- Apagón breve de todo el cartel --- */
+.neon-logo .neon-art.is-dark .green-ring,
+.neon-logo .neon-art.is-dark .neon-title,
+.neon-logo .neon-art.is-dark .neon-tm,
+.neon-logo .neon-art.is-dark #ship-on { opacity: .025 !important; }
+.neon-logo .neon-art.is-dark #ship-off { opacity: 1 !important; }
+.neon-logo .neon-art.is-dark #plate-fill { fill: #858b89; }
+.neon-logo .neon-art.is-dark #plate-light { opacity: 0; }
+
+/* --- Cartel roto --- */
+.neon-logo .neon-art.is-broken .green-ring,
+.neon-logo .neon-art.is-broken .neon-title,
+.neon-logo .neon-art.is-broken .neon-tm,
+.neon-logo .neon-art.is-broken #ship-on { opacity: 0 !important; animation: none !important; }
+.neon-logo .neon-art.is-broken #ship-off,
+.neon-logo .neon-art.is-broken #title-off { opacity: 1 !important; }
+.neon-logo .neon-art.is-broken #plate-fill { fill: #858b89 !important; }
+.neon-logo .neon-art.is-broken #plate-light { opacity: 0 !important; }
+.neon-logo .neon-art.is-broken.late-failure .neon-title { opacity: 1 !important; animation: none !important; }
+.neon-logo .neon-art.is-broken.late-failure .neon-title tspan { opacity: 0 !important; }
+.neon-logo .neon-art.is-broken.late-failure .neon-title tspan.late-fault { opacity: 1 !important; animation: nl-residual-failure 850ms steps(1,end) forwards; }
+
+/* --- Falla al hacer clic --- */
+.neon-logo .neon-art.is-click-failing .green-ring,
+.neon-logo .neon-art.is-click-failing #plate-light,
+.neon-logo .neon-art.is-click-failing #ship-on,
+.neon-logo .neon-art.is-click-failing .neon-title,
+.neon-logo .neon-art.is-click-failing .neon-tm { animation: nl-click-failure 780ms steps(1,end) both; }
+.neon-logo .neon-art.is-click-failing #ship-on { animation-delay: 35ms; }
+.neon-logo .neon-art.is-click-failing #plate-light { animation-delay: 70ms; }
+
+/* --- Chispas --- */
+.neon-logo .nl-spark { position: absolute; left: var(--sx); top: var(--sy); width: var(--sw); height: var(--sh); border-radius: 999px; background: linear-gradient(90deg,#ff9b31,#fffbe1 48%,#ffc252 72%,#ff632b); box-shadow: 0 0 9px 4px rgba(255,220,137,1), 0 0 22px 9px rgba(255,113,34,.9); transform: translate(-50%,-50%) rotate(var(--angle)); animation: nl-spark-fly var(--duration) cubic-bezier(.12,.72,.28,1) forwards; }
+
+@keyframes nl-buzz {
+    0%,18%,21%,24%,100% { opacity: 1; text-shadow: 0 0 4px #ff4fd8, 0 0 11px #ff4fd8, 0 0 24px #ff4fd8, 0 0 48px #ff4fd8; }
+    19%,22%,62% { opacity: .35; text-shadow: none; }
+    63%,64.5% { opacity: .6; text-shadow: 0 0 4px #ff4fd8; }
+}
+@keyframes nl-click-failure {
+    0%,8%,17%,25%,42%,53%,68%,84%,100% { opacity: 1; }
+    9%,16%,26%,41%,54%,67%,85%,93% { opacity: .025; }
+}
+@keyframes nl-residual-failure {
+    0%,15%,32%,55%,100% { opacity: 1; }
+    16%,31%,56%,80% { opacity: .03; }
+}
+@keyframes nl-spark-fly {
+    0% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--angle)) translateX(0) scale(.7); }
+    12% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--angle)) translateX(var(--distance)) scale(.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .neon-logo *, .neon-logo *::before, .neon-logo *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
